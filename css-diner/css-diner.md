@@ -361,3 +361,40 @@ bento[for*='obb']{}
 
 <img src='https://user-images.githubusercontent.com/8843955/141084670-eaf1a152-28c1-493d-b3a8-d549126de5ca.png' alt='respuestas' width='350'>
 
+# La especificidad 
+Cuando dos o más estilos se enfocan en un elemento en particular (entran en conflicto), el estilo con la mayor **especificidad** es el que se aplica.
+```css
+/* 
+1) Los estilos inline se encuentran en el 'primer' lugar de la jerarquía de la especifidad. 
+Estos estilos esta vinculados directamente con el elemento (considerado una mala práctica) 
+*/
+
+/* 
+2) Los selectores ID son los 'segundos' en la jerarquía. Los IDs son únicos; 
+un elemento puede tener solamente un ID, y ese ID puede ser usado solamente una vez dentro de un documento HTML. 
+*/
+#parrafo{
+	color: blue;
+}
+
+/* 
+3) Los selectores de clase son los 'terceros' en la jerarquía 
+*/
+.parrafo{
+	color: green;
+}
+
+/* 
+4) Los elementos o Tags. Estos selectores tienen el rango 
+'más bajo en la jerarquía' de especificidad de CSS 
+*/
+p{
+	color: red;
+}
+```
+```html
+<p class="parrafo" title="hola" id="parrafo" style="color:purple;">hola mundo</p>
+```
+
+**Resultado:**<br>
+<img src='https://user-images.githubusercontent.com/8843955/141092342-0daed43c-b938-4cfe-a4ef-f93d2caab09f.png' alt='Especificidad' width='350'>
