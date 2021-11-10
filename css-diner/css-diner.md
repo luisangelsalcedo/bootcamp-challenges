@@ -160,7 +160,8 @@ plate:nth-child(3){}
 **respuesta:**
 
 ```css
-plate:first-child + bento{}
+bento:nth-last-child(3){}
+plate:first-child + bento{} /* otra respuesta */
 ```
 
 ### level 20
