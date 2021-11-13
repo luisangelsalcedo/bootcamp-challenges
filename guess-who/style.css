@@ -21,7 +21,7 @@ main{
 }
 #selected,
 .board .character{
-    background:  url(../allCharacters.jpg);
+    background:  url(allCharacters.jpg);
     background-position: var(--first-column1-width) var(--first-row1-height);
     width: 100px;
     height: 185px;
