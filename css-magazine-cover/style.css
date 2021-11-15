@@ -1,0 +1,160 @@
+@import url(//db.onlinewebfonts.com/c/dec3885852e9207492bd1629c611a388?family=FashionDidotW90-Regular);
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.yellow{
+    color: yellow;
+}
+.cover{
+    background: url(background.jpg) no-repeat;
+    background-size: cover;
+    width: 44.8rem;
+    height: 64rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+.model{
+    background: url(modelo.png) no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
+.title{
+    font-family: 'FashionDidotW90-Regular';
+    font-size: 22rem;
+    letter-spacing: 2.6rem;
+    color: #fff;
+    position: relative;
+    top: -2.6rem;
+    padding-left: 1.5rem;
+    text-align: center;
+}
+.title.up{
+    position: absolute;
+    z-index: 10;
+}
+.title span{
+    position: absolute;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    color: #000;
+    top: 17.8rem;
+    right: -.7rem;
+    z-index: 10;
+}
+
+.text-box{
+    position: absolute;
+    /* border: solid 1px red; */
+    width: 40rem;
+    height: 44.5rem;
+    top: 17rem;
+    margin-left: 3rem;
+    color: #fff;
+}
+/* block */
+.text-box span{
+    display: block;
+    font-weight: bold;
+}
+.text-box-block{
+    position: absolute;
+}
+.text-box-block.box-1{
+    top: 2.2rem;
+}
+.text-box-block.box-2{
+    bottom: 0;
+}
+.text-box-block.box-3,
+.text-box-block.box-4{
+    right: 0;
+    text-align: right;
+}
+.text-box-block.box-4{
+    bottom: 0;
+}
+
+/* text */
+.text-1{
+    position: relative;
+    font-size: 6.6rem;
+    line-height: 6rem;
+    left: -3.5rem;
+}
+.text-2{
+    font-size: 6.6rem;
+    line-height: 4rem;
+    font-weight: 300 !important;
+}
+.text-3{
+    font-size: 3.3rem;
+    line-height: 3rem;
+}
+.text-4{
+    font-size: 2.8rem;
+    line-height: 2.7rem;
+}
+.text-5{
+    font-size: 2.5rem;
+    line-height: 2.2rem;
+    padding-bottom: .5rem;
+}
+.text-6{
+    font-size: 1.9rem;
+    line-height: 1.7rem;
+    padding-bottom: .4rem;
+}
+.text-7{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    padding-bottom: .5rem;
+}
+.text-cursive{
+    font-family: 'Cormorant Infant', serif;
+    font-style: oblique;
+    font-size: 1.3rem;
+    line-height: 1.1rem;
+}
+.text-date{
+    font-size: .8rem;
+    font-weight: 300 !important;
+    padding-top: 3rem;
+}
+@media (min-width:1px) {
+    html{
+        font-size: 5px;
+    }
+}
+@media (min-width:400px) {
+    html{
+        font-size: 7px;
+    }
+}
+@media (min-width:600px) {
+    html{
+        font-size: 9px;
+    }
+}
+@media (min-width:700px) {
+    html{
+        font-size: 11px;
+    }
+}
+@media (min-width:1200px) {
+    html{
+        font-size: 13px;
+    }
+}
+@media (max-height:43rem) {
+    main{
+        height: auto;
+    }
+}
