@@ -1,4 +1,8 @@
-@import url(//db.onlinewebfonts.com/c/dec3885852e9207492bd1629c611a388?family=FashionDidotW90-Regular);
+/* @import url(//db.onlinewebfonts.com/c/dec3885852e9207492bd1629c611a388?family=FashionDidotW90-Regular); */
+@font-face {
+    font-family: 'dinotFashion';
+    src: url(fashionDidot.ttf);
+}
 main{
     width: 100%;
     height: 100vh;
@@ -27,7 +31,7 @@ main{
     top: 0;
 }
 .title{
-    font-family: 'FashionDidotW90-Regular';
+    font-family: 'dinotFashion';
     font-size: 22rem;
     letter-spacing: 2.6rem;
     color: #fff;
