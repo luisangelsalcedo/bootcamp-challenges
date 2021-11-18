@@ -1,5 +1,6 @@
 :root{
     --acento:orangered;
+    --acentoShadow: rgba(170,46,0,1);
 }
 body{
     padding: 0;
@@ -35,6 +36,9 @@ main.playing{
     align-items: center;
     justify-content: center;
 }
+.controls a{
+    font-size: 1.4rem;
+}
 .play,
 .playing .pause{
     display: block;
@@ -62,7 +66,7 @@ main.playing{
 }
 .foot{
     text-align: center;
-    font-size: .4rem;
+    font-size: .5rem;
     font-weight: bold;
     padding-top: 20px;
     text-transform: uppercase;
@@ -72,6 +76,6 @@ main.playing{
 
 @keyframes playAlert {
     0% {background: var(--acento);}
-    50% {background: #000;}
+    50% {background: var(--acentoShadow);}
     100% {background: var(--acento);}
 }

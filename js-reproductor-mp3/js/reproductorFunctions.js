@@ -1,5 +1,6 @@
 'use strict';
 
+const tipo = '1) Usando solo funciones';
 const audioObj = new Audio();
 const playList = playListObj;
 const reproductor = document.querySelector('main');
@@ -64,6 +65,9 @@ const loadPlayList = ()=>{
 const init = ()=>{
     loadPlayList();
     reproductorHandler();
+
+    document.querySelector('.foot').innerHTML = tipo;
+    document.querySelector('title').innerHTML = tipo;
 }
 
 
