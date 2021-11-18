@@ -32,7 +32,7 @@ main{
     justify-content: center;
     position: relative;
 }
-.board .character.active i{
+.board .character.hide i{
     font-size: 3em;
     color: #fff;
     transition: all .4s ease;
@@ -40,7 +40,7 @@ main{
     display: block;
     cursor: pointer;
 }
-.board .character.active i:hover{
+.board .character.hide i:hover{
     
 }
 .board .character i{
@@ -59,10 +59,10 @@ main{
 .board .character:hover > span{
     opacity: .2;
 }
-.board .character.active > span{
+.board .character.hide > span{
     height: 0;
 }
-.board .character.active{
+.board .character.hide{
     background: aquamarine;
 }
 .board .character:nth-child(1) {

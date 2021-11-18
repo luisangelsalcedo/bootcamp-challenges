@@ -26,9 +26,14 @@
                 <div class="character"><span></span><i class="fa fa-times-circle" aria-hidden="true"></i></div>
                 <div class="character"><span></span><i class="fa fa-times-circle" aria-hidden="true"></i></div>
             </div>
+            <button onclick="game.start()">Empezar de nuevo</button>
         </div>
     </main>
 </body>
 <script src="character.js"></script>
 <script src="game.js"></script>
+<script>
+    const game = new Game();
+          game.start();
+</script>
 </html>
