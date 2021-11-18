@@ -4,18 +4,17 @@ const random = (max) => {
 
 const Game = {
   
-    "characters" : generatedCharacters,
-    "selectedCharacter" : null,
-    "randomCharacterIndex" : random(this.characters.length),
-    "closeCharacter" : (event) =>{
+    characters : generatedCharacters,
+    selectedCharacter : null,
+    closeCharacter : (event) =>{
         event.target.parentNode.classList.add('hide');
     },
 
-    "openCharacter" : (event)=>{
+    openCharacter : (event)=>{
         event.target.parentNode.classList.remove('hide')
     },
 
-    "handlerCharacters" : ()=>{
+    handlerCharacters : ()=>{
         document.querySelectorAll('.character').forEach((character, index)=>{            
             character.id = this.characters[index].name;            
             character.firstChild.addEventListener('click', this.closeCharacter);
@@ -23,7 +22,7 @@ const Game = {
         });
     },
 
-    "createSelectedCharacterCard" : ()=>{
+    createSelectedCharacterCard : ()=>{
         const character = document.getElementById(this.selectedCharacter.name);
         const position = window.getComputedStyle(character)['background-position'];
 
@@ -31,19 +30,20 @@ const Game = {
         console.log(position);
     },
 
-    "selectRandomCharacter" : ()=>{
-        this.handlerCharacters();
-        this.selectedCharacter = this.characters[this.randomCharacterIndex];
-        this.createSelectedCharacterCard();
+    selectRandomCharacter : ()=>{
+        const randomCharacterIndex = random(this.characters.length);
+        this.selectedCharacter = this.characters[randomCharacterIndex];
     },
 
-    "removeHideClass" : ()=>{
+    removeHideClasses : ()=>{
         document.querySelectorAll('.hide').forEach((element)=>{
             element.classList.remove('.hide');
         });
     },
-    "start" : ()=>{
-        this.removeHideClass();
+    start : ()=>{
+        this.removeHideClasses();
+        this.handlerCharacters();
         this.selectRandomCharacter();
+        this.createSelectedCharacterCard();
     },
-}
+};

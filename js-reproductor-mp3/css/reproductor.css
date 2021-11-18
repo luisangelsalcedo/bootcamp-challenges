@@ -1,0 +1,77 @@
+:root{
+    --acento:orangered;
+}
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+a{color: var(--acento)}
+main{
+    background: #ccc;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+}
+main.playing{
+    /* background: var(--acento); */
+    animation-name: playAlert;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.reproductor{    
+    padding: 1rem;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    
+}
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play,
+.playing .pause{
+    display: block;
+}
+.pause,
+.playing .play{
+    display: none;
+}
+.playing .info{
+    padding-left: 20px;
+    font-size: .5rem;
+}
+.playlist{
+    margin-top: 20px;
+}
+
+.playlist > div{
+    cursor: pointer;
+    border-bottom: solid 1px rgba(0,0,0,.1);
+    padding:2px 15px;
+    font-size: .9em;
+}
+.playlist > div.active{
+    color:var(--acento);
+}
+.foot{
+    text-align: center;
+    font-size: .4rem;
+    font-weight: bold;
+    padding-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: .15rem;
+    color: #ccc;
+}
+
+@keyframes playAlert {
+    0% {background: var(--acento);}
+    50% {background: #000;}
+    100% {background: var(--acento);}
+}

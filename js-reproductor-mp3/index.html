@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/ico" href="../favicon.jpg">
+    <title>Usando solo funciones</title>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!-- reproductor -->
+    <link rel="stylesheet" href="css/reproductor.css">
+</head>
+<body>
+    <main>
+        <div class="reproductor">
+            <div class="controls">
+                <div>
+                    <a href="javascript:void(0)" class="play" id="play"><i class="fa fa-play" aria-hidden="true"></i></a>
+                    <a href="javascript:void(0)" class="pause" id="pause"><i class="fa fa-pause" aria-hidden="true"></i></a>
+                </div>
+                <div class="info"></div>
+            </div>
+            <div class="playlist"></div>            
+        </div>
+        <div class="foot">usando solo funciones</div>
+        
+    </main>
+    <!-- reproductor -->
+    <script src="js/Mp3File.js"></script>
+    <script src="js/reproductorFunctions.js"></script>
+    <script>
+        init();
+        // const repo = new Reproductor();
+        // repo.init();
+    </script>
+</body>
+</html>
