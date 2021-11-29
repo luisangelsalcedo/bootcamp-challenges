@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "game1": "node game1.js",
+    "game2": "node game2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Luis Angel Salcedo Gavidia",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "jest": "^27.3.1"
+  }
+}
