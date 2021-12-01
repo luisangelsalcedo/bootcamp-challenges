@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root{
+    --color1: rgba(242, 242, 242,1);
+    --color2: rgba(71, 82, 94, 1);
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+figure, ul{
+    padding: 0;
+    margin: 0;
+}
+/* img{
+    width: 50px;
+} */
+.container{
+    max-width: 80%;
+    position: relative;
+    margin: auto;
+}
+header,main,footer{
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+header nav .container{ 
+    display: flex;
+    justify-content: flex-end;
+}
+header nav ul{
+    display: flex;
+    align-items: center;
+}
+header nav ul li{
+    list-style: none;
+}
+header nav ul li a{
+    text-decoration: none;
+    color: var(--color2);
+    padding: 5px 15px;
+}
+
+
+
+header section,
+header nav{
+    width: 100%;
+    background: #fff;
+    padding: 35px 0;
+}
+header section{
+    background: var(--color1);
+}
+header section .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+}
+header section article{
+    display: flex;
+    justify-content: center;
+    width: 200px;
+}
+header section article img{
+    width: 100%;
+    height: auto;
+}
+header section article figure{
+    margin: 0;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+header section article figure img{
+    width: auto;
+    height: 100px;
+}
+header section article figure figcaption{
+    text-align: center;
+    background: #fff;
+    padding: 10px 20px 25px 20px ;
+    position: absolute;
+    bottom: 20px;
+    border: solid 1px #ccc;
+}
+header section article figure figcaption span{
+    border-bottom: solid 2px var(--color2);
+    font-size: .6em;
+    padding-bottom: 5px;
+}
+
+main{
+    width: 100%;
+    padding: 20px 0;
+    font-size: .7em;
+}
+main .container{
+    display: flex;
+    align-items: stretch;
+    
+}
+main section{
+    width: 70%;
+    display: flex;
+    align-items: stretch;
+}
+main section article{
+    background: var(--color1);
+    padding: 20px 70px;
+    text-align: center;
+}
+main section article h3{
+    text-transform: uppercase;
+    font-size: 1.1em;
+}
+main p{
+    text-align: justify;
+}
+main section article img{
+    width: 100%;
+}
+main aside{
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+main aside > div{
+    width:150px
+}
+main aside img{
+    width: 100px;
+}
+main aside h3{
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: solid 2px var(--color2);
+}
+main aside input,
+main aside textarea{
+    border: solid 1px var(--color2);
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 5px;
+    width: 80%;
+}
+main aside input[type*='sub']{
+    background: var(--color2);
+    color: #fff;
+}
+main aside input[type*='sub']:hover{
+    background: #333;
+    color: #fff;
+}
+
+footer{
+    background: var(--color2);
+    text-align: center;
+    color: #fff;
+    padding: 60px 0
+}
+footer a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+
+
+@media (max-width:749.5px) {
+    header section article figure img{
+        height: 140px;
+    }
+    
+}
+@media (max-width:630px) {
+    header nav ul li a{
+        font-size: .8em;
+        padding: 5px;
+    }
+    header section article figure img{
+        height: 100px;
+    }
+
+    main .container{
+        flex-direction: column;
+    }
+    main section,
+    main aside{
+        width: inherit;
+    }
+    main section article{
+        padding: 20px;
+    }
+    .container{
+        max-width: 90%;
+    }
+    header nav .container{ 
+        justify-content: center;
+    }
+    header nav ul{
+        width: 100%;
+        justify-content: center;
+    }
+}
+@media (max-width:480px) {
+    footer{
+        font-size: .8em;
+    }
+    footer span{
+        display: block;
+        padding-bottom: 5px;
+    }
+}
