@@ -1,3 +1,4 @@
+<img src='favicon.jpg' width='50'>
 # bootcamp-challenges
 
 * [css-diner](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/css-diner)
