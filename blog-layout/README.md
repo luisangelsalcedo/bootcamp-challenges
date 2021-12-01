@@ -18,6 +18,7 @@ Nota: Los links del menú no es necesario que vayan a alguna página por el mome
 * [Martin Cruz](https://github.com/martincruzot)
 * [Renzo Manrique](https://github.com/RenzoEMH)
 
+<a href='http://www.luissg.com/bootcamp/blog-layout/' target='_blank'>VER DEMO</a>
 
 
 
