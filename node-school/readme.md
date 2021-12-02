@@ -2,11 +2,15 @@
 
 Aprende acerca de las características fundamentales de la programación funcional de JavaScript en puro ES5.
 
-<br>
-
 ## Run: [functionalJS.js](functionalJS.js)
 
 <br>
+
+<img src='img/complete.png' width='500'> 
+
+<br><br>
+
+
 
 ## 01) Hello World
 ### Task:
