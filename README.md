@@ -10,3 +10,4 @@
 * [css-flexbox-game](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/css-flexbox-game)
 * [my-team-page](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/my-team-page)
 * [blog-layout](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/blog-layout)
+* [node-school](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/node-school)
