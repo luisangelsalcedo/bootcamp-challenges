@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
 :root{
     --color1: rgba(242, 242, 242,1);
     --color2: rgba(71, 82, 94, 1);
@@ -10,6 +9,7 @@ body{
     margin: 0;
     font-size: 16px;
     font-family: 'Lato', sans-serif;
+    background: var(--color2);
 }
 figure, ul{
     padding: 0;
@@ -48,8 +48,28 @@ header nav ul li{
 header nav ul li a{
     text-decoration: none;
     color: var(--color2);
-    padding: 5px 15px;
+    padding: 5px 15px 8px 15px;
+    transition: all .4s ease;
 }
+header nav ul li a:hover,
+body.home header nav ul li a[data-active='home'],
+body.about header nav ul li a[data-active='about'],
+body.features header nav ul li a[data-active='features'],
+body.pricing header nav ul li a[data-active='pricing'],
+body.contac header nav ul li a[data-active='contac']{
+    background: var(--color2);
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -68,28 +88,45 @@ header section .container{
     justify-content: space-around;
     align-items: stretch;
 }
-header section article{
+a article{
     display: flex;
     justify-content: center;
     width: 200px;
+    color: var(--color2);
 }
-header section article img{
+a article img{
     width: 100%;
     height: auto;
 }
-header section article figure{
+a article figure{
     margin: 0;
     position: relative;
     padding-top: 10px;
     padding-bottom: 40px;
     display: flex;
     justify-content: center;
+    /* border: solid 1px red; */
+    width: 100%;
 }
-header section article figure img{
-    width: auto;
+a article figure div{
+    /* border: solid 1px red; */
+    overflow: hidden;
+    width: 100%;
     height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-header section article figure figcaption{
+a article figure img{
+    width: auto;
+    width: 100%;
+    transition: all .3s ease;
+    transform: scale(1);
+}
+a:hover article figure img{
+    transform: scale(1.1);
+}
+a article figure figcaption{
     text-align: center;
     background: #fff;
     padding: 10px 20px 25px 20px ;
@@ -97,16 +134,20 @@ header section article figure figcaption{
     bottom: 20px;
     border: solid 1px #ccc;
 }
-header section article figure figcaption span{
+a article figure figcaption span{
     border-bottom: solid 2px var(--color2);
     font-size: .6em;
     padding-bottom: 5px;
+}
+a:hover article figure figcaption span{
+    border-bottom: solid 2px orangered;
 }
 
 main{
     width: 100%;
     padding: 20px 0;
     font-size: .7em;
+    background: #fff;
 }
 main .container{
     display: flex;
@@ -186,21 +227,75 @@ footer a:hover{
 }
 
 
+
+
+
+
+
+
+
+
+
+/* HOME */
+
+body.home header section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background: rgb(32, 32, 32) url(../images/autor-image.jpeg) no-repeat 0 20%;
+    background-size: auto 300%;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 5rem;
+    color: white;
+    transition: all .4s ease;
+}
+body.home header section .container{
+    flex: 1;
+    justify-content: flex-end;
+    transition: all .4s ease;
+}
+
+body.home main section{
+    width: 100%;
+    flex-wrap: wrap;
+}
+body.home main section > a{
+    width: 50%;
+}
+body.home main section > a article{
+    padding: 0;
+    width: 100%;
+    background: transparent;
+}
+body.home main section > a article figure {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+body.home main section > a article figure div{
+    height: 135px;
+}
+body.home main section > a article figure figcaption{
+    font-size: 2em;
+}
+
+
+
+
+
+
+
 @media (max-width:749.5px) {
     header section article figure img{
         height: 140px;
     }
+
+    body.home main section > a article figure div{
+        height: 100px;
+    }
     
 }
 @media (max-width:630px) {
-    header nav ul li a{
-        font-size: .8em;
-        padding: 5px;
-    }
-    header section article figure img{
-        height: 100px;
-    }
-
     main .container{
         flex-direction: column;
     }
@@ -221,6 +316,23 @@ footer a:hover{
         width: 100%;
         justify-content: center;
     }
+
+    /* //////////////// */
+    body.home header section{
+        background: linear-gradient(180deg,rgba(0,0,0,.7) 0%,rgba(0,0,0,1) 100%), rgb(32, 32, 32) url(../images/autor-image.jpeg) no-repeat center 20%;
+        background-size: auto 500%;
+        font-size: 4rem;   
+    }
+    body.home header section .container{
+        justify-content: center;
+    }
+    header nav ul li a{
+        font-size: .8em;
+        padding: 5px;
+    }
+    header section article figure img{
+        height: 100px;
+    }
 }
 @media (max-width:480px) {
     footer{
@@ -229,5 +341,32 @@ footer a:hover{
     footer span{
         display: block;
         padding-bottom: 5px;
+    }
+
+    body.home header section{
+        font-size: 3rem; 
+    }
+
+    body.home main section > a{
+        width: 80%;
+    }
+    body.home main section{
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: nowrap;
+    }
+
+    body.home main section > a article figure div{
+        height: 135px;
+    }
+}
+@media (max-width:400px) {
+    body.home main section > a{
+        width: 100%;
+    }
+
+    body.home main section > a article figure div{
+        height: 120px;
     }
 }
