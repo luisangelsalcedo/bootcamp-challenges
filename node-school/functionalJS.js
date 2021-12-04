@@ -8,7 +8,7 @@ module.exports = upperCaser
 
 // 2) Order functions
 function repeat(operation, num) {
-    // SOLUTION GOES HERE
+// SOLUTION GOES HERE
     if(num <= 0){
         return;
     }
@@ -57,5 +57,16 @@ function countWords(inputWords) {
 }
 module.exports = countWords
 
+// 7) Basic: Recursion
+function reduce(arr, fn, initial) {
+// SOLUTION GOES HERE
+
+    if(!arr.length) return initial;  
+    const [first, ...rest] = arr;
+    initial = fn(initial,first,rest.length,rest);  
+    return reduce(rest,fn,initial);
+}
+
+module.exports = reduce
 
 
