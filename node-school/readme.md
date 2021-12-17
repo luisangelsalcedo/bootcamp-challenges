@@ -17,7 +17,7 @@ Aprende acerca de las características fundamentales de la programación funcion
 Write a function that takes an input string and returns it uppercased.
 ### Arguments:
 * input: a String of random words (lorem ipsum).
-### My solution:
+### My solution: ✅
 ```js
 function upperCaser(input) {
     let result = input.toUpperCase();
@@ -39,7 +39,7 @@ Implement a function that takes a function as its first argument, a number num a
 * It's ok to use a loop in your implementation, bonus points if you use recursion instead.
 * You may notice some output. That is coming from the function we passed you.
 * You do not need to console.log anything.
-### My solution:
+### My solution: ✅
 ```js
 function repeat(operation, num) {
     if(num <= 0) return;
@@ -68,7 +68,7 @@ function doubleAll(numbers) {
 * Your solution should use Array.prototype.map()            
 * Do not use any for/while loops or Array.prototype.forEach.
 * Do not create any unnecessary functions e.g. helpers.
-### My solution:
+### My solution: ✅
 ```js
 function doubleAll(numbers) {
     return numbers.map(n => n*2);
@@ -96,14 +96,14 @@ The function should return an array containing the messages themselves, without 
 * Do not create any unnecessary functions e.g. helpers.  
 ### Hint
 * Try chaining some Array methods!                                                                     
-### My solution:
+### My solution: ✅
 ```js
 function getShortMessages(messages) {
     return messages.filter(({message}) => message.length < 50).map(x => x.message); 
 }
 module.exports = getShortMessages
 ```
-### Official solution
+### Official solution: 🤖
 ```js
 module.exports = function getShortMessages(messages) {
     return messages.filter(function(item) {
@@ -152,7 +152,7 @@ You only need to check that the ids match.
 ### Conditions:
 * Do not use any for/while loops or Array#forEach.
 * Do not create any unnecessary functions e.g. helpers.
-### My solution:
+### My solution: ✅
 ```js
 function checkUsersValid(goodUsers) {
   return function allUsersValid(submittedUsers) {
@@ -165,7 +165,7 @@ function checkUsersValid(goodUsers) {
 }
 module.exports = checkUsersValid
 ```
-### Official solution
+### Official solution: 🤖
 ```js
 module.exports = function checkUsersValid(goodUsers) {
     return function allUsersValid(submittedUsers) {
@@ -201,7 +201,7 @@ console.log(countWords(inputWords))
 ### Conditions:
 * Do not use any for/while loops or Array#forEach.
 * Do not create any unnecessary functions e.g. helpers.
-### My solution:
+### My solution: ✅
 ```js
 function countWords(inputWords) {
     return inputWords.reduce((valorInicial, valorActual)=>{
@@ -215,7 +215,7 @@ function countWords(inputWords) {
 }
 module.exports = countWords
 ```
-### Official solution:
+### Official solution: 🤖
 ```js
 function countWords(arr) {
     return arr.reduce(function(countMap, word) {
@@ -256,7 +256,7 @@ reduce([1,2,3], function(prev, curr, index, arr) {
 * Do not use any for/while loops.
 * Do not use any Array methods like Array#map or Array#reduce.
 
-### My solution:
+### My solution: ✅
 ```js
 function reduce(arr, fn, initial) {
 // SOLUTION GOES HERE
@@ -269,7 +269,7 @@ function reduce(arr, fn, initial) {
 module.exports = reduce
 ```
 
-### Official solution
+### Official solution: 🤖
 ```js
 function reduce(arr, fn, initial) {
     return (function reduceOne(index, value) {

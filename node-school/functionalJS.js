@@ -69,4 +69,11 @@ function reduce(arr, fn, initial) {
 
 module.exports = reduce
 
+// 8) Basic: Call
+function duckCount() {
+// SOLUTION GOES HERE
+
+}
+
+module.exports = duckCount
 

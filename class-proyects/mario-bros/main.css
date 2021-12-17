@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+.game__container {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  background-color: #5a8df6;
+}
+
+.mariobros__floor {
+  height: 80px;
+  background-image: url('images/floorTexture.png');
+}
+
+.cloud {
+  height: 80px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cloud--single {
+  min-width: 95px;
+  background-image: url(images/cloud1.png);
+}
+
+.cloud--double {
+  min-width: 240px;
+  background-image: url('images/cloud2.png');
+}
+
+.mario,
+.mushroom,
+.pipe,
+.bush,
+.hill {
+  position: absolute;
+  bottom: 50px;
+}
+
+.mario {
+  width: 50px;
+}
+
+.mushroom {
+  height: 38px;
+  left: 70%;
+}
+
+.block {
+  height: 40px;
+}
+
+.pipe {
+  right: 5%;
+  width: 90px;
+}
+
+.bush {
+  left: 20%;
+  width: 200px;
+}
+
+.hill {
+  left: 50%;
+  width: 170px;
+}
+
+.coins__image {
+  height: 22px;
+}
+
+/* Aqui va un flexbox */
+.mariobross__header {
+  font-family: 'Press Start 2P', Arial;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #fff;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Aqui va un flexbox */
+.cloud__container {
+  flex: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px 0;
+}
+.cloud__container > div:nth-child(1){
+  align-self: flex-end;
+}
+.cloud__container > div:nth-child(3){
+  align-self: flex-start;
+}
+
+/* Aqui va un flexbox */  
+.characters__container {
+  flex: 3;
+}
+
+/* Aqui va un flexbox */
+.coins__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.coins__container img{
+  padding-right: 10px;
+}
+.blocks__wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.mushroom{
+  z-index: 10;
+}
+.bush{
+  z-index: 5;
+}
+.pipe{
+  z-index: 6;
+}
+
+.mario{
+  z-index: 12;
+  animation-name: mariomove;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+.mushroom{
+  animation-name: mushroonmove;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mariomove {
+  0%   {
+    left: 0;
+    bottom: 50px;
+  }
+  38%{
+    bottom: 50px;
+  }
+  40%{
+    bottom: 100px;
+  }
+  43%{
+    bottom: 50px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes mushroonmove {
+  0%   {
+  bottom: 50px;
+  }
+  38%{
+  bottom: 50px;
+  }
+  46%{
+   bottom: -100px;
+  }
+  48%{
+   bottom: -100px;
+  }
+  100% {
+    bottom: -100px;
+  }
+}
