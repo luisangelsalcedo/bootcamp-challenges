@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "game1": "node game1.js",
-    "game2": "node game2.js",
+    "start": "node src/game1.js",
+    "game2": "node src/game2.js",
+    "lint": "eslint ./src/*/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Luis Angel Salcedo Gavidia",
@@ -16,8 +17,9 @@
   "devDependencies": {
     "eslint": "^8.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-config-xo": "^0.39.0",
-    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.3.1"
   }
 }

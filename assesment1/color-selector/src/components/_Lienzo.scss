@@ -1,0 +1,228 @@
+$base-font-size: 16px;
+
+@function calc-rem($size) {
+  @return ($size / $base-font-size) * 1rem;
+}
+body {
+  font-size: $base-font-size;
+  background: #ddd;
+}
+.Lienzo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.Lienzo > div {
+  width: calc-rem(640px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .pixel {
+    flex-shrink: 0;
+    width: calc-rem(30px);
+    height: calc-rem(30px);
+    background-color: #ccc;
+    margin: calc-rem(1px);
+    transition: all 0.2s ease;
+  }
+}
+.pixeles {
+  cursor: url(../image/brush.png), auto;
+}
+.Colors {
+  width: calc-rem(180px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: calc-rem(10px);
+
+  h4 {
+    text-align: center;
+    color: #333;
+  }
+
+  > div {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .color-item {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    width: calc-rem(50px);
+    height: calc-rem(50px);
+    border-radius: 50%;
+    background-color: #ddd;
+    margin-bottom: calc-rem(5px) !important;
+    border: solid calc-rem(3px) transparent;
+    cursor: url(../image/brush.png), auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.8) 100%
+      );
+      display: block;
+      border-radius: 50%;
+    }
+  }
+
+  .color-item:hover {
+    opacity: 0.9;
+  }
+
+  .color-item.active,
+  .color-item.active:nth-of-type(1) {
+    margin: 0;
+    border: solid calc-rem(3px) #fff;
+    box-shadow: 0px 0px 15px #fff;
+    color: #fff;
+  }
+  .color-item.active::before {
+    font-family: FontAwesome;
+    content: "\f00c";
+    // font-weight: 900;
+    position: absolute;
+    font-size: calc-rem(25px);
+  }
+  .color-item.active:nth-of-type(1) {
+    border-color: #333;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    color: #333;
+  }
+}
+.btn {
+  width: 100%;
+  text-align: center;
+  padding: calc-rem(7px);
+  margin-top: calc-rem(5px);
+  border-radius: calc-rem(5px);
+  background: #ccc;
+  cursor: pointer;
+
+  &:hover {
+    background: #aaa;
+  }
+  &.reset {
+    margin-top: calc-rem(20px);
+    background: red;
+    color: #fff;
+  }
+  &.reset:hover {
+    background: rgb(192, 10, 10);
+  }
+
+  &.compare {
+    background: rgb(40, 145, 40);
+    color: #fff;
+  }
+
+  &.compare:hover {
+    background: rgb(27, 107, 27);
+  }
+}
+
+.muestra {
+  width: calc-rem(200px) !important;
+  align-items: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc-rem(230px);
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  select {
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 7px;
+  }
+
+  .pixel {
+    width: calc-rem(8px) !important;
+    height: calc-rem(8px) !important;
+    margin: calc-rem(0.8px) !important;
+    cursor: inherit !important;
+  }
+}
+.responsive {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  width: 0 !important;
+  overflow: hidden;
+  display: none;
+  align-items: center;
+  background: rgba($color: #da1111, $alpha: 1);
+  text-align: center;
+}
+footer {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  padding-left: calc-rem(180px);
+}
+footer,
+footer a {
+  color: #999;
+  text-align: center;
+  text-decoration: none;
+}
+footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+footer a i {
+  padding-left: 20px;
+}
+@media (max-width: 840px) {
+  footer {
+    padding-left: 0;
+  }
+
+  .App > div {
+    flex-direction: column-reverse;
+    align-items: center !important;
+  }
+  .Colors {
+    // width: 100%;
+    padding-top: 50px;
+  }
+  .Colors > div {
+    width: calc-rem(320px);
+  }
+}
+@media (max-width: 680px) {
+  .Lienzo > div {
+    width: calc-rem(450px);
+    .pixel {
+      width: calc-rem(20px);
+      height: calc-rem(20px);
+    }
+  }
+}
+@media (max-width: 460px) {
+  .App {
+    overflow-y: hidden;
+    height: 100vh;
+  }
+  .responsive {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+}

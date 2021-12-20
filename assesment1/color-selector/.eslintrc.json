@@ -1,0 +1,39 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["react", "prettier"],
+  "rules": {
+    "prettier/prettier": ["error", {}, { "usePrettierrc": true }],
+    //💡Permitir arrow function
+    "react/function-component-definition": [
+      2,
+      { "namedComponents": "arrow-function" }
+    ],
+    //💡Eliminar tipado de las props
+    "react/prop-types": [0],
+    //💡Evita que falte React al usar JSX
+    "react/react-in-jsx-scope": 0,
+    "react/jsx-uses-react": 0,
+    //💡permitir extensiones jsx
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    //💡permitir iteradores
+    "no-restricted-syntax": [
+      "error",
+      "FunctionExpression",
+      "WithStatement",
+      "BinaryExpression[operator='in']"
+    ],
+    //💡permitir alert y confirm (provicional)
+    "no-alert": "off"
+  }
+}
