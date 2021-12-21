@@ -3,7 +3,6 @@ import draws from "../helpers/draws"
 import colorsList from "../helpers/colors"
 import Color from "./Color"
 import Pixel from "./Pixel"
-
 import "./_Lienzo.scss"
 import message from "../helpers/menssage"
 
