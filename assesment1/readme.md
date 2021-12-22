@@ -1,7 +1,10 @@
 # Proyectos React
 
-- ## Opción 1 - [web-products](./web-web-products)
-  <br><br><br>
+- ## Opción 1 - [fake-store](./fake-store)
+
+<img src='image/fake-store.jpg' width='400'/>
+<br><br><br>
+
 - ## Opción 2 - [color-selector](./color-selector)
 <img src='image/color-selector.png' width='400'/>
 <br><br><br>
@@ -10,7 +13,7 @@
 
 ## 1) ¿Cuáles son las ceremonias más importantes de un Sprint y cuál es la idea de cada una?
 
-_Resuesta:_
+_Respuesta:_
 
 - _sprint planning_: Es la reunión donde da inicio de un sprint. Aquí el equipo se compromete con una serie de entregables y se identifican las tareas que se deben completar para cumplir con ellos.
 - _daily scrum_: Reunión muy corta, al inicio del día, donde cada participante cuenta qué items ha completado.
@@ -20,7 +23,7 @@ _Resuesta:_
 
 ## 2) ¿Qué son los Wireframes? Nombra al menos una herramienta que podamos utilizar.
 
-_Resuesta:_
+_Respuesta:_
 
 El wireframe es una guía visual que representa el esqueleto o estructura visual de un sitio web.​
 
@@ -34,9 +37,9 @@ Una de las principal funciones es de ahorrar tiempo y dinero porque lleva poco t
 
 ## 3) Explicar la diferencia entre var, let y const. Y dar un ejemplo en qué caso se utilizará.
 
-_Resuesta:_
+_Respuesta:_
 
-- var: Es la palabra reservada con la que declaramos una valiable, es decir que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de una alcance de función (función scope).
+- var: Es la palabra reservada con la que declaramos una valiable, es decir que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de un alcance de función (función scope).
 
 ```javascript
 if (true) {
@@ -47,7 +50,7 @@ if (true) {
 console.log(str); // chao mundo
 ```
 
-- let: Es la palabra reservada con la que declaramos una valiable, es decir que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de una alcance de bloque (block scope), es decir dentro de una bloque de llaves (if, for, while, etc).
+- let: Es la palabra reservada con la que declaramos una valiable, es decir que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de un alcance de bloque (block scope), es decir dentro de una bloque de llaves (if, for, while, etc).
 
 ```javascript
 if (true) {
@@ -58,7 +61,7 @@ if (true) {
 console.log(str); // str is undefined
 ```
 
-- const: Es la palabra reservada con la que declaramos una constante, es decir que el valor de esta no puede ser cambiado una vez sea declarado. Podemos acceder a ella dentro de una alcance de bloque (block scope), es decir dentro de una bloque de llaves (if, for, while, etc).
+- const: Es la palabra reservada con la que declaramos una constante, es decir que el valor de esta no puede ser cambiado una vez sea declarado. Podemos acceder a ella dentro de una alcance de bloque (block scope), es decir dentro de un bloque de llaves (if, for, while, etc).
 
 ```javascript
 if (true) {
@@ -78,7 +81,7 @@ if (true) {
 
 ## 4) ¿Cuáles son los tres comandos que se pueden utilizar para crear una nueva rama llamada rama-1?
 
-_Resuesta:_
+_Respuesta:_
 
 Para crear una nueva rama usamos 2 comandos de git, el primero para crear la rama y el segundo para posicionarnos sobre ella
 
@@ -95,7 +98,7 @@ git checkout -b rama-1
 
 ## 5) Explicar la diferencia entre git merge y git rebase.
 
-_Resuesta:_
+_Respuesta:_
 
 ### Git Merge
 
@@ -113,7 +116,7 @@ _Resuesta:_
 
 ## 6) ¿Cuál es la diferencia entre Pull Request (PR) y el comando git pull?
 
-_Resuesta:_
+_Respuesta:_
 
 - Pull Request: Es un mecanismo para solicitar, revisar y discutir los cambios que se van a integrar sobre una rama.
 
@@ -121,7 +124,7 @@ _Resuesta:_
 
 ## 7) ¿Qué es el Virtual DOM?
 
-_Resuesta:_
+_Respuesta:_
 
 En React el virtualDOM (VDOM) es una copia del DOM (que contiene todos los elementos del de la applicacion)
 
@@ -129,12 +132,14 @@ Al ser una copia cuando se actualiza el estado en React, hace una comparación d
 
 ## 8) Dado el siguiente [codePen](https://codepen.io/cristian-makeitreal/pen/NWadqqa?editors=1100), el cual solo tiene un HTML, por medio de css llegar a esta respuesta. [Imagen](https://github.com/makeitrealcamp/assesment-1-programa-top/blob/main/assets/services-section.gif). (Para mostrar los servicios debes usar CSS Flexbox o CSS Grid).
 
-_Resuesta:_
+_Respuesta:_
 
 Para este ejercicio se puede llegar a resultados similares usando cualquiera de los 2.
 Solo cabe mencionar que grid te da mas facilidad en definir los espacios entre columnas y filas (lo que en diagramación llamamos medianiles) usando column-gap y row-gap
 
 ### 👨🏻‍💻 Usando grid
+
+(Para probar, copiar y pegar codigo en el codePen)
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap");
@@ -202,6 +207,8 @@ ul {
 ```
 
 ### 👨🏻‍💻 Usando flexbox
+
+(Para probar, copiar y pegar codigo en el codePen)
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap");
