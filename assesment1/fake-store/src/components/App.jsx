@@ -4,6 +4,7 @@ import Error404 from "../pages/Error404"
 import Home from "../pages/Home"
 import "./App.css"
 import Product from "../pages/Product"
+import Footer from "./Footer"
 
 const App = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const App = () => (
       <Route path="/product-detail/:id" element={<Product />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
+    <Footer />
   </BrowserRouter>
 )
 

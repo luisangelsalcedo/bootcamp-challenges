@@ -23,7 +23,7 @@ const Home = () => {
           <h2>Home</h2>
           Products ({products.length})
         </div>
-
+        <div className="categorias">{}</div>
         <div className="products">
           {products.map(({ id, title, image, rating }) => (
             <ProductCard
