@@ -43,20 +43,21 @@ const About = () => (
           </p>
         </div>
         <div>
-          <h3>3 cosas que aprendi en este programa</h3>
+          <h3>3 cosas que aprendí en este programa</h3>
           <ul>
             <li>
-              Entendí como es que funciona git y los principales comandos para
-              el manejo de versiones y crear mi primer repositorio en gitHub que
-              se ha vuelto indispensable (también uso más la consola que antes).
+              Entendí como funciona git y los principales comandos para el
+              manejo de versiones.Así también como crear mi primer repositorio
+              en gitHub, el cual se ha vuelto indispensable. Además uso más la
+              consola que antes.
             </li>
             <li>
               Conceptos de javascript, el hoisting y la mutabilidad, ES6, la
-              destructuración, el Spread Operator (...) y el operador ?? (que me
-              han ayudado en más de una ocación)
+              destructuración, el Spread Operator (...) y el operador ??, el
+              cual me ha ayudado en más de una ocasión.
             </li>
             <li>
-              Ya voy entendiendo las promesas, el then, async await y el consumo
+              Ya comprendo mejor las promesas, el then, async await y el consumo
               de Apis y vamos por más.
             </li>
           </ul>

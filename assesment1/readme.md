@@ -15,9 +15,9 @@
 
 _Respuesta:_
 
-- _sprint planning_: Es la reunión donde da inicio de un sprint. Aquí el equipo se compromete con una serie de entregables y se identifican las tareas que se deben completar para cumplir con ellos.
+- _sprint planning_: Es la reunión donde da inicio un sprint. Aquí el equipo se compromete con una serie de entregables y se identifican las tareas que se deben completar para cumplir con ellas.
 - _daily scrum_: Reunión muy corta, al inicio del día, donde cada participante cuenta qué items ha completado.
-- _story time_: Es una reunión programa a mitad de semana generalmente, con el fin de discutir y mejorar las historias de usuario de futuros sprints.
+- _story time_: Es una reunión programada a mitad de semana generalmente, con el fin de discutir y mejorar las historias de usuario de futuros sprints.
 - _sprint review_: Es la reunión que marca el final del sprint. Se revisan los items que se terminaron y los que no se terminaron.
 - _retrospective_: Esta es una reunión interna del equipo, generalmente después de la revisión del sprint en donde se identifican uno o dos cambios estratégicos para el siguiente sprint.
 
@@ -27,7 +27,7 @@ _Respuesta:_
 
 El wireframe es una guía visual que representa el esqueleto o estructura visual de un sitio web.​
 
-Una de las principal funciones es de ahorrar tiempo y dinero porque lleva poco tiempo hacerlo y aporta mucho valor informativo.
+Una de las principales funciones es de ahorrar tiempo y dinero porque lleva poco tiempo hacerlo y aporta mucho valor informativo.
 
 ### Herramientas:
 
@@ -39,7 +39,7 @@ Una de las principal funciones es de ahorrar tiempo y dinero porque lleva poco t
 
 _Respuesta:_
 
-- var: Es la palabra reservada con la que declaramos una valiable, es decir que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de un alcance de función (función scope).
+- var: Es la palabra reservada con la que declaramos una variable, es decir, que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de un alcance de función (función scope).
 
 ```javascript
 if (true) {
@@ -50,7 +50,7 @@ if (true) {
 console.log(str); // chao mundo
 ```
 
-- let: Es la palabra reservada con la que declaramos una valiable, es decir que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de un alcance de bloque (block scope), es decir dentro de una bloque de llaves (if, for, while, etc).
+- let: Es la palabra reservada con la que declaramos una variable, es decir, que podemos reasignarle un nuevo valor y podemos acceder a ella dentro de un alcance de bloque (block scope), vale decir, dentro de un bloque de llaves (if, for, while, etc).
 
 ```javascript
 if (true) {
@@ -61,7 +61,7 @@ if (true) {
 console.log(str); // str is undefined
 ```
 
-- const: Es la palabra reservada con la que declaramos una constante, es decir que el valor de esta no puede ser cambiado una vez sea declarado. Podemos acceder a ella dentro de una alcance de bloque (block scope), es decir dentro de un bloque de llaves (if, for, while, etc).
+- const: Es la palabra reservada con la que declaramos una constante, es decir, que el valor de esta no puede ser cambiado una vez sea declarado. Podemos acceder a ella dentro de un alcance de bloque (block scope), vale decir, dentro de un bloque de llaves (if, for, while, etc).
 
 ```javascript
 if (true) {
@@ -90,7 +90,7 @@ git branch rama-1
 git checkout rama-1
 ```
 
-La otra forma de crear una rama y además posicionarse sobre ella, usamos el comando:
+La otra forma de crear una rama y posicionarse sobre ella, es utilizando el comando:
 
 ```
 git checkout -b rama-1
@@ -102,17 +102,17 @@ _Respuesta:_
 
 ### Git Merge
 
-- Crea un nuevo commit donde se evidencia la integración de las ramas
-- No se pierde la historia del commit, queda intacto
-- Si se sabe el autor real de cada commit
-- No importa el número de commit que hubo antes, se hace solo una vez
+- Crea un nuevo commit donde se evidencia la integración de las ramas.
+- No se pierde la historia del commit, queda intacto.
+- Sí se sabe el autor real de cada commit.
+- No importa el número de commit que hubo antes, se hace solo una vez.
 
 ### Git Rebase
 
-- No se crea un nuevo commit por cada rebase
-- La historia del commit cambia y crea una especie de duplicado
-- No se sabe el autor real de los commits
-- Si hubo n commits se debe iterar n veces sobre el rebase
+- No se crea un nuevo commit por cada rebase.
+- La historia del commit cambia y crea una especie de duplicado.
+- No se sabe el autor real de los commits.
+- Si hubo n commits se debe iterar n veces sobre el rebase.
 
 ## 6) ¿Cuál es la diferencia entre Pull Request (PR) y el comando git pull?
 
@@ -126,20 +126,20 @@ _Respuesta:_
 
 _Respuesta:_
 
-En React el virtualDOM (VDOM) es una copia del DOM (que contiene todos los elementos del de la applicacion)
+En React el virtualDOM (VDOM) es una copia del DOM (que contiene todos los elementos de la aplicación).
 
-Al ser una copia cuando se actualiza el estado en React, hace una comparación del nuevo virtual VDOM con el anterior, y si encuentra cambios solo actualiza lo que cambio en el Real DOM (RDOM)
+Al ser una copia, cuando se actualiza el estado en React, hace una comparación del nuevo virtual VDOM con el anterior, y si encuentra cambios solo actualiza lo que cambio en el Real DOM (RDOM).
 
 ## 8) Dado el siguiente [codePen](https://codepen.io/cristian-makeitreal/pen/NWadqqa?editors=1100), el cual solo tiene un HTML, por medio de css llegar a esta respuesta. [Imagen](https://github.com/makeitrealcamp/assesment-1-programa-top/blob/main/assets/services-section.gif). (Para mostrar los servicios debes usar CSS Flexbox o CSS Grid).
 
 _Respuesta:_
 
 Para este ejercicio se puede llegar a resultados similares usando cualquiera de los 2.
-Solo cabe mencionar que grid te da mas facilidad en definir los espacios entre columnas y filas (lo que en diagramación llamamos medianiles) usando column-gap y row-gap
+Solo cabe mencionar que grid te da más facilidad en definir los espacios entre columnas y filas (lo que en diagramación llamamos medianiles) usando column-gap y row-gap.
 
 ### 👨🏻‍💻 Usando grid
 
-(Para probar, copiar y pegar codigo en el codePen)
+(Para probar, copiar y pegar código en el codePen)
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap");
@@ -208,7 +208,7 @@ ul {
 
 ### 👨🏻‍💻 Usando flexbox
 
-(Para probar, copiar y pegar codigo en el codePen)
+(Para probar, copiar y pegar código en el codePen)
 
 ```css
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;500;600&display=swap");
