@@ -1,0 +1,102 @@
+.taks-box {
+  position: relative;
+  background: rgba(255, 193, 7, 0.8);
+  border: solid 1px rgba(255, 193, 7, 1);
+  border-radius: 5px;
+  width: 250px;
+  height: auto;
+  margin: 5px;
+  padding: 10px 5px 5px 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+.taks-box[data-state="active"] {
+  border-color: rgba(40, 167, 69, 1);
+  background: #fff;
+}
+.taks-box.edit {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+}
+.taks-box.edit textarea {
+  background: rgba(255, 193, 7, 1);
+  border: solid 1px rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  padding: 20px;
+  outline: none;
+
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  height: 100px;
+}
+.task-box.edit .caracteres {
+  color: red;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+}
+
+.task > h5 {
+  font-size: 1em;
+  width: 150px;
+  overflow: hidden;
+}
+.edit .task-state {
+  opacity: 0;
+}
+.task-state {
+  font-size: 0.6em;
+  border-top: solid 1px rgb(245, 245, 245);
+  padding-top: 5px;
+  width: 100%;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
