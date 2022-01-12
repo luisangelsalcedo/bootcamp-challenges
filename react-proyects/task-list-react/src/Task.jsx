@@ -5,11 +5,6 @@ const Taks = ({ name, state, id, updateTask, deleteTask }) => {
   const [isEdit, setIsEdit] = useState(false);
   const [nameTask, setNameTask] = useState(name);
 
-  // activamos el modo de edición
-  const editTask = () => {
-    setIsEdit(true);
-  };
-
   // si hay cambio en el name de la tarea llamamos la la funcion updateTask para actualizar la propiedad NAME
   // Desactivamos el modo de edición
   const saveTask = () => {
@@ -35,6 +30,9 @@ const Taks = ({ name, state, id, updateTask, deleteTask }) => {
             value={nameTask}
           ></textarea>
           <div className="caracteres">{nameTask.length}</div>
+          <div className="btn-close" onClick={() => setIsEdit(false)}>
+            <i className="fa fa-times-circle" aria-hidden="true"></i>
+          </div>
           <div>
             <button className="btn btn-primary" onClick={saveTask}>
               Guardar cambios
@@ -67,7 +65,7 @@ const Taks = ({ name, state, id, updateTask, deleteTask }) => {
                 <i className="fa fa-trash" aria-hidden="true"></i>
               </span>
             ) : (
-              <span className="btn" onClick={editTask}>
+              <span className="btn" onClick={() => setIsEdit(true)}>
                 <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
               </span>
             )}
