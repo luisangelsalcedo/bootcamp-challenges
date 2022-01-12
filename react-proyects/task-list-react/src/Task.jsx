@@ -1,16 +1,19 @@
 import { useState } from "react";
-const Taks = ({ name, state, id, setStateTaks, deleteTask }) => {
+const Taks = ({ name, state, id, updateTask, deleteTask }) => {
   const countCaraterDefault = 150;
 
   const [isEdit, setIsEdit] = useState(false);
   const [nameTask, setNameTask] = useState(name);
 
+  // activamos el modo de edición
   const editTask = () => {
     setIsEdit(true);
   };
 
+  // si hay cambio en el name de la tarea llamamos la la funcion updateTask para actualizar la propiedad NAME
+  // Desactivamos el modo de edición
   const saveTask = () => {
-    if (name !== nameTask) setStateTaks(id, "name", nameTask);
+    if (name !== nameTask) updateTask(id, "name", nameTask);
     setIsEdit(false);
   };
 
@@ -44,14 +47,14 @@ const Taks = ({ name, state, id, setStateTaks, deleteTask }) => {
             {state ? (
               <span
                 className="btn text-success"
-                onClick={() => setStateTaks(id, "state", false)}
+                onClick={() => updateTask(id, "state", false)}
               >
                 <i className="fa fa-2x fa-check" aria-hidden="true"></i>
               </span>
             ) : (
               <span
                 className="btn text-warning"
-                onClick={() => setStateTaks(id, "state", true)}
+                onClick={() => updateTask(id, "state", true)}
               >
                 <i className="fa fa-2x fa-check" aria-hidden="true"></i>
               </span>
