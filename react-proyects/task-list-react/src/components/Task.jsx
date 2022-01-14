@@ -1,5 +1,12 @@
 import { useState } from "react";
-const Taks = ({ name, state, id, updateTask, deleteTask }) => {
+const Taks = ({
+  name,
+  state,
+  id,
+  updateNameTask,
+  updateStateTask,
+  deleteTask,
+}) => {
   const countCaraterDefault = 150;
 
   const [isEdit, setIsEdit] = useState(false);
@@ -8,16 +15,45 @@ const Taks = ({ name, state, id, updateTask, deleteTask }) => {
   // si hay cambio en el name de la tarea llamamos la la funcion updateTask para actualizar la propiedad NAME
   // Desactivamos el modo de edición
   const saveTask = () => {
-    if (name !== nameTask) updateTask(id, "name", nameTask);
-    setIsEdit(false);
+    if (name !== nameTask) {
+      updateNameTask({ id: id, name: nameTask, state: state });
+      setIsEdit(false);
+    }
   };
+
+  // Botones
+  ////////////////////////////////////////////////////////////////////
+  const btnEdit = () => (
+    <span className="btn" onClick={() => setIsEdit(true)}>
+      <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+    </span>
+  );
+  const btnDelete = () => (
+    <span className="btn" onClick={() => deleteTask(id)}>
+      <i className="fa fa-trash" aria-hidden="true"></i>
+    </span>
+  );
+  const btnComplete = () => (
+    <span className="btn text-success" onClick={() => updateStateTask(id)}>
+      <i className="fa fa-2x fa-check" aria-hidden="true"></i>
+    </span>
+  );
+  const btnIncomplete = () => (
+    <span className="btn text-warning" onClick={() => updateStateTask(id)}>
+      <i className="fa fa-2x fa-check" aria-hidden="true"></i>
+    </span>
+  );
+  ////////////////////////////////////////////////////////////////////
 
   return (
     <div
+      id={id}
       className={isEdit ? "taks-box edit" : "taks-box"}
       data-state={state ? "active" : ""}
     >
       {isEdit ? (
+        // Modo edicion TRUE
+        /////////////////////////////////////////////
         <div className="task-edit">
           <textarea
             onChange={e => {
@@ -40,36 +76,12 @@ const Taks = ({ name, state, id, updateTask, deleteTask }) => {
           </div>
         </div>
       ) : (
+        // Modo edicion FALSE
+        /////////////////////////////////////////////
         <div className="task">
-          <div>
-            {state ? (
-              <span
-                className="btn text-success"
-                onClick={() => updateTask(id, "state", false)}
-              >
-                <i className="fa fa-2x fa-check" aria-hidden="true"></i>
-              </span>
-            ) : (
-              <span
-                className="btn text-warning"
-                onClick={() => updateTask(id, "state", true)}
-              >
-                <i className="fa fa-2x fa-check" aria-hidden="true"></i>
-              </span>
-            )}
-          </div>
-          <h5>{nameTask}</h5>
-          <div>
-            {state ? (
-              <span className="btn" onClick={() => deleteTask(id)}>
-                <i className="fa fa-trash" aria-hidden="true"></i>
-              </span>
-            ) : (
-              <span className="btn" onClick={() => setIsEdit(true)}>
-                <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
-              </span>
-            )}
-          </div>
+          <div>{state ? btnComplete() : btnIncomplete()}</div>
+          <h5>{name}</h5>
+          <div>{state ? btnDelete() : btnEdit()}</div>
         </div>
       )}
 
