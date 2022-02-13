@@ -1,0 +1,191 @@
+CREATE TABLE equipo (
+  id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  nombre VARCHAR(50)  NULL   COMMENT 'nombre del equipo' ,
+  avatar VARCHAR(50)  NULL   COMMENT 'imagen' ,
+  descripcion TEXT  NULL   COMMENT 'texto descriptivo' ,
+  active TINYINT UNSIGNED  NULL   COMMENT 'activo/desactivo'   ,
+PRIMARY KEY(id));
+
+
+
+
+
+
+
+CREATE TABLE partido (
+  id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  fecha DATE  NULL   COMMENT 'fecha del partido' ,
+  hora_ini TIME  NULL   COMMENT 'hora de inicio del partido' ,
+  hora_end TIME  NULL   COMMENT 'hora del final del partido' ,
+  active TINYINT(1) UNSIGNED  NULL   COMMENT 'abierto / cerrado'   ,
+PRIMARY KEY(id));
+
+
+
+
+
+
+
+CREATE TABLE apostador (
+  id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  apo_user VARCHAR(50)  NULL   COMMENT 'usuario del apostador' ,
+  apo_pass VARCHAR(50)  NULL   COMMENT 'password del apostador' ,
+  nombre VARCHAR(50)  NULL   COMMENT 'nombre' ,
+  email VARCHAR(50)  NULL   COMMENT 'correo electrónico' ,
+  phone INTEGER(15) UNSIGNED  NULL   COMMENT 'número telefónico' ,
+  tarjeta INTEGER(16) UNSIGNED  NULL   COMMENT 'método de pago'   ,
+PRIMARY KEY(id));
+
+
+
+
+
+
+
+
+
+CREATE TABLE rol (
+  id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT COMMENT 'id' ,
+  rol VARCHAR(30)  NULL   COMMENT 'Nombre del rol'   ,
+PRIMARY KEY(id));
+
+
+
+
+
+CREATE TABLE operador (
+  op_id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  rol_id INTEGER UNSIGNED  NOT NULL  ,
+  op_user VARCHAR(50)  NULL   COMMENT 'usuario del operador' ,
+  op_pass VARCHAR(50)  NULL   COMMENT 'password del operador'   ,
+PRIMARY KEY(op_id)  ,
+INDEX operador_FKIndex1(rol_id),
+  FOREIGN KEY(rol_id)
+    REFERENCES rol(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION);
+
+
+
+
+
+CREATE TABLE partido_equipo (
+  partido_id INTEGER UNSIGNED  NOT NULL   COMMENT 'id partido' ,
+  equipo_id INTEGER UNSIGNED  NOT NULL   COMMENT 'id equipo' ,
+  marcador_final INTEGER UNSIGNED  NULL   COMMENT 'marcador por equipo' ,
+  position INTEGER(1) UNSIGNED  NULL   COMMENT 'position: equipo1 o equipo2'   ,
+PRIMARY KEY(partido_id, equipo_id)  ,
+INDEX equipos_has_partidos_FKIndex1(equipo_id)  ,
+INDEX equipos_has_partidos_FKIndex2(partido_id),
+  FOREIGN KEY(equipo_id)
+    REFERENCES equipo(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(partido_id)
+    REFERENCES partido(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION);
+
+
+
+
+
+
+
+CREATE TABLE apuesta (
+  id INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  partido_id INTEGER UNSIGNED  NOT NULL  ,
+  apostador_id INTEGER UNSIGNED  NOT NULL   COMMENT 'id del apostador' ,
+  apuesta FLOAT  NULL   COMMENT 'dinero apostado' ,
+  open TINYINT UNSIGNED  NULL   COMMENT 'abierto / cerrado'   ,
+PRIMARY KEY(id)  ,
+INDEX apuestas_FKIndex1(apostador_id)  ,
+INDEX apuestas_FKIndex2(partido_id),
+  FOREIGN KEY(apostador_id)
+    REFERENCES apostador(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(partido_id)
+    REFERENCES partido(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION);
+
+
+
+
+
+
+CREATE TABLE marcador_apostado (
+  equipo_id INTEGER UNSIGNED  NOT NULL  ,
+  apuesta_id INTEGER UNSIGNED  NOT NULL  ,
+  marcador_apuesta INTEGER UNSIGNED  NULL   COMMENT 'marcador de mi apuesta' ,
+  position INTEGER(1) UNSIGNED  NULL   COMMENT 'position: equipo1 o equipo2'   ,
+PRIMARY KEY(equipo_id, apuesta_id)  ,
+INDEX equipo_has_apuesta_FKIndex1(equipo_id)  ,
+INDEX equipo_has_apuesta_FKIndex2(apuesta_id),
+  FOREIGN KEY(equipo_id)
+    REFERENCES equipo(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION,
+  FOREIGN KEY(apuesta_id)
+    REFERENCES apuesta(id)
+      ON DELETE NO ACTION
+      ON UPDATE NO ACTION);
+
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-- INGRESO DE DATOS
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+
+--  agregando roles
+SELECT * FROM rol;
+INSERT INTO rol (id, rol) VALUES (NULL, 'Auditor'), (NULL, 'Administrador');
+-------------------------------------------------------------------------------------
+--  agregando operadores
+SELECT * FROM operador;
+INSERT INTO operador (op_id, rol_id, op_user, op_pass) 
+VALUES 	(NULL, '2', 'operador1', 'operador1'), 	#id = 1
+		(NULL, '1', 'operador2', 'operador2');	#id = 2
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------
+--  agregando apostadores
+SELECT * FROM apostador;
+INSERT INTO apostador (id, apo_user, apo_pass, nombre, email, phone, tarjeta) 
+VALUES 	(NULL, 'user1', 'pass1', 'luis salcedo', 'luis@correo.com', '956745678', '0000001111111111'),  	#id = 1
+		(NULL, 'user2', 'pass2', 'pedro romero', 'pedro@correo.com', '935807684', '0000002222222222');	#id = 2
+-------------------------------------------------------------------------------------
+--  agregando equipos
+SELECT * FROM equipo;
+INSERT INTO equipo (id, nombre, avatar, descripcion, active) 
+VALUES 	(NULL, 'Alianza Lima', 'e-al.svg', 'Descripción del club Alianza Lima', '1'), 							#id = 1
+		(NULL, 'Universitario de Deportes', 'e-u.svg', 'Descripción del club Universitario de Deportes', '1'), 	#id = 2
+		(NULL, 'Sporting Cristal', 'e-sc.svg', 'Descripción del club Sporting Cristal', '0'),					#id = 3
+		(NULL, 'Sport Boys', 'e-sba.svg', 'Descripción del club Sport Boys', '1');								#id = 4
+-------------------------------------------------------------------------------------
+--  agregando partidos
+SELECT * FROM partido;
+INSERT INTO partido (id, fecha, hora_ini, hora_end, active) 
+VALUES 	(NULL, '2022-02-07', '18:00:00', '19:30:00', '1'), 	#id = 1
+		(NULL, '2022-02-10', '18:00:00', '19:30:00', '0');	#id = 2
+-------------------------------------------------------------------------------------
+--  agregando partido_equipo - vinculando equipos a partidos
+SELECT * FROM partido_equipo;
+INSERT INTO partido_equipo (partido_id, equipo_id, marcador_final, position) 
+VALUES 	('1', '1', '1','1'), 
+		('1', '2', '2','2'),
+		('2', '1', '0','1'), 
+		('2', '4', '0','2');
+-------------------------------------------------------------------------------------
+--  agregando apuestas
+SELECT * FROM apuesta;
+INSERT INTO apuesta (id, partido_id, apostador_id, apuesta, open) 
+VALUES 	(NULL, '1', '1', '100', '1'), 	#id = 1
+		(NULL, '1', '2', '50', '1');	#id = 2
+-------------------------------------------------------------------------------------
+INSERT INTO marcador_apostado (equipo_id, apuesta_id, marcador_apuesta, position) 
+VALUES 	('1', '1', '1','1'), 
+		('2', '1', '2','2'), 
+		('1', '2', '1','1'), 
+		('2', '2', '1','2');
