@@ -3,7 +3,7 @@ import { ReactComponent as DeleteIcon } from "../assets/img/icon-delete.svg";
 import { useDispatch, useSelector } from "react-redux";
 
 import { deleteNumber } from "../redux/actions";
-import { cleanResult } from "./../redux/actions/index";
+import { clean } from "./../redux/actions/index";
 
 export const Extra = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export const Extra = () => {
 
   return (
     <div className="buttons_extra">
-      <button onClick={() => dispatch(cleanResult(result))}>C</button>
+      <button onClick={() => dispatch(clean(result))}>C</button>
       <button
         onClick={() => dispatch(deleteNumber(result))}
         className="btn_delete"

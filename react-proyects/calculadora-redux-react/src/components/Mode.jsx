@@ -1,9 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { setDarkMode } from "../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { setMode } from "../redux/actions";
 
 export const Mode = () => {
   const dispatch = useDispatch();
+  const { darkMode } = useSelector(state => state.ui);
+
   return (
     <div className="checkMode">
       Dark mode
@@ -12,7 +14,7 @@ export const Mode = () => {
         <input
           type="checkbox"
           id="mode"
-          onChange={() => dispatch(setDarkMode())}
+          onChange={() => dispatch(setMode(darkMode))}
         />
       </div>
     </div>

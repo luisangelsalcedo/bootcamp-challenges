@@ -5,6 +5,7 @@ const maxNumber = 9999999999;
 export const validateNumber = str => dispatch => {
   if (str.length < String(maxNumber).length) dispatch(setTyping(str));
 };
+
 export const setTyping = str => ({
   type: types.TYPING,
   payload: str,
@@ -42,7 +43,11 @@ export const division = () => ({
   type: types.DIVISION,
 });
 
-export const cleanResult = result => !result || { type: types.CLEAN };
+export const clean = result => dispatch => {
+  !!result && dispatch(cleanResult());
+};
+
+export const cleanResult = () => ({ type: types.CLEAN });
 
 export const deleteNumber = result => dispatch => {
   if (result !== "") {
@@ -51,6 +56,13 @@ export const deleteNumber = result => dispatch => {
   }
 };
 
-export const setDarkMode = () => ({
+export const setMode = mode => dispatch => {
+  const newMode = !mode;
+  localStorage.setItem("darkMode", newMode);
+  dispatch(setDarkMode(newMode));
+};
+
+export const setDarkMode = newMode => ({
   type: types.SET_DARK_MODE,
+  payload: newMode,
 });

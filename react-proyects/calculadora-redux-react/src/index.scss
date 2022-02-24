@@ -75,7 +75,8 @@ body {
       display: flex;
     }
 
-    button {
+    button,
+    input[type="button"] {
       width: 2.5rem;
       height: 2.5rem;
       border-radius: 1.25rem;
@@ -90,7 +91,8 @@ body {
       transition: all 0.2s ease;
     }
 
-    button:hover {
+    button:hover,
+    input[type="button"]:hover {
       background-color: #ddd;
     }
 
@@ -98,7 +100,8 @@ body {
       display: flex;
       flex-direction: row-reverse;
       flex-wrap: wrap;
-      button {
+      button,
+      input[type="button"] {
         background-color: rgb(204, 204, 204);
       }
     }
@@ -106,7 +109,8 @@ body {
     &_operations {
       display: flex;
       flex-direction: column;
-      button {
+      button,
+      input[type="button"] {
         @include btnOp;
       }
     }
@@ -190,7 +194,8 @@ body {
   }
   .buttons {
     &_numbers {
-      button {
+      button,
+      input[type="button"] {
         background: rgb(48, 50, 66);
         color: #fff;
         &:hover {
@@ -200,7 +205,8 @@ body {
     }
 
     &_extra {
-      button {
+      button,
+      input[type="button"] {
         background: #111;
         color: #fff;
 
