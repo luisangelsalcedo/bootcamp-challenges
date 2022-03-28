@@ -4,11 +4,14 @@ Usando [PokeApi v2](https://pokeapi.co/) para mostrar una lista de pokemons que 
 
 ---
 
-## <a href='https://luisangelsalcedo.github.io/pokedex/' target='_blank'>Deploy</a>
+<a href='https://luisangelsalcedo.github.io/pokedex/' target='_blank'>Deploy</a>
 
-<img src="https://img.icons8.com/color/32/000000/javascript--v1.png"/>
+<div>
 <img src="https://img.icons8.com/color/32/000000/html-5--v1.png"/>
 <img src="https://img.icons8.com/color/32/000000/css3.png"/>
+<img src="https://img.icons8.com/color/32/000000/javascript--v1.png"/>
+
+</div>
 
 ---
 
