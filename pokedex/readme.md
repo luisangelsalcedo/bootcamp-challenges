@@ -2,9 +2,13 @@
 
 Usando [PokeApi v2](https://pokeapi.co/) para mostrar una lista de pokemons que al darle clic abrirá un modal con el detalle del pokemon seleccionado.
 
-<table><tr><td>
+---
 
-<img src="https://img.icons8.com/color-glass/32/000000/github.png"/>
+<table border=0><tr><td>
+
+<img src="https://img.icons8.com/color/32/000000/javascript--v1.png"/>
+<img src="https://img.icons8.com/color/32/000000/html-5--v1.png"/>
+<img src="https://img.icons8.com/color/32/000000/css3.png"/>
 
 </td><td>
 
