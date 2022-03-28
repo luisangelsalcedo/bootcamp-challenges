@@ -2,23 +2,15 @@
 
 Usando [PokeApi v2](https://pokeapi.co/) para mostrar una lista de pokemons que al darle clic abrirá un modal con el detalle del pokemon seleccionado.
 
----
+<table><tr><td>
 
-<div style="display:flex; text-align:center; justify-content:space-between">
-<div>
+<img src="https://img.icons8.com/color-glass/32/000000/github.png"/>
+
+</td><td>
 
 ## <a href='https://luisangelsalcedo.github.io/pokedex/' target='_blank'>Deploy</a>
 
-</div>
-
-<div>
-
-![HTML5](https://img.icons8.com/color/36/000000/html-5--v1.png)
-![CSS3](https://img.icons8.com/color/36/000000/css3.png)
-![Javascript](https://img.icons8.com/color/36/000000/javascript--v1.png)
-
-</div>
-</div>
+</td></tr></table>
 
 ---
 
