@@ -73,6 +73,20 @@ export const updateFavsListById = async (req, res) => {
   }
 };
 
-export const deleteFavsListById = (req, res) => {
-  res.send("Handler deleteFavsListById");
+/**
+ * * Delete favorites list by ID
+ * @param {Object} req - HTTPRequest Object
+ * @param {ObjectId} req.params.id - Favorites list ID
+ * @return {HTTPResponse Object} - status 200 return {notice} | status 500 return {message}
+ */
+export const deleteFavsListById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const favs = await Favs.findByIdAndDelete(id);
+    if (!favs) return res.status(500).json({ message: "Lists not found" });
+    res.status(200).json({ notice: `${favs?.name} has been removed` });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
