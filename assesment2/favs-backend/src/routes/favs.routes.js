@@ -1,23 +1,22 @@
 import { Router } from "express";
+import * as favsCtrl from "../controllers/favs.controller.js";
 
 const router = Router();
 
-// get all lists of favorites
-router.get("/api/favs", (req, res) => {
-  res.json({ message: "get all favs list" });
-});
-
 // create a new list of favorite
-router.post("/api/favs", (req, res) => {});
+router.post("/api/favs", favsCtrl.createFavsList);
+
+// get all lists of favorites
+router.get("/api/favs", favsCtrl.getAllFavsList);
 
 // get a single list of favorite
-router.get("/api/favs/:id", (req, res) => {});
+router.get("/api/favs/:id", favsCtrl.getFavsListById);
 
 // update a single list of favorite
-router.put("/api/favs/:id", (req, res) => {});
+router.put("/api/favs/:id", favsCtrl.updateFavsListById);
 
 // delete a single list of favorite
-router.delete("/api/favs/:id", (req, res) => {});
+router.delete("/api/favs/:id", favsCtrl.deleteFavsListById);
 
 //
 export default router;
