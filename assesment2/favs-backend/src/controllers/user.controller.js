@@ -3,10 +3,10 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 /**
- * * log in with a username and password
- * @param {Object} req - object http request
- * @param {String} req.body.email - email sent to validate login
- * @param {String} req.body.password - password sent to validate login
+ * * Log in with a username and password
+ * @param {Object} req - HTTPRequest Object
+ * @param {String} req.body.email - Email sent to validate login
+ * @param {String} req.body.password - Password sent to validate login
  * @return {HTTPResponse Object} - status 200 return {token} | status 403,500 return {message}
  */
 export const login = async (req, res) => {
@@ -43,9 +43,9 @@ export const login = async (req, res) => {
 
 /**
  * * Create a new user with a username and password
- * @param {Object} req - object http request
- * @param {String} req.body.email - email sent to validate login
- * @param {String} req.body.password - password sent to validate login
+ * @param {Object} req - HTTPRequest Object
+ * @param {String} req.body.email - Email sent to validate login
+ * @param {String} req.body.password - Password sent to validate login
  * @return {HTTPResponse Object} - status 201 return {User} | status 500 return {message}
  */
 export const createUser = async (req, res) => {
