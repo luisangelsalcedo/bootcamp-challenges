@@ -2,7 +2,7 @@ import Favs from "../models/favslist.model.js";
 
 /**
  * * Creating a new favorites list
- * @param {Object} req - object http request
+ * @param {Object} req - HTTPRequest Object
  * @param {String} req.body.name - Favorites list name
  * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
  */
@@ -21,7 +21,7 @@ export const createFavsList = async (req, res) => {
 };
 
 /**
- * * get all favorites lists
+ * * Get all favorites lists
  * @return {HTTPResponse Object} - status 200 return {Favs[]} | status 500 return {message} | status 204
  */
 export const getAllFavsLists = async (req, res) => {
@@ -34,8 +34,21 @@ export const getAllFavsLists = async (req, res) => {
   }
 };
 
-export const getFavsListById = (req, res) => {
-  res.send("Handler getFavsListById");
+/**
+ * * Get favorites list by ID
+ * @param {Object} req - HTTPRequest Object
+ * @param {ObjectId} req.params.id - Favorites list ID
+ * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
+ */
+export const getFavsListById = async (req, res) => {
+  const { id } = req.params;
+
+  try {
+    const favs = await Favs.findById(id);
+    res.status(200).json({ favs });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const updateFavsListById = (req, res) => {
