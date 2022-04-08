@@ -20,8 +20,18 @@ export const createFavsList = async (req, res) => {
   }
 };
 
-export const getAllFavsList = (req, res) => {
-  res.send("Handler getAllFavsList");
+/**
+ * * get all favorites lists
+ * @return {HTTPResponse Object} - status 200 return {Favs[]} | status 500 return {message} | status 204
+ */
+export const getAllFavsLists = async (req, res) => {
+  try {
+    const favs = await Favs.find();
+    if (!favs.length) return res.status(204).send();
+    res.status(200).json({ favs });
+  } catch (error) {
+    res.status(500).json({ message: "Lists not found" });
+  }
 };
 
 export const getFavsListById = (req, res) => {

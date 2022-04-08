@@ -7,7 +7,7 @@ const router = Router();
 router.post("/api/favs", favsCtrl.createFavsList);
 
 // get all lists of favorites
-router.get("/api/favs", favsCtrl.getAllFavsList);
+router.get("/api/favs", favsCtrl.getAllFavsLists);
 
 // get a single list of favorite
 router.get("/api/favs/:id", favsCtrl.getFavsListById);
