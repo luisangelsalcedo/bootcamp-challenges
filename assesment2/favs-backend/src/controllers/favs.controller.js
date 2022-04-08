@@ -51,8 +51,26 @@ export const getFavsListById = async (req, res) => {
   }
 };
 
-export const updateFavsListById = (req, res) => {
-  res.send("Handler updateFavsListById");
+/**
+ * * Update favorites list by ID
+ * @param {Object} req - HTTPRequest Object
+ * @param {ObjectId} req.params.id - Favorites list ID
+ * @param {Object} req.body - Favorites list edited object
+ * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
+ */
+export const updateFavsListById = async (req, res) => {
+  const editedObject = req.body;
+  const numKeys = Object.keys(editedObject).length;
+  if (!numKeys) return res.status(500).json({ message: "Content is required" });
+
+  const { id } = req.params;
+
+  try {
+    const favs = await Favs.findByIdAndUpdate(id, editedObject, { new: true });
+    res.status(200).json({ favs });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 };
 
 export const deleteFavsListById = (req, res) => {
