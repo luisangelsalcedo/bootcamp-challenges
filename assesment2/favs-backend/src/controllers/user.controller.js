@@ -20,7 +20,6 @@ export const login = async (req, res) => {
 
   // compare hash
   const hashIsCorrect = await bcrypt.compare(pass, user.password);
-
   if (!hashIsCorrect)
     return res.status(403).json({ message: "Password is not correct" });
 
