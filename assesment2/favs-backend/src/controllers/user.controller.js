@@ -3,7 +3,7 @@ import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 /**
- * * Log in with a username and password
+ * * Log in with a email and password
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.body.email - Email sent to validate login
  * @param {String} req.body.password - Password sent to validate login
@@ -42,7 +42,7 @@ export const login = async (req, res) => {
 };
 
 /**
- * * Create a new user with a username and password
+ * * Create a new user with a email and password
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.body.email - Email sent to validate login
  * @param {String} req.body.password - Password sent to validate login
