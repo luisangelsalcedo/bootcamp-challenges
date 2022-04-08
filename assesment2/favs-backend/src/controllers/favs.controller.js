@@ -1,4 +1,4 @@
-import Favs from "../models/favslist.model.js";
+import Favs from "../models/favs.model.js";
 
 /**
  * * Creating a new favorites list
@@ -67,6 +67,7 @@ export const updateFavsListById = async (req, res) => {
 
   try {
     const favs = await Favs.findByIdAndUpdate(id, editedObject, { new: true });
+    if (!favs) return res.status(500).json({ message: "Lists not found" });
     res.status(200).json({ favs });
   } catch (error) {
     res.status(500).json({ message: error.message });
