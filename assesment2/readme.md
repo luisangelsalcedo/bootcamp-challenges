@@ -14,6 +14,8 @@
 
 [Repositorio](./favs-backend/) |
 
+<br>
+<img src="./favs-backend/public/img/screenshot.jpg"/>
 ---
 
 ## favs-frontend
