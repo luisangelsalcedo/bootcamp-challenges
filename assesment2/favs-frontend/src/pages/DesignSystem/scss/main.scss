@@ -1,0 +1,22 @@
+@import "../../../assets/scss/colors.scss";
+
+.dark,
+.light,
+.red,
+.grey,
+.black {
+  padding: 2rem;
+}
+
+.red {
+  background: $color-main;
+}
+.grey {
+  background: $color-grey-1;
+}
+.dark {
+  background: $color-dark;
+}
+.black {
+  background: $color-black;
+}

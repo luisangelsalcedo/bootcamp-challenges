@@ -1,0 +1,14 @@
+@import "../../../assets/scss/colors.scss";
+
+// COMPONENT
+.title-field {
+  margin-bottom: 1rem;
+  color: $color-dark;
+}
+
+// DARK
+.dark {
+  .title-field {
+    color: #fff;
+  }
+}

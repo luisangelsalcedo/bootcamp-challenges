@@ -1,0 +1,14 @@
+.logo {
+  width: 15rem;
+  margin-bottom: 0.5rem;
+  svg {
+    width: 100%;
+  }
+}
+.dark {
+  .logo {
+    path[fill="#375A64"] {
+      fill: #fff !important;
+    }
+  }
+}

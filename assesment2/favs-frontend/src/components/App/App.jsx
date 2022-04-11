@@ -1,1 +1,3 @@
-export const App = () => <div>App</div>;
+import { DesignSystem } from "../../pages/DesignSystem";
+
+export const App = () => <DesignSystem />;
