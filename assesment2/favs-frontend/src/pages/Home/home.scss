@@ -1,0 +1,63 @@
+@import "../../assets/scss/main.scss";
+
+// responsive
+@media (min-width: 1px) {
+  .home {
+    height: 100vh;
+    overflow: hidden;
+    .container {
+      align-items: center;
+      justify-content: center;
+    }
+    .logo {
+      display: flex;
+      justify-content: center;
+      margin: 5em 0 1rem 0;
+      max-width: 200px;
+    }
+    .img-responsive {
+      svg {
+        max-width: 100%;
+        height: auto;
+        margin: 3rem 0;
+      }
+    }
+    .toggle-mode {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+}
+
+@media (min-width: 400px) {
+  .home {
+    .container {
+      width: 400px;
+
+      &-flex > div {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      &-flex {
+        flex-direction: row;
+      }
+    }
+
+    .logo {
+      margin-top: 0;
+    }
+  }
+}
