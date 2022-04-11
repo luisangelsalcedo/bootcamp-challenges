@@ -1,5 +1,5 @@
 import { MainRouter } from "./MainRouter";
-import { PublicRoutes } from "./PublicRoutes";
-import { PrivateRoutes } from "./PrivateRoutes";
+import { PublicRoutes as Public } from "./PublicRoutes";
+import { PrivateRoutes as Private } from "./PrivateRoutes";
 
-export { MainRouter, PublicRoutes, PrivateRoutes };
+export { MainRouter, Public, Private };
