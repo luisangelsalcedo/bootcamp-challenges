@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { App } from "./components/App";
+import { App } from "./app";
 
 import "./index.css";
 import "font-awesome/css/font-awesome.min.css";

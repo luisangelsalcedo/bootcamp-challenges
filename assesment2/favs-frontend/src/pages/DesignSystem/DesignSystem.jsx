@@ -1,14 +1,17 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import "./scss/main.scss";
-import { ToggleMode } from "../../components/ToggleMode";
-import { Btn } from "../../components/Btn";
-import { Logo } from "../../components/Logo";
-import { InputForm } from "../../components/InputForm";
-import { FavItem } from "../../components/FavItem";
-import { FavList } from "../../components/FavList";
+import {
+  Btn,
+  Logo,
+  InputForm,
+  FavItem,
+  FavList,
+  TitleField,
+  ToggleMode,
+} from "../../components";
+
 import { ReactComponent as Img1 } from "../../assets/svg/ilustracion1.svg";
 import { ReactComponent as Img2 } from "../../assets/svg/ilustracion2.svg";
-import { TitleField } from "../../components/TitleField";
 
 export const DesignSystem = () => (
   <>
