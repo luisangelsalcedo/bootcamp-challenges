@@ -10,6 +10,7 @@ $input-form-bg-dark: $color-black;
 $input-form-placeholder-dark: #4f717a;
 
 .input-form {
+  width: 100%;
   overflow: hidden;
   border-radius: 0.5rem;
   background: $input-form-bg;
@@ -28,6 +29,12 @@ $input-form-placeholder-dark: #4f717a;
 
     &::placeholder {
       color: $input-form-placeholder;
+    }
+
+    &:-internal-autofill-selected {
+      background-color: transparent !important;
+      appearance: inherit !important;
+      color: inherit !important;
     }
   }
 

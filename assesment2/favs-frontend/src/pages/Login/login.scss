@@ -2,10 +2,9 @@
 
 // responsive
 @media (min-width: 1px) {
-  .home {
+  .login {
     height: 100vh;
     overflow: hidden;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,18 +15,14 @@
       justify-content: center;
     }
 
-    .img-responsive {
-      svg {
-        max-width: 100%;
-        height: auto;
-        margin: 3rem 0;
-      }
-    }
-
     .toggle-mode {
       position: absolute;
       top: 1rem;
       right: 1rem;
+    }
+
+    form {
+      width: 100%;
     }
   }
 }
@@ -36,25 +31,6 @@
   .home {
     .container {
       width: 400px;
-
-      &-flex > div {
-        display: flex;
-        justify-content: center;
-      }
-    }
-  }
-}
-
-@media (min-width: 800px) {
-  .home {
-    .container {
-      &-flex {
-        flex-direction: row;
-      }
-    }
-
-    .logo {
-      margin-top: 0;
     }
   }
 }

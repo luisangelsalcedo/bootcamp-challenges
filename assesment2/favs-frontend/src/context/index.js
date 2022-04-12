@@ -1,3 +1,3 @@
-import { ModeColorProvider } from "./ModeColorProvider";
+import { ModeColorContext, ModeColorProvider } from "./ModeColorProvider";
 
-export { ModeColorProvider };
+export { ModeColorContext, ModeColorProvider };

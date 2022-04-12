@@ -4,12 +4,11 @@ import { useContext } from "react";
 import { Link, useLinkClickHandler } from "react-router-dom";
 import { ReactComponent as Image } from "../../assets/svg/ilustracion1.svg";
 import { Logo, TitleField, Btn, ToggleMode } from "../../components";
-import { ModeColorContext } from "../../context/ModeColorProvider";
+import { ModeColorContext } from "../../context";
 
 export const Home = () => {
   const { modeColor, changeModeColor } = useContext(ModeColorContext);
-
-  const linkRegister = useLinkClickHandler("/register");
+  const linkRegister = useLinkClickHandler("/login");
 
   return (
     <div className={!modeColor ? "home" : "home dark"}>
@@ -24,7 +23,7 @@ export const Home = () => {
             />
             <Btn
               label="Iniciar sesión"
-              type="outline"
+              btn="outline"
               handler={linkRegister}
               block
             />

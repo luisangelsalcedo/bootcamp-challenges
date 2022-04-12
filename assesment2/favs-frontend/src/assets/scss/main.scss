@@ -12,6 +12,13 @@
   }
 }
 
+.logo {
+  display: flex;
+  justify-content: center;
+  margin: 1em 0 1rem 0;
+  max-width: 200px;
+}
+
 a {
   color: $color-blue;
   font-weight: bold;
@@ -25,4 +32,5 @@ a {
 .dark {
   color: #fff;
   background: $color-dark;
+  transition: all 0.3s ease;
 }

@@ -76,6 +76,13 @@ $btn-outline-border-dark: $color-main;
   &:hover {
     opacity: 0.7;
   }
+  &:disabled {
+    opacity: 0.3;
+    &:hover {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+  }
 
   span {
     height: 0.7rem;

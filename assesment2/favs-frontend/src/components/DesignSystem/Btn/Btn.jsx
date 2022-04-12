@@ -1,20 +1,20 @@
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import "./scss/btn.scss";
 
-export const Btn = ({ label, fa, type, block, handler }) => {
-  const buttonRef = useRef();
+export const Btn = React.forwardRef((props, ref) => {
+  const { label, fa, btn } = props;
+  const buttonRef = !ref ? useRef() : ref;
 
   useEffect(() => {
     buttonRef.current.classList.add("btn");
-    if (type) buttonRef.current.classList.add(`btn-${type}`);
+    if (btn) buttonRef.current.classList.add(`btn-${btn}`);
     if (fa) buttonRef.current.classList.add("btn-icon");
-    if (block) buttonRef.current.classList.add("btn-block");
   }, []);
 
   return (
-    <button ref={buttonRef} type="button" onClick={handler}>
+    <button ref={buttonRef} type="button" {...props}>
       {fa && <i className={`fa fa-${fa}`} aria-hidden="true" />}
       {label && <span>{label}</span>}
     </button>
   );
-};
+});
