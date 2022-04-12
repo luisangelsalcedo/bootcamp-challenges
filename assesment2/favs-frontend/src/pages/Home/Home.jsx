@@ -24,8 +24,8 @@ export const Home = () => {
             <Btn
               label="Iniciar sesión"
               btn="outline"
-              handler={linkRegister}
-              block
+              onClick={linkRegister}
+              className="btn-block"
             />
             <div>
               ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
