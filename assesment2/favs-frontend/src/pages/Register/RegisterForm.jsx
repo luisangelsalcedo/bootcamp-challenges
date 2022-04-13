@@ -1,35 +1,37 @@
 import { useEffect, useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { InputForm, Btn } from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
-import { loginService } from "../../services";
-import { login } from "../../redux";
+import { registerService } from "../../services";
 
-export const LoginForm = () => {
+export const RegisterForm = () => {
+  const nameRef = useRef();
   const emailRef = useRef();
   const passRef = useRef();
   const btnRef = useRef();
-  const dispatch = useDispatch();
   const { callEndpoint } = useFetchAndLoad();
+  const navigate = useNavigate();
 
   const handleChange = () => {
+    const nameVal = nameRef.current.value.length;
     const emailVal = emailRef.current.value.length;
     const passVal = passRef.current.value.length;
     let isDisable = true;
-    if (emailVal + passVal) isDisable = false;
+    if (nameVal + emailVal + passVal) isDisable = false;
     btnRef.current.disabled = isDisable;
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userLogin = {
+    const newUser = {
+      name: nameRef.current.value,
       email: emailRef.current.value,
       password: passRef.current.value,
     };
-    // console.log(userLogin);
-    const { data } = await callEndpoint(loginService(userLogin));
-    dispatch(login(data));
+    // console.log(newUser);
+    await callEndpoint(registerService(newUser));
+    navigate("/login", { replace: true });
   };
 
   useEffect(() => {
@@ -38,6 +40,13 @@ export const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <InputForm
+        ref={nameRef}
+        placeholder="Nombre completo"
+        fa="user"
+        required
+        onChange={handleChange}
+      />
       <InputForm
         ref={emailRef}
         placeholder="Correo electrónico"

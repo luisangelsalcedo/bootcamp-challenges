@@ -30,8 +30,8 @@
       2,
       { "namedComponents": "arrow-function" }
     ],
-    "no-confusing-arrow": 0,
     "linebreak-style": "off",
+    "default-param-last": "off",
     "arrow-parens": ["error", "always"],
     "comma-dangle": [
       "error",
@@ -49,9 +49,10 @@
       "WithStatement",
       "BinaryExpression[operator='in']"
     ],
+    "no-confusing-arrow": 0,
     "no-plusplus": "off",
+    "no-param-reassign": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "jsx-a11y/label-has-for": "off",
-    "default-param-last": "off"
+    "jsx-a11y/label-has-for": "off"
   }
 }

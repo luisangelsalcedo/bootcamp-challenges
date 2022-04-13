@@ -8,6 +8,6 @@ export const PublicRoutes = ({ children }) => {
   return !logged ? (
     children
   ) : (
-    <Navigate to="/login" state={{ from: location }} replace />
+    <Navigate to="/dashboard" state={{ from: location }} replace />
   );
 };

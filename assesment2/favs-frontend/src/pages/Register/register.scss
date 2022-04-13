@@ -2,7 +2,7 @@
 
 // responsive
 @media (min-width: 1px) {
-  .login {
+  .register {
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -28,7 +28,7 @@
 }
 
 @media (min-width: 400px) {
-  .login {
+  .register {
     .container {
       width: 400px;
     }
