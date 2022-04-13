@@ -1,3 +1,7 @@
-import { loginService, registerService } from "./auth.service";
+import {
+  loginService,
+  registerService,
+  validateTokenService,
+} from "./auth.service";
 
-export { loginService, registerService };
+export { loginService, registerService, validateTokenService };

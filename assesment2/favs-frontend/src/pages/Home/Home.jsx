@@ -1,10 +1,9 @@
-import "./home.scss";
-
 import { useContext } from "react";
 import { Link, useLinkClickHandler } from "react-router-dom";
 import { ReactComponent as Image } from "../../assets/svg/ilustracion1.svg";
 import { Logo, TitleField, Btn, ToggleMode } from "../../components";
 import { ModeColorContext } from "../../context";
+import "./home.scss";
 
 export const Home = () => {
   const { modeColor, changeModeColor } = useContext(ModeColorContext);
@@ -18,7 +17,8 @@ export const Home = () => {
           <div className="container">
             <Logo />
             <TitleField
-              text="Inicia sessión y empieza a organizarlo todo"
+              text="Inicia sessión y empieza a organizar tus listas favoritas"
+              size="1.3"
               center
             />
             <Btn

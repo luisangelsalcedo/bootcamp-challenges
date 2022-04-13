@@ -1,5 +1,4 @@
 import axios from "axios";
-import { ENDPOINTS } from "../constants";
 
 /**
  * * AXIOS INSTANCE
@@ -33,13 +32,7 @@ axiosHTTPclient.interceptors.request.use(
  * * RESPONSE INTERCEPTOR
  */
 axiosHTTPclient.interceptors.response.use(
-  (response) => {
-    const { config, data } = response;
-    if (config.url.indexOf(ENDPOINTS.LOGIN) !== -1) {
-      localStorage.setItem("auth", JSON.stringify({ logged: true, ...data }));
-    }
-    return response;
-  },
+  (response) => response,
   (error) => {
     console.log(error.response.data);
 

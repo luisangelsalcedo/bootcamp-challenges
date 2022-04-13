@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { InputForm, Btn } from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
-import { loginService } from "../../services";
+import { loginService, validateTokenService } from "../../services";
 import { login } from "../../redux";
 
 export const LoginForm = () => {
@@ -27,9 +27,11 @@ export const LoginForm = () => {
       email: emailRef.current.value,
       password: passRef.current.value,
     };
-    // console.log(userLogin);
-    const { data } = await callEndpoint(loginService(userLogin));
-    dispatch(login(data));
+
+    const { data: token } = await callEndpoint(loginService(userLogin));
+    const { data: payload } = await callEndpoint(validateTokenService(token));
+
+    dispatch(login({ ...token, ...payload }));
   };
 
   useEffect(() => {

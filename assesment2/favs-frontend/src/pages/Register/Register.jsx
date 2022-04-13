@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Btn, Logo, TitleField, ToggleMode } from "../../components";
 import { ModeColorContext } from "../../context";
-import "./register.scss";
 import { RegisterForm } from "./RegisterForm";
+import "./register.scss";
 
 export const Register = () => {
   const { modeColor, changeModeColor } = useContext(ModeColorContext);

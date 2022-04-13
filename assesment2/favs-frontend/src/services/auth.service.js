@@ -21,3 +21,13 @@ export const registerService = (user) => {
     controller,
   };
 };
+
+export const validateTokenService = ({ token }) => {
+  const controller = loadAbort();
+  return {
+    call: axiosHTTPclient.get(`${ENDPOINTS.VALIDATE}${token}`, {
+      signal: controller.signal,
+    }),
+    controller,
+  };
+};
