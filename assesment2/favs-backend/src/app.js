@@ -7,12 +7,14 @@ import { authentication } from "./middlewares/index.js";
 
 import "dotenv/config";
 import "./dataBase.js";
+import cors from "cors";
 
 const app = express();
 
 // middleware
 app.use(express.json());
 app.use(express.static("public"));
+app.use(cors());
 
 // template
 app.set("view engine", "ejs");

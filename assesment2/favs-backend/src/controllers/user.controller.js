@@ -65,3 +65,24 @@ export const createUser = async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 };
+
+/**
+ * * validate user authentication token
+ * @param {Object} req - HTTPRequest Object
+ * @param {String} req.query.token - Authentication token
+ * @return {HTTPResponse Object} - status 201 return {Object} | status 403,500 return {message}
+ */
+export const authToken = async (req, res) => {
+  const { token } = req.query;
+  if (!token)
+    return res.status(500).json({ message: "Auth token  is required" });
+
+  // jwt
+  jwt.verify(token, process.env.JWT_PASSWORD, (err, payload) => {
+    console.log(payload);
+    if (!!err) return res.status(403).json({ message: "Invalid token" });
+
+    res.status(200).json(payload);
+  });
+  //
+};
