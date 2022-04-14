@@ -16,92 +16,110 @@ $btn-outline-border-dark: $color-main;
 
 // COMPONENT
 .btn {
-  background: transparent;
-  outline: none;
-  border: 0;
-  opacity: 1;
-  color: $btn-text;
-  cursor: pointer;
-  font-weight: 600;
-  padding: 0 1rem;
-  height: 2.5rem;
-  border-radius: 0.5rem;
-  margin: 0 0.5rem 0.5rem 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  background: transparent !important;
+  outline: none !important;
+  border: 0 !important;
+  opacity: 1 !important;
+  color: $btn-text !important;
+  cursor: pointer !important;
+  font-weight: 600 !important;
+  padding: 0 1rem !important;
+  height: 2.5rem !important;
+  border-radius: 0.5rem !important;
+  margin: 0 0.5rem 0.5rem 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: none !important;
 
-  transition: all 0.2s ease;
+  transition: all 0.2s ease !important;
 
   &-default {
-    background-color: $btn-default-bg;
+    background-color: $btn-default-bg !important;
   }
 
   &-outline {
-    color: $btn-outline-text;
-    border: solid 0.1rem $btn-outline-border;
+    color: $btn-outline-text !important;
+    border: solid 0.1rem $btn-outline-border !important;
   }
 
   &-primary {
-    color: #fff;
-    background: $btn-primary-bg;
+    color: #fff !important;
+    background: $btn-primary-bg !important;
   }
 
   &-danger {
-    color: #fff;
-    background: $btn-danger-bg;
+    color: #fff !important;
+    background: $btn-danger-bg !important;
+  }
+
+  &-google {
+    & > div {
+      background: transparent !important;
+      padding: 0 !important;
+      left: 1rem !important;
+      position: absolute !important;
+    }
+    & > span {
+      background: transparent !important;
+      padding: 0 !important;
+      padding-left: 1rem !important;
+      position: absolute !important;
+      top: 12px !important;
+    }
   }
 
   &-icon {
     & i {
-      font-size: 1.1rem;
+      font-size: 1.1rem !important;
     }
     & i + span {
-      padding-left: 1rem;
+      padding-left: 1rem !important;
     }
   }
 
   &-block {
-    display: flex;
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    display: flex !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     & i {
-      left: 1rem;
-      position: absolute;
+      left: 1rem !important;
+      position: absolute !important;
     }
   }
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.7 !important;
   }
   &:disabled {
-    opacity: 0.3;
+    opacity: 0.3 !important;
     &:hover {
-      opacity: 0.3;
-      cursor: not-allowed;
+      opacity: 0.3 !important;
+      cursor: not-allowed !important;
     }
   }
 
   span {
-    height: 0.7rem;
+    height: 0.7rem !important;
   }
 }
 
 // DARK
 .dark {
   .btn {
-    color: $btn-text-dark;
+    color: $btn-text-dark !important;
 
     &-default {
-      color: $btn-default-text-dark;
-      background-color: $btn-default-bg-dark;
+      color: $btn-default-text-dark !important;
+      background-color: $btn-default-bg-dark !important;
     }
 
     &-outline {
-      color: $btn-outline-text-dark;
-      border-color: $btn-outline-border-dark;
+      color: $btn-outline-text-dark !important;
+      border-color: $btn-outline-border-dark !important;
     }
   }
 }

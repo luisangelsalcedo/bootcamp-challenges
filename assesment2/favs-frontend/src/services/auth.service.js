@@ -31,3 +31,13 @@ export const validateTokenService = ({ token }) => {
     controller,
   };
 };
+
+export const loginGoogleService = (profileObj) => {
+  const controller = loadAbort();
+  return {
+    call: axiosHTTPclient.post(ENDPOINTS.LOGIN_GOOGLE, profileObj, {
+      signal: controller.signal,
+    }),
+    controller,
+  };
+};
