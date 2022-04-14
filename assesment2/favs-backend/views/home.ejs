@@ -30,7 +30,8 @@
         <h2 class="display-5">Endpoints</h2>
 
         <p>
-          Create a new list of favorite <small>(requires authentication)</small>
+          <b>Create</b> a new list of favorite
+          <small>(requires authentication)</small>
         </p>
 
         <div class="input-group mb-3">
@@ -58,7 +59,8 @@
         </div>
 
         <p>
-          Get all lists of favorites <small>(requires authentication)</small>
+          <b>Get all</b> lists of favorites
+          <small>(requires authentication)</small>
         </p>
         <div class="input-group mb-3">
           <div class="input-group-append">
@@ -85,7 +87,8 @@
         </div>
 
         <p>
-          Get a single list of favorite <small>(requires authentication)</small>
+          <b>Get a single</b> list of favorite
+          <small>(requires authentication)</small>
         </p>
         <div class="input-group mb-3">
           <div class="input-group-append">
@@ -112,7 +115,7 @@
         </div>
 
         <p>
-          Update a single list of favorite
+          <b>Update</b> a single list of favorite
           <small>(requires authentication)</small>
         </p>
         <div class="input-group mb-3">
@@ -140,7 +143,7 @@
         </div>
 
         <p>
-          Delete a single list of favorite
+          <b>Delete</b> a single list of favorite
           <small>(requires authentication)</small>
         </p>
         <div class="input-group mb-3">
@@ -168,7 +171,7 @@
         </div>
 
         <h2 class="display-5">Auth</h2>
-        <p>Log in with a email and password</p>
+        <p><b>Login</b> with a email and password</p>
         <div class="input-group mb-3">
           <div class="input-group-append">
             <span class="input-group-text bg-primary text-light">POST</span>
@@ -193,17 +196,42 @@
           </div>
         </div>
 
-        <p>Register a new user</p>
+        <p><b>Register</b> a new user</p>
         <div class="input-group mb-3">
           <div class="input-group-append">
             <span class="input-group-text bg-primary text-light">POST</span>
           </div>
           <input
-            id="Register"
+            id="register"
             type="text"
             class="form-control"
             disabled
             data-uri="/auth/local/register"
+          />
+          <div class="input-group-append">
+            <button
+              class="btn btn-outline-light"
+              type="button"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              title="Copy"
+            >
+              <i class="fa fa-files-o" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+
+        <p><b>Validate</b> user authentication token</p>
+        <div class="input-group mb-3">
+          <div class="input-group-append">
+            <span class="input-group-text bg-success text-light">GET</span>
+          </div>
+          <input
+            id="validate"
+            type="text"
+            class="form-control"
+            disabled
+            data-uri="/auth/local/validate?token=:token"
           />
           <div class="input-group-append">
             <button

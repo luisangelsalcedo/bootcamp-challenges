@@ -79,9 +79,7 @@ export const authToken = async (req, res) => {
 
   // jwt
   jwt.verify(token, process.env.JWT_PASSWORD, (err, payload) => {
-    console.log(payload);
     if (!!err) return res.status(403).json({ message: "Invalid token" });
-
     res.status(200).json(payload);
   });
   //
