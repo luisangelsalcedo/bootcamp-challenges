@@ -12,5 +12,8 @@ router.post("/auth/local/register", userCtrl.createUser);
 // validate user authentication token
 router.get("/auth/local/validate", userCtrl.authToken);
 
+// login and register user google
+router.post("/usergoogle/login", userCtrl.loginAndGoogle);
+
 //
 export default router;

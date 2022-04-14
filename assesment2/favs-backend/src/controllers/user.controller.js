@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import { generateJWT } from "../utils/jwtGenerate.js";
 
 /**
  * * Log in with a email and password
@@ -15,11 +16,15 @@ export const login = async (req, res) => {
   if (!email) return res.status(500).json({ message: "Email is required" });
   if (!pass) return res.status(500).json({ message: "Password is required" });
 
-  const user = await User.findOne({ email });
+  const user = await User.findOne({ email, is_google_log: false });
   if (!user) return res.status(403).json({ message: "User not found" });
 
+  console.log("hola");
   // compare hash
   const hashIsCorrect = await bcrypt.compare(pass, user.password);
+
+  console.log("bye", hashIsCorrect);
+
   if (!hashIsCorrect)
     return res.status(403).json({ message: "Password is not correct" });
 
@@ -28,17 +33,8 @@ export const login = async (req, res) => {
     id: user._id,
     name: user.name,
   };
-
-  jwt.sign(
-    payload,
-    process.env.JWT_PASSWORD,
-    {
-      expiresIn: "1d",
-    },
-    (err, token) => {
-      !err && res.status(200).json({ token });
-    }
-  );
+  const token = await generateJWT(payload);
+  !!token && res.status(200).json({ token });
 };
 
 /**
@@ -83,4 +79,46 @@ export const authToken = async (req, res) => {
     res.status(200).json(payload);
   });
   //
+};
+
+/**
+ * * login and register user google
+ * @param {Object} req - HTTPRequest Object
+ * @param {String} req.body.profileObj - Profile object sent by google
+ * @return {HTTPResponse Object} - status 200 return {token} | status 403,500 return {message}
+ */
+export const loginAndGoogle = async (req, res) => {
+  const { profileObj } = req.body;
+  if (!profileObj)
+    return res.status(403).json({ message: "Authentication error" });
+
+  const user = {
+    email: profileObj.email,
+    is_google_log: true,
+  };
+
+  const userFound = await User.findOne(user);
+  if (userFound) {
+    const payload = { id: userFound._id, ...profileObj };
+    const token = await generateJWT(payload);
+    console.log("login", token);
+    !!token && res.status(200).json({ token });
+  } else {
+    // create new user
+    const newUser = new User({
+      ...user,
+      name: profileObj.name,
+      profileObj,
+    });
+
+    try {
+      const userSave = await newUser.save();
+      const payload = { id: userSave._id, ...profileObj };
+      const token = await generateJWT(payload);
+      console.log("register", token);
+      !!token && res.status(200).json({ token });
+    } catch (error) {
+      res.status(403).json({ message: error.message });
+    }
+  }
 };

@@ -7,6 +7,8 @@ const userSchema = new Schema(
     email: String,
     password: String,
     favslists: [{ type: Schema.Types.ObjectId, ref: "Favslist" }],
+    is_google_log: { type: Boolean, default: false },
+    profileObj: { type: Object, default: {} },
   },
   {
     versionKey: false,
