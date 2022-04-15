@@ -2,7 +2,7 @@
 
 // general
 .container {
-  padding: 0 2rem;
+  margin: 0 1.5rem;
   display: flex;
   flex-direction: column;
 
@@ -33,4 +33,21 @@ a {
   color: #fff;
   background: $color-dark;
   transition: all 0.3s ease;
+}
+
+.red {
+  background: $color-main;
+}
+
+.grey {
+  background: $color-grey-1;
+}
+
+.ds {
+  & .light,
+  & .dark,
+  & .red,
+  & .grey {
+    padding: 1.5rem;
+  }
 }

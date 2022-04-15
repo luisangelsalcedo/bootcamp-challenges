@@ -12,7 +12,7 @@ export const FavItem = ({ fa }) => (
     </summary>
     <div>More info about the details.</div>
 
-    <Btn label="Editar" fa="edit" type="primary" />
-    <Btn label="Borrar" fa="times" type="danger" />
+    <Btn label="Editar" fa="edit" btn="primary" />
+    <Btn label="Borrar" fa="times" btn="danger" />
   </details>
 );

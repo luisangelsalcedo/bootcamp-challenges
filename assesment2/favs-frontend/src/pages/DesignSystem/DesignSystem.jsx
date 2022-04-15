@@ -14,7 +14,7 @@ import { ReactComponent as Img1 } from "../../assets/svg/ilustracion1.svg";
 import { ReactComponent as Img2 } from "../../assets/svg/ilustracion2.svg";
 
 export const DesignSystem = () => (
-  <>
+  <div className="ds">
     <div className="light">
       <TitleField text="Light mode" center />
       <TitleField text="Light mode" />
@@ -27,14 +27,14 @@ export const DesignSystem = () => (
       <Btn label="button" />
       <Btn label="button" fa="plus" />
 
-      <Btn fa="plus" type="default" />
-      <Btn label="button" type="default" />
-      <Btn label="button" fa="plus" type="default" />
+      <Btn fa="plus" btn="default" />
+      <Btn label="button" btn="default" />
+      <Btn label="button" fa="plus" btn="default" />
 
-      <Btn fa="envelope" type="outline" />
-      <Btn label="button" type="outline" />
-      <Btn label="button" fa="envelope" type="outline" />
-      <Btn label="button" fa="envelope" type="outline" block />
+      <Btn fa="envelope" btn="outline" />
+      <Btn label="button" btn="outline" />
+      <Btn label="button" fa="envelope" btn="outline" />
+      <Btn label="button" fa="envelope" btn="outline" className="btn-block" />
 
       <InputForm placeholder="Input form" />
       <InputForm placeholder="Input form" fa="user" />
@@ -64,14 +64,14 @@ export const DesignSystem = () => (
       <Btn label="button" />
       <Btn label="button" fa="plus" />
 
-      <Btn fa="plus" type="default" />
-      <Btn label="button" type="default" />
-      <Btn label="button" fa="plus" type="default" />
+      <Btn fa="plus" btn="default" />
+      <Btn label="button" btn="default" />
+      <Btn label="button" fa="plus" btn="default" />
 
-      <Btn fa="envelope" type="outline" />
-      <Btn label="button" type="outline" />
-      <Btn label="button" fa="envelope" type="outline" />
-      <Btn label="button" fa="envelope" type="outline" block />
+      <Btn fa="envelope" btn="outline" />
+      <Btn label="button" btn="outline" />
+      <Btn label="button" fa="envelope" btn="outline" />
+      <Btn label="button" fa="envelope" btn="outline" className="btn-block" />
 
       <InputForm placeholder="Input form" />
       <InputForm placeholder="Input form" fa="user" />
@@ -87,5 +87,5 @@ export const DesignSystem = () => (
         <Img2 width="50%" height="200" />
       </div>
     </div>
-  </>
+  </div>
 );

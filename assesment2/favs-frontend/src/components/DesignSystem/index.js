@@ -5,5 +5,15 @@ import { InputForm } from "./InputForm";
 import { Logo } from "./Logo";
 import { TitleField } from "./TitleField";
 import { ToggleMode } from "./ToggleMode";
+import { Avatar } from "./Avatar";
 
-export { Btn, FavItem, FavList, InputForm, Logo, TitleField, ToggleMode };
+export {
+  Btn,
+  FavItem,
+  FavList,
+  InputForm,
+  Logo,
+  TitleField,
+  ToggleMode,
+  Avatar,
+};

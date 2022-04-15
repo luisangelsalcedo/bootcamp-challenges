@@ -1,4 +1,4 @@
-import { login } from "./actions";
+import { login, logout } from "./actions";
 import store from "./store";
 
-export { store, login };
+export { store, login, logout };

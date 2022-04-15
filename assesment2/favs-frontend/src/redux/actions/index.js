@@ -1,3 +1,3 @@
-import { login } from "./auth.actions";
+import { login, logout } from "./auth.actions";
 
-export { login };
+export { login, logout };

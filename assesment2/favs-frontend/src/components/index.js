@@ -7,6 +7,7 @@ import {
   Logo,
   TitleField,
   ToggleMode,
+  Avatar,
 } from "./DesignSystem";
 
 export {
@@ -18,4 +19,5 @@ export {
   Logo,
   TitleField,
   ToggleMode,
+  Avatar,
 };
