@@ -1,22 +1,16 @@
 import "./scss/toggleMode.scss";
-import { useRef } from "react";
+import { useContext } from "react";
+import { ColorModeContext } from "./context/ColorModeProvider";
 
-export const ToggleMode = ({ active, handler }) => {
-  const checkID = useRef();
-  const { random, floor } = Math;
-  const ramStr = floor(random() * 100) + 0;
-  checkID.current = `mode${String(ramStr)}`;
+export const ToggleMode = () => {
+  const { colorMode, changeColorMode } = useContext(ColorModeContext);
 
   return (
-    <div className="toggle-mode">
-      <input
-        type="checkbox"
-        id={checkID.current}
-        defaultChecked={active}
-        onChange={handler}
-      />
-      <label htmlFor={checkID.current} />
-      <span />
+    <div className={`toggle-mode ${colorMode ? "active" : ""}`}>
+      <div>
+        <input type="checkbox" id="colorModeID" onChange={changeColorMode} />
+        <label htmlFor="colorModeID" />
+      </div>
     </div>
   );
 };

@@ -4,8 +4,9 @@ import { FavList } from "./FavList";
 import { InputForm } from "./InputForm";
 import { Logo } from "./Logo";
 import { TitleField } from "./TitleField";
-import { ToggleMode } from "./ToggleMode";
+import { ToggleMode, ColorModeContext, ColorModeProvider } from "./ToggleMode";
 import { Avatar } from "./Avatar";
+import { Modal, ModalContext, ModalProvider } from "./Modal";
 
 export {
   Btn,
@@ -15,5 +16,10 @@ export {
   Logo,
   TitleField,
   ToggleMode,
+  ColorModeContext,
+  ColorModeProvider,
   Avatar,
+  Modal,
+  ModalContext,
+  ModalProvider,
 };

@@ -71,6 +71,17 @@ $btn-outline-border-dark: $color-main;
     }
   }
 
+  &-circle {
+    background: #fff !important;
+    padding: 0 !important;
+    width: 2.5rem !important;
+    border-radius: 2.5rem !important;
+    border: solid 0.1rem $btn-outline-border !important;
+    i {
+      color: $color-main !important;
+    }
+  }
+
   &-icon {
     & i {
       font-size: 1.1rem !important;

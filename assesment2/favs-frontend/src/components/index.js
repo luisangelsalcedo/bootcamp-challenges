@@ -7,7 +7,12 @@ import {
   Logo,
   TitleField,
   ToggleMode,
+  ColorModeContext,
+  ColorModeProvider,
   Avatar,
+  Modal,
+  ModalContext,
+  ModalProvider,
 } from "./DesignSystem";
 
 export {
@@ -19,5 +24,10 @@ export {
   Logo,
   TitleField,
   ToggleMode,
+  ColorModeContext,
+  ColorModeProvider,
   Avatar,
+  Modal,
+  ModalContext,
+  ModalProvider,
 };

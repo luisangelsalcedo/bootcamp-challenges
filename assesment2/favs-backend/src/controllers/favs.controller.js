@@ -30,9 +30,9 @@ export const createFavsList = async (req, res) => {
 export const getAllFavsLists = async (req, res) => {
   const { id: userID } = req.auth;
   try {
-    const favs = await Favs.find({ owner: userID });
-    if (!favs.length) return res.status(204).send();
-    res.status(200).json({ favs });
+    const arrFavs = await Favs.find({ owner: userID });
+    if (!arrFavs.length) return res.status(204).send();
+    res.status(200).json({ arrFavs });
   } catch (error) {
     res.status(500).json({ message: "Lists not found" });
   }
@@ -63,14 +63,15 @@ export const getFavsListById = async (req, res) => {
  * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
  */
 export const updateFavsListById = async (req, res) => {
-  const editedObject = req.body;
-  const numKeys = Object.keys(editedObject).length;
+  const { favslist } = req.body;
+  console.log(favslist);
+  const numKeys = Object.keys(favslist).length;
   if (!numKeys) return res.status(500).json({ message: "Content is required" });
 
   const { id } = req.params;
 
   try {
-    const favs = await Favs.findByIdAndUpdate(id, editedObject, { new: true });
+    const favs = await Favs.findByIdAndUpdate(id, favslist, { new: true });
     if (!favs) return res.status(500).json({ message: "Lists not found" });
     res.status(200).json({ favs });
   } catch (error) {

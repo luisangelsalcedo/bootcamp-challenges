@@ -11,7 +11,7 @@ $fav-list-arrow-dark: $color-main;
 
 // COMPONENT
 .fav-list {
-  max-width: 18rem;
+  min-width: 18rem;
   transition: all 0.3s ease;
   background: $fav-list-bg;
   color: $fav-list-text;

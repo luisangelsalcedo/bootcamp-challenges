@@ -2,17 +2,22 @@ import React, { useEffect, useRef } from "react";
 import "./scss/btn.scss";
 
 export const Btn = React.forwardRef((props, ref) => {
-  const { label, fa, btn } = props;
-  const buttonRef = !ref ? useRef() : ref;
+  const { label, fa, btn, className } = props;
 
-  useEffect(() => {
-    buttonRef.current.classList.add("btn");
-    if (btn) buttonRef.current.classList.add(`btn-${btn}`);
-    if (fa) buttonRef.current.classList.add("btn-icon");
-  }, []);
+  const classRef = useRef("btn");
+
+  if (btn) classRef.current += ` btn-${btn}`;
+  if (fa) classRef.current += " btn-icon";
+
+  useEffect(() => {}, []);
 
   return (
-    <button ref={buttonRef} type="button" {...props}>
+    <button
+      ref={ref}
+      type="button"
+      {...props}
+      className={`${classRef.current} ${className}`}
+    >
       {fa && <i className={`fa fa-${fa}`} aria-hidden="true" />}
       {label && <span>{label}</span>}
     </button>

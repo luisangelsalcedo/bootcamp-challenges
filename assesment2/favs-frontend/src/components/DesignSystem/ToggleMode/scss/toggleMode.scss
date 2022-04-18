@@ -8,84 +8,85 @@ $toggle-mode-label: $color-main;
 
 // COMPONENT
 .toggle-mode {
-  color: $toggle-mode-text;
-  border: solid 0.1rem $toggle-mode-border;
-  overflow: hidden;
-  display: flex;
   width: 4.4rem;
-  align-items: center;
   height: 1.8rem;
   border-radius: 1.8rem;
+  border: solid 0.1rem $toggle-mode-border;
+  color: $toggle-mode-text;
+  background: #fff;
+  overflow: hidden;
   position: relative;
 
-  span {
-    background: #fff;
-    position: absolute;
+  & > div {
+    list-style: none;
     width: 100%;
     height: 100%;
-    transition: all 0.3s ease;
-  }
-
-  label {
-    background: $toggle-mode-label;
-    width: 1.3rem;
-    height: 1.3rem;
-    border-radius: 1.3rem;
-    position: absolute;
-    z-index: 1;
-    margin: 0.3rem;
-    cursor: pointer;
     display: flex;
     align-items: center;
-    transition: all 0.3s ease;
-    transform: translate(-0.1rem);
-  }
 
-  label {
-    &::before {
-      content: "Light";
-      font-size: 0.8rem;
-      position: absolute;
-      right: -2rem;
+    overflow: hidden !important;
+
+    input {
+      display: none;
     }
-    &::after {
+    label {
       content: "";
-      background: $toggle-mode-bg;
+      background: $toggle-mode-label;
+      width: 1.3rem;
+      height: 1.3rem;
+      border-radius: 1.3rem;
       position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 100%;
-      transform: translate(1rem, -1rem);
+      z-index: 1;
+      margin: 0.3rem;
+      display: flex;
+      align-items: center;
       transition: all 0.3s ease;
-      opacity: 0;
-    }
-    &:hover {
-      opacity: 0.7;
+      transform: translate(-0.1rem);
+      cursor: pointer;
+
+      &::before {
+        content: "Light";
+        font-size: 0.8rem;
+        position: absolute;
+        right: -2rem;
+      }
+      &::after {
+        content: "";
+        background: $toggle-mode-bg;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        transform: translate(1rem, -1rem);
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
-  input {
-    display: none;
-    &:checked + label {
-      background: #fff;
-      transform: translate(2.4rem);
-    }
-    &:checked + label::before {
-      content: "Dark";
-      color: #fff;
-      right: 1.8rem;
-    }
-    &:checked + label::after {
-      width: 0.9rem;
-      height: 0.9rem;
-      top: -0.1rem;
-      right: -0.1rem;
-      transform: translate(0, 0);
-      opacity: 1;
-    }
-
-    &:checked + label + span {
-      background: $toggle-mode-bg;
+  &.active {
+    background: $color-dark;
+    & > div {
+      label {
+        background: #fff;
+        transform: translate(2.3rem);
+        &::before {
+          content: "Dark";
+          color: #fff;
+          right: 1.8rem;
+        }
+        &::after {
+          width: 0.9rem;
+          height: 0.9rem;
+          top: -0.1rem;
+          right: -0.1rem;
+          transform: translate(0, 0);
+          opacity: 1;
+        }
+      }
     }
   }
 }
