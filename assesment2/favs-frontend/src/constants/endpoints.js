@@ -3,4 +3,6 @@ export const ENDPOINTS = {
   REGISTER: "/auth/local/register",
   VALIDATE: "/auth/local/validate?token=",
   LOGIN_GOOGLE: "/usergoogle/login",
+  FAVS: "/api/favs",
+  USER: "/api/user",
 };

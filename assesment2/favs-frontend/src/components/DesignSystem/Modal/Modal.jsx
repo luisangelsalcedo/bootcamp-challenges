@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ReactDOM from "react-dom";
 import "./scss/modal.scss";
 import { Btn } from "../Btn/Btn";
+import { ReduxStore } from "../../../redux";
 
 export const Modal = ({ children, show, handler }) => {
   const portalNode = document.createElement("div");
@@ -14,13 +15,15 @@ export const Modal = ({ children, show, handler }) => {
   }, [portalNode]);
 
   return ReactDOM.createPortal(
-    <div className={`modal ${show ? "show" : ""}`}>
-      <Btn onClick={handler} />
-      <div className="modal-content">
-        <Btn fa="times" btn="circle" onClick={handler} className="closeBtn" />
-        <div className="form-content">{children}</div>
+    <ReduxStore>
+      <div className={`modal ${show ? "show" : ""}`}>
+        <Btn onClick={handler} />
+        <div className="modal-content">
+          <Btn fa="times" btn="circle" onClick={handler} className="closeBtn" />
+          <div className="form-content">{children}</div>
+        </div>
       </div>
-    </div>,
+    </ReduxStore>,
     portalNode
   );
 };

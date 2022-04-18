@@ -1,18 +1,47 @@
 import "./scss/favItem.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { useContext } from "react";
 import { Btn } from "../Btn";
+import { useFetchAndLoad } from "../../../hooks";
+import { updateFavsByIdService } from "../../../services";
+import { updateFavs } from "../../../redux";
+import { ModalContext } from "../Modal";
 
-export const FavItem = ({ fa }) => (
-  <details className="fav-item">
-    <summary>
-      <span>
-        {fa && <i className={`fa fa-${fa}`} aria-hidden="true" />}
-        Some details
-      </span>
-      <i className="fa fa-chevron-down" aria-hidden="true" />
-    </summary>
-    <div>More info about the details.</div>
+export const FavItem = ({ fa, fav, index, handleEdit }) => {
+  const { title, link, description } = fav;
+  const { open } = useSelector((state) => state.favs);
+  const { callEndpoint } = useFetchAndLoad();
+  const dispatch = useDispatch();
 
-    <Btn label="Editar" fa="edit" btn="primary" />
-    <Btn label="Borrar" fa="times" btn="danger" />
-  </details>
-);
+  const handleDelete = async () => {
+    open.list.splice(index, 1);
+    const favsUpdate = {
+      _id: open._id,
+      list: open.list,
+    };
+    const { data } = await callEndpoint(updateFavsByIdService(favsUpdate));
+    const { favs } = data;
+    dispatch(updateFavs(favs));
+  };
+
+  return (
+    <details className="fav-item">
+      <summary>
+        <span>
+          {fa && <i className={`fa fa-${fa}`} aria-hidden="true" />}
+          {title}
+        </span>
+        <i className="fa fa-chevron-down" aria-hidden="true" />
+      </summary>
+      <div>{description}</div>
+
+      <Btn fa="edit" btn="primary" onClick={handleEdit} />
+      <Btn
+        fa="external-link-square"
+        btn="primary"
+        onClick={() => window.open(link, "_blank")}
+      />
+      <Btn fa="trash" btn="danger" onClick={handleDelete} />
+    </details>
+  );
+};

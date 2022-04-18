@@ -1,17 +1,15 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
 import { Btn, Logo, TitleField, ToggleMode } from "../../components";
-import { ColorModeContext } from "../../context";
-import { RegisterForm } from "./RegisterForm";
+import { LoginForm } from "./LoginForm";
 import { loginGoogleService, validateTokenService } from "../../services";
 import { useFetchAndLoad } from "../../hooks";
 import { login } from "../../redux";
-import "./register.scss";
+import "./loginPage.scss";
 
-export const Register = () => {
-  const { colorMode, changeColorMode } = useContext(ColorModeContext);
+export const LoginPage = () => {
   const [isForm, setIsForm] = useState(false);
   const { callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
@@ -29,16 +27,16 @@ export const Register = () => {
   };
 
   return (
-    <div className={!colorMode ? "register" : "register dark"}>
-      <ToggleMode active={colorMode} handler={changeColorMode} />
+    <div className="login">
+      <ToggleMode />
       <div className="container">
         <Logo />
-        <TitleField text="Crea tu cuenta para continuar" center />
+        <TitleField text="Inicia sessión para continuar" center />
 
         {!isForm ? (
           <>
             <Btn
-              label="Continúa con tu correo"
+              label="Iniciar sesión"
               btn="outline"
               fa="envelope"
               onClick={handleLoadForm}
@@ -54,11 +52,11 @@ export const Register = () => {
             />
           </>
         ) : (
-          <RegisterForm />
+          <LoginForm />
         )}
 
         <div>
-          ¿Ya tienes cuenta? <Link to="/login">Inicia sessión</Link>
+          ¿No tienes cuenta? <Link to="/register">Regístrate</Link>
         </div>
       </div>
     </div>

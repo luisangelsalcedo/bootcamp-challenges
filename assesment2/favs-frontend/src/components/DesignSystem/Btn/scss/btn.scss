@@ -48,11 +48,19 @@ $btn-outline-border-dark: $color-main;
   &-primary {
     color: #fff !important;
     background: $btn-primary-bg !important;
+    border: 0 !important;
   }
 
   &-danger {
     color: #fff !important;
     background: $btn-danger-bg !important;
+    border: 0 !important;
+  }
+
+  &-success {
+    color: #fff !important;
+    background: $color-green !important;
+    border: 0 !important;
   }
 
   &-google {

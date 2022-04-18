@@ -1,17 +1,15 @@
-import { useContext } from "react";
 import { Link, useLinkClickHandler } from "react-router-dom";
 import { ReactComponent as Image } from "../../assets/svg/ilustracion1.svg";
 import { Logo, TitleField, Btn, ToggleMode } from "../../components";
-import { ColorModeContext } from "../../context";
-import "./home.scss";
 
-export const Home = () => {
-  const { colorMode, changeColorMode } = useContext(ColorModeContext);
+import "./homePage.scss";
+
+export const HomePage = () => {
   const linkRegister = useLinkClickHandler("/login");
 
   return (
-    <div className={!colorMode ? "home" : "home dark"}>
-      <ToggleMode active={colorMode} handler={changeColorMode} />
+    <div className="home">
+      <ToggleMode />
       <div className="container-flex">
         <div>
           <div className="container">

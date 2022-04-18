@@ -2,7 +2,7 @@ import React from "react";
 import "./scss/inputForm.scss";
 
 export const InputForm = React.forwardRef((props, ref) => {
-  const { fa } = props;
+  const { fa, focus } = props;
 
   return (
     <div className="input-form">

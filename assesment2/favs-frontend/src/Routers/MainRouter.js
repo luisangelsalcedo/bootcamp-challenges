@@ -5,7 +5,7 @@ import { PrivateRoutes as Private } from "./PrivateRoutes";
 import { Dashboard } from "../components";
 
 import {
-  FavListPage,
+  FavsPage,
   HomePage,
   LoginPage,
   NotFoundPage,
@@ -21,6 +21,7 @@ export const MainRouter = () => (
           <HomePage />
         </Public>
       }
+      replace
     />
     <Route
       path="/register"
@@ -29,6 +30,7 @@ export const MainRouter = () => (
           <RegisterPage />
         </Public>
       }
+      replace
     />
     <Route
       path="/login"
@@ -37,6 +39,7 @@ export const MainRouter = () => (
           <LoginPage />
         </Public>
       }
+      replace
     />
     <Route
       path="/dashboard"
@@ -45,14 +48,16 @@ export const MainRouter = () => (
           <Dashboard />
         </Private>
       }
+      replace
     >
       <Route
         path="favs/:id"
         element={
           <Private>
-            <FavListPage />
+            <FavsPage />
           </Private>
         }
+        replace
       />
     </Route>
     <Route path="*" element={<NotFoundPage />} />

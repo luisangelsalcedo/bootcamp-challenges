@@ -1,0 +1,40 @@
+@media (min-width: 1px) {
+  .fav-list-page {
+    &-init {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      .icon {
+        font-size: 5.5rem;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
+      .btn {
+        margin: 0 !important;
+      }
+    }
+
+    &-list {
+      padding-top: 5rem;
+    }
+  }
+}
+@media (min-width: 670px) {
+  .fav-list-page {
+    &-init {
+    }
+    &-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .fav-list {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

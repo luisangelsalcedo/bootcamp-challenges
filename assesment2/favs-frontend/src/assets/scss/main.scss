@@ -2,7 +2,7 @@
 
 // general
 .container {
-  margin: 0 1.5rem;
+  padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
 
@@ -29,14 +29,29 @@ a {
   }
 }
 
+.bg-red {
+  background: $color-main;
+  color: #fff;
+
+  .btn {
+    color: #fff !important;
+    border-color: #fff !important;
+    i {
+      color: #fff;
+    }
+  }
+}
+
 .dark {
   color: #fff;
   background: $color-dark;
   transition: all 0.3s ease;
-}
 
-.red {
-  background: $color-main;
+  .bg-red {
+    .btn {
+      border-color: $color-main !important;
+    }
+  }
 }
 
 .grey {

@@ -13,7 +13,7 @@ import {
 import { ReactComponent as Img1 } from "../../assets/svg/ilustracion1.svg";
 import { ReactComponent as Img2 } from "../../assets/svg/ilustracion2.svg";
 
-export const DesignSystem = () => (
+export const DesignSystemPage = () => (
   <div className="ds">
     <div className="light">
       <TitleField text="Light mode" center />

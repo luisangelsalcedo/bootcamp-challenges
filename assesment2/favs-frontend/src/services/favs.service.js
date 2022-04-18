@@ -51,9 +51,13 @@ export const updateFavsByIdService = (favslist) => {
   const controller = loadAbort();
   const { _id: id } = favslist;
   return {
-    call: axiosHTTPclient.put(`${ENDPOINTS.FAVS}/${id}`, favslist, {
-      signal: controller.signal,
-    }),
+    call: axiosHTTPclient.put(
+      `${ENDPOINTS.FAVS}/${id}`,
+      { favslist },
+      {
+        signal: controller.signal,
+      }
+    ),
     controller,
   };
 };

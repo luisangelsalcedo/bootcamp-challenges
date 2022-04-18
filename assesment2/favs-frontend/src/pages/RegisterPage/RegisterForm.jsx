@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { InputForm, Btn } from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
-import { registerService } from "../../services";
+import { registerUserService } from "../../services";
 
 export const RegisterForm = () => {
   const nameRef = useRef();
@@ -30,7 +30,7 @@ export const RegisterForm = () => {
       password: passRef.current.value,
     };
     // console.log(newUser);
-    await callEndpoint(registerService(newUser));
+    await callEndpoint(registerUserService(newUser));
     navigate("/login", { replace: true });
   };
 

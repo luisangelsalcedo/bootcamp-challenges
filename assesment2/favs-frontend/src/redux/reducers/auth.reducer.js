@@ -6,7 +6,7 @@ const initialState = () =>
 let authObject;
 let logoutFalse;
 
-const authReducer = (stare = initialState(), action) => {
+const authReducer = (state = initialState(), action) => {
   switch (action.type) {
     case TYPES.LOGIN:
       authObject = { logged: true, ...action.payload };
@@ -19,7 +19,7 @@ const authReducer = (stare = initialState(), action) => {
       return logoutFalse;
 
     default:
-      return stare;
+      return state;
   }
 };
 

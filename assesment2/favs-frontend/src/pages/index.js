@@ -1,9 +1,12 @@
-import { DesignSystem as DesignSystemPage } from "./DesignSystem/DesignSystem";
-import { Home as HomePage } from "./Home/Home";
-import { Login as LoginPage } from "./Login/Login";
-import { Register as RegisterPage } from "./Register/Register";
-import { NotFound as NotFoundPage } from "./NotFound/NotFound";
-import { FavList as FavListPage } from "./FavList/FavList";
+import { DesignSystemPage } from "./DesignSystemPage/DesignSystemPage";
+import { HomePage } from "./HomePage/HomePage";
+import { LoginPage } from "./LoginPage/LoginPage";
+import { RegisterPage } from "./RegisterPage/RegisterPage";
+import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
+import { FavListPage } from "./FavListPage/FavListPage";
+import { FavsPage } from "./FavsPage/FavsPage";
+import { FavListFormEdit } from "./FavsPage/FavListFormEdit";
+import { FavForm } from "./FavsPage/FavForm";
 
 export {
   DesignSystemPage,
@@ -12,4 +15,7 @@ export {
   RegisterPage,
   NotFoundPage,
   FavListPage,
+  FavsPage,
+  FavListFormEdit,
+  FavForm,
 };
