@@ -1,6 +1,6 @@
 import { ENDPOINTS } from "../constants";
 import { axiosHTTPclient } from "../interceptors";
-import { loadAbort } from "../utils/loadAbortAxios.utils";
+import { loadAbort } from "../utils";
 
 export const loginService = (user) => {
   const controller = loadAbort();
@@ -12,7 +12,7 @@ export const loginService = (user) => {
   };
 };
 
-export const registerService = (user) => {
+export const registerUserService = (user) => {
   const controller = loadAbort();
   return {
     call: axiosHTTPclient.post(ENDPOINTS.REGISTER, user, {
