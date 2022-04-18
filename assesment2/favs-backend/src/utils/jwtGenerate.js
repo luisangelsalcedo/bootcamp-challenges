@@ -9,7 +9,6 @@ export const generateJWT = payload => {
         expiresIn: "1d",
       },
       (err, token) => {
-        console.log(err, token);
         if (!err) resolve(token);
         else reject(null);
       }

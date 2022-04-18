@@ -3,14 +3,16 @@ import Favs from "../models/favs.model.js";
 /**
  * * Creating a new favorites list
  * @param {Object} req - HTTPRequest Object
+ * @param {String} req.auth.id - User auth id
  * @param {String} req.body.name - Favorites list name
  * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
  */
 export const createFavsList = async (req, res) => {
+  const { id: userID } = req.auth;
   const { name } = req.body;
   if (!name) return res.status(500).json({ message: "Name is required" });
 
-  const favs = new Favs({ name });
+  const favs = new Favs({ name, owner: userID });
 
   try {
     const newFavs = await favs.save();
@@ -22,11 +24,13 @@ export const createFavsList = async (req, res) => {
 
 /**
  * * Get all favorites lists
+ * @param {String} req.auth.id - User auth id
  * @return {HTTPResponse Object} - status 200 return {Favs[]} | status 500 return {message} | status 204
  */
 export const getAllFavsLists = async (req, res) => {
+  const { id: userID } = req.auth;
   try {
-    const favs = await Favs.find();
+    const favs = await Favs.find({ owner: userID });
     if (!favs.length) return res.status(204).send();
     res.status(200).json({ favs });
   } catch (error) {

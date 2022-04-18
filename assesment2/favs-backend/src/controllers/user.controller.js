@@ -19,11 +19,8 @@ export const login = async (req, res) => {
   const user = await User.findOne({ email, is_google_log: false });
   if (!user) return res.status(403).json({ message: "User not found" });
 
-  console.log("hola");
   // compare hash
   const hashIsCorrect = await bcrypt.compare(pass, user.password);
-
-  console.log("bye", hashIsCorrect);
 
   if (!hashIsCorrect)
     return res.status(403).json({ message: "Password is not correct" });
@@ -101,7 +98,7 @@ export const loginAndGoogle = async (req, res) => {
   if (userFound) {
     const payload = { id: userFound._id, ...profileObj };
     const token = await generateJWT(payload);
-    console.log("login", token);
+
     !!token && res.status(200).json({ token });
   } else {
     // create new user
@@ -115,7 +112,7 @@ export const loginAndGoogle = async (req, res) => {
       const userSave = await newUser.save();
       const payload = { id: userSave._id, ...profileObj };
       const token = await generateJWT(payload);
-      console.log("register", token);
+
       !!token && res.status(200).json({ token });
     } catch (error) {
       res.status(403).json({ message: error.message });

@@ -8,7 +8,8 @@ export const authentication = (req, res, next) => {
     // verificar token
     jwt.verify(token, process.env.JWT_PASSWORD, (err, dataAuth) => {
       if (!!err) return res.status(403).json({ message: "Invalid token" });
-      req.auth = dataAuth;
+      //
+      req.auth = dataAuth; // send data user auth
       next();
     });
     //

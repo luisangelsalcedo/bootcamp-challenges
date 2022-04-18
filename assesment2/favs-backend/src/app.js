@@ -15,12 +15,12 @@ const app = express();
 app.use(express.json());
 app.use(express.static("public"));
 app.use(cors());
+app.all("/api/*", authentication);
 
 // template
 app.set("view engine", "ejs");
 
 // routes
-app.all("/api/*", authentication);
 app.use(userRoutes);
 app.use(favsRoutes);
 app.use(templateRoutes);
