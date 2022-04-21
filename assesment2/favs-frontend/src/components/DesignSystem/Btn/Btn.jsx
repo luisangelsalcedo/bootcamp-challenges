@@ -1,6 +1,16 @@
 import React, { useEffect, useRef } from "react";
 import "./scss/btn.scss";
 
+/**
+ * ## Btn component
+ * * Custom button component
+ * **Use:**
+ * ```
+ * <Btn label={String} fa={String} btn={String} ...props />
+ * ```
+ * @param {object} props
+ * @returns {jsx} JSX
+ */
 export const Btn = React.forwardRef((props, ref) => {
   const { label, fa, btn, className } = props;
 

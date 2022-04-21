@@ -2,6 +2,17 @@ import "./scss/toggleMode.scss";
 import { useContext } from "react";
 import { ColorModeContext } from "./context/ColorModeProvider";
 
+/**
+ * ## ToggleMode component
+ * * Dark mode controller component
+ * * Works with ColorModeContext and ColorModeProvider context
+ * **Use:**
+ * ```
+ * <ToggleMode />
+ * ```
+ * @param {object} props
+ * @returns {jsx} JSX
+ */
 export const ToggleMode = () => {
   const { colorMode, changeColorMode } = useContext(ColorModeContext);
 

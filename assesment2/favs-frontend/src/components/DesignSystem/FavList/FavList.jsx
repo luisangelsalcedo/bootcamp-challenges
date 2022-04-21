@@ -1,6 +1,16 @@
 import { useLinkClickHandler, useParams } from "react-router-dom";
 import "./scss/favList.scss";
 
+/**
+ * ## FavList component
+ * * Custom card component
+ * **Use:**
+ * ```
+ * <FavList favs={favs} />
+ * ```
+ * @param {object} props
+ * @returns {jsx} JSX
+ */
 export const FavList = ({ favs }) => {
   const { _id: id, name, list } = favs;
   const { id: paramID } = useParams();

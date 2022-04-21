@@ -1,7 +1,13 @@
 import { useEffect, useState } from "react";
 
 /**
- * @returns { boolean, Promise }
+ * ## useFetchAndLoad
+ * * Hook to control the call of an api and the loading of data
+ * **use:**
+ * ```
+ * const { loading, callEndpoint } = useFetchAndLoad()
+ * ```
+ * @returns {Object} - {boolean, Promise}
  */
 export const useFetchAndLoad = () => {
   let controller;
@@ -10,6 +16,7 @@ export const useFetchAndLoad = () => {
   const [loading, setLoading] = useState(false);
 
   /**
+   * ## callEndpoint
    * * API request and load state handling
    * @param {Promise} axiosCall
    * @param {Axios Request} axiosCall.call - Call Api

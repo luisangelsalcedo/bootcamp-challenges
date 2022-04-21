@@ -7,6 +7,16 @@ import { updateFavsByIdService } from "../../../services";
 import { updateFavs } from "../../../redux";
 import { ModalContext } from "../Modal";
 
+/**
+ * ## FavItem component
+ * * Custom item component
+ * **Use:**
+ * ```
+ * <FavItem fa={String} fav={String} index={Number} handleEdit={Function} />
+ * ```
+ * @param {object} props
+ * @returns {jsx} JSX
+ */
 export const FavItem = ({ fa, fav, index, handleEdit }) => {
   const { title, link, description } = fav;
   const { open } = useSelector((state) => state.favs);

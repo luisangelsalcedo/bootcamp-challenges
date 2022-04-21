@@ -34,6 +34,11 @@ axiosHTTPclient.interceptors.request.use(
 axiosHTTPclient.interceptors.response.use(
   (response) => response,
   (error) => {
+    if (error.response.request.status === 401) {
+      localStorage.setItem("auth", JSON.stringify({ logger: false }));
+      window.location.href = "/";
+    }
+
     console.log(error.response.data);
 
     return Promise.reject(error);
