@@ -1,6 +1,7 @@
 import Favs from "../models/favs.model.js";
 
 /**
+ * ## createFavsList
  * * Creating a new favorites list
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.auth.id - User auth id
@@ -23,6 +24,7 @@ export const createFavsList = async (req, res) => {
 };
 
 /**
+ * ## getAllFavsLists
  * * Get all favorites lists
  * @param {String} req.auth.id - User auth id
  * @return {HTTPResponse Object} - status 200 return {Favs[]} | status 500 return {message} | status 204
@@ -39,6 +41,7 @@ export const getAllFavsLists = async (req, res) => {
 };
 
 /**
+ * ## getFavsListById
  * * Get favorites list by ID
  * @param {Object} req - HTTPRequest Object
  * @param {ObjectId} req.params.id - Favorites list ID
@@ -56,6 +59,7 @@ export const getFavsListById = async (req, res) => {
 };
 
 /**
+ * ## updateFavsListById
  * * Update favorites list by ID
  * @param {Object} req - HTTPRequest Object
  * @param {ObjectId} req.params.id - Favorites list ID
@@ -80,6 +84,7 @@ export const updateFavsListById = async (req, res) => {
 };
 
 /**
+ * ## deleteFavsListById
  * * Delete favorites list by ID
  * @param {Object} req - HTTPRequest Object
  * @param {ObjectId} req.params.id - Favorites list ID

@@ -4,11 +4,13 @@ import jwt from "jsonwebtoken";
 import { generateJWT } from "../utils/jwtGenerate.js";
 
 /**
- * * Log in with a email and password
+ * ## login
+ * * Login with a email and password
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.body.email - Email sent to validate login
  * @param {String} req.body.password - Password sent to validate login
  * @return {HTTPResponse Object} - status 200 return {token} | status 403,500 return {message}
+ *
  */
 export const login = async (req, res) => {
   const { email, password: pass } = req.body;
@@ -35,6 +37,7 @@ export const login = async (req, res) => {
 };
 
 /**
+ * ## createUser
  * * Create a new user with a email and password
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.body.email - Email sent to validate login
@@ -60,6 +63,7 @@ export const createUser = async (req, res) => {
 };
 
 /**
+ * ## authToken
  * * validate user authentication token
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.query.token - Authentication token
@@ -79,12 +83,13 @@ export const authToken = async (req, res) => {
 };
 
 /**
+ * ## loginAndRegisterGoogle
  * * login and register user google
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.body.profileObj - Profile object sent by google
  * @return {HTTPResponse Object} - status 200 return {token} | status 403,500 return {message}
  */
-export const loginAndGoogle = async (req, res) => {
+export const loginAndRegisterGoogle = async (req, res) => {
   const { profileObj } = req.body;
   if (!profileObj)
     return res.status(403).json({ message: "Authentication error" });
