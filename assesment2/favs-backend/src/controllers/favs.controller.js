@@ -68,7 +68,6 @@ export const getFavsListById = async (req, res) => {
  */
 export const updateFavsListById = async (req, res) => {
   const { favslist } = req.body;
-  console.log(favslist);
   const numKeys = Object.keys(favslist).length;
   if (!numKeys) return res.status(500).json({ message: "Content is required" });
 

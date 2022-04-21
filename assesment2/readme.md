@@ -10,6 +10,8 @@
 <img src="https://raw.githubusercontent.com/motdotla/dotenv/master/dotenv.png" width='28'/>&nbsp;&nbsp;
 <img src="https://img.icons8.com/color/32/000000/java-web-token.png"/>&nbsp;&nbsp;
 <img src="https://img.stackshare.io/package/19054/default_2be036aaca5c71baf790e00f1ef80dd37a625905.png" width='28'/>
+<img src="https://progsoft.net/images/ejs-icon-bccf3f017751a71ee75c69021ee1020fc0d9067e.jpg" width='28'/>
+<img src="https://img.icons8.com/color/32/000000/bootstrap.png"/>
 </div>
 
 [Repositorio](./favs-backend/) |
@@ -32,6 +34,9 @@
 </div>
 
 [Repositorio](./favs-frontend/) | [UI Design](https://www.figma.com/file/Z2gIl93XMtpLRUHsEBDKOS/favsApp?node-id=0%3A1)
+
+<br>
+<img src="./favs-frontend/public/img/screenshot.jpg"/>
 
 ---
 

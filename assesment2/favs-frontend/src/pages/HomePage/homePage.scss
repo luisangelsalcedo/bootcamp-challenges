@@ -3,9 +3,7 @@
 // responsive
 @media (min-width: 1px) {
   .home {
-    height: 100vh;
-    overflow: hidden;
-
+    padding: 4rem 0 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -42,11 +40,17 @@
         justify-content: center;
       }
     }
+    .img-responsive {
+      width: 400px;
+    }
   }
 }
 
 @media (min-width: 800px) {
   .home {
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
     .container {
       &-flex {
         flex-direction: row;
