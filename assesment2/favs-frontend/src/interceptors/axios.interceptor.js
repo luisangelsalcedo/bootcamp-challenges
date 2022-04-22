@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useContext } from "react";
 
 /**
  * * AXIOS INSTANCE

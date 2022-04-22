@@ -9,6 +9,8 @@ import {
   deleteFavs,
   openFavs,
   openFavsById,
+  cleanFavs,
+  exit,
 } from "./actions";
 
 export {
@@ -22,4 +24,6 @@ export {
   openFavs,
   openFavsById,
   ReduxStore,
+  cleanFavs,
+  exit,
 };

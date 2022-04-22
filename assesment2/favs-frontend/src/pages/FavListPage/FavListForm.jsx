@@ -5,6 +5,7 @@ import {
   Btn,
   ModalContext,
   TitleField,
+  Preloading,
 } from "../../components/DesignSystem";
 
 import { useFetchAndLoad } from "../../hooks";
@@ -13,7 +14,7 @@ import { createFavsListService } from "../../services";
 
 export const FavListForm = () => {
   const { closeModal } = useContext(ModalContext);
-  const { callEndpoint } = useFetchAndLoad();
+  const { loading, callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
   const nameRef = useRef();
   const btnRef = useRef();
@@ -41,25 +42,29 @@ export const FavListForm = () => {
   }, []);
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <TitleField text="Crea una nueva lista" size="1.2" center />
-        <InputForm
-          ref={nameRef}
-          placeholder="Nombre de lista"
-          fa="star"
-          onChange={handleChange}
-          required
-        />
-        <Btn
-          ref={btnRef}
-          label="Guardar"
-          btn="outline"
-          className="btn-block"
-          type="submit"
-          disabled
-        />
-      </form>
-    </div>
+    <>
+      {loading ? (
+        <Preloading />
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <TitleField text="Crea una nueva lista" size="1.2" center />
+          <InputForm
+            ref={nameRef}
+            placeholder="Nombre de lista"
+            fa="star"
+            onChange={handleChange}
+            required
+          />
+          <Btn
+            ref={btnRef}
+            label="Guardar"
+            btn="outline"
+            className="btn-block"
+            type="submit"
+            disabled
+          />
+        </form>
+      )}
+    </>
   );
 };

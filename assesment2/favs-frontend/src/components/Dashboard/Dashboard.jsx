@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useContext } from "react";
 import { Avatar, Logo, Btn, ToggleMode, ModalContext } from "../DesignSystem";
 import { FavListPage } from "../../pages/FavListPage";
-import { logout } from "../../redux";
+import { exit } from "../../redux";
 
 export const Dashboard = () => {
   const { name, imageUrl } = useSelector((state) => state.auth);
@@ -13,7 +13,7 @@ export const Dashboard = () => {
   const { openModal } = useContext(ModalContext);
 
   const handleLogout = () => {
-    dispatch(logout());
+    dispatch(exit());
   };
 
   const handleCredits = () => {

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { InputForm, Btn } from "../../components";
+import { InputForm, Btn, Preloading } from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
 import { loginService, validateTokenService } from "../../services";
@@ -11,7 +11,7 @@ export const LoginForm = () => {
   const passRef = useRef();
   const btnRef = useRef();
   const dispatch = useDispatch();
-  const { callEndpoint } = useFetchAndLoad();
+  const { loading, callEndpoint } = useFetchAndLoad();
 
   const handleChange = () => {
     const emailVal = emailRef.current.value.length;
@@ -39,32 +39,38 @@ export const LoginForm = () => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        ref={emailRef}
-        placeholder="Correo electrónico"
-        fa="envelope"
-        required
-        onChange={handleChange}
-        pattern={PATTERNS.EMAIL.exp}
-        title={PATTERNS.EMAIL.title}
-      />
-      <InputForm
-        ref={passRef}
-        placeholder="Contraseña"
-        fa="lock"
-        type="password"
-        required
-        onChange={handleChange}
-      />
-      <Btn
-        ref={btnRef}
-        label="Iniciar sesión"
-        btn="outline"
-        className="btn-block"
-        type="submit"
-        disabled
-      />
-    </form>
+    <>
+      {loading ? (
+        <Preloading />
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <InputForm
+            ref={emailRef}
+            placeholder="Correo electrónico"
+            fa="envelope"
+            required
+            onChange={handleChange}
+            pattern={PATTERNS.EMAIL.exp}
+            title={PATTERNS.EMAIL.title}
+          />
+          <InputForm
+            ref={passRef}
+            placeholder="Contraseña"
+            fa="lock"
+            type="password"
+            required
+            onChange={handleChange}
+          />
+          <Btn
+            ref={btnRef}
+            label="Iniciar sesión"
+            btn="outline"
+            className="btn-block"
+            type="submit"
+            disabled
+          />
+        </form>
+      )}
+    </>
   );
 };

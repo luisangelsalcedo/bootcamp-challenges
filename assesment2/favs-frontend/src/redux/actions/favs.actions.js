@@ -23,3 +23,7 @@ export const openFavsById = (id) => ({
   type: TYPES.OPEN_FAVS_BY_ID,
   payload: id,
 });
+
+export const cleanFavs = () => ({
+  type: TYPES.CLEAN,
+});

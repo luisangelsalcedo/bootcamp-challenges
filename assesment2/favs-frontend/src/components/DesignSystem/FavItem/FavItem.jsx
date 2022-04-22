@@ -6,6 +6,7 @@ import { useFetchAndLoad } from "../../../hooks";
 import { updateFavsByIdService } from "../../../services";
 import { updateFavs } from "../../../redux";
 import { ModalContext } from "../Modal";
+import { Preloading } from "../Preloading";
 
 /**
  * ## FavItem component
@@ -20,7 +21,7 @@ import { ModalContext } from "../Modal";
 export const FavItem = ({ fa, fav, index, handleEdit }) => {
   const { title, link, description } = fav;
   const { open } = useSelector((state) => state.favs);
-  const { callEndpoint } = useFetchAndLoad();
+  const { loading, callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
@@ -35,23 +36,31 @@ export const FavItem = ({ fa, fav, index, handleEdit }) => {
   };
 
   return (
-    <details className="fav-item">
-      <summary>
-        <span>
-          {fa && <i className={`fa fa-${fa}`} aria-hidden="true" />}
-          {title}
-        </span>
-        <i className="fa fa-chevron-down" aria-hidden="true" />
-      </summary>
-      <div>{description}</div>
+    <>
+      {loading ? (
+        <div className="fav-item">
+          <Preloading />
+        </div>
+      ) : (
+        <details className="fav-item">
+          <summary>
+            <span>
+              {fa && <i className={`fa fa-${fa}`} aria-hidden="true" />}
+              {title}
+            </span>
+            <i className="fa fa-chevron-down" aria-hidden="true" />
+          </summary>
+          <div>{description}</div>
 
-      <Btn fa="edit" btn="primary" onClick={handleEdit} />
-      <Btn
-        fa="external-link-square"
-        btn="primary"
-        onClick={() => window.open(link, "_blank")}
-      />
-      <Btn fa="trash" btn="danger" onClick={handleDelete} />
-    </details>
+          <Btn fa="edit" btn="primary" onClick={handleEdit} />
+          <Btn
+            fa="external-link-square"
+            btn="primary"
+            onClick={() => window.open(link, "_blank")}
+          />
+          <Btn fa="trash" btn="danger" onClick={handleDelete} />
+        </details>
+      )}
+    </>
   );
 };

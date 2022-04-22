@@ -25,7 +25,7 @@ export const ColorModeProvider = ({ children }) => {
 
   return (
     <ColorModeContext.Provider value={valueMemo}>
-      <div className={colorMode ? "dark" : ""}>{children}</div>
+      <main className={colorMode ? "dark" : ""}>{children}</main>
     </ColorModeContext.Provider>
   );
 };

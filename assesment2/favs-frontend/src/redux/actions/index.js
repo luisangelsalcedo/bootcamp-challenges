@@ -1,4 +1,4 @@
-import { login, logout } from "./auth.actions";
+import { login, logout, exit } from "./auth.actions";
 import {
   createFavs,
   getAllFavs,
@@ -6,6 +6,7 @@ import {
   deleteFavs,
   openFavs,
   openFavsById,
+  cleanFavs,
 } from "./favs.actions";
 
 export {
@@ -17,4 +18,6 @@ export {
   deleteFavs,
   openFavs,
   openFavsById,
+  cleanFavs,
+  exit,
 };

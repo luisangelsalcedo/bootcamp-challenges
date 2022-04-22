@@ -10,11 +10,12 @@ import {
   Btn,
   TitleField,
   ModalContext,
+  Preloading,
 } from "../../components/DesignSystem";
 import { FavListFormEdit } from "./FavListFormEdit";
-import "./favsPage.scss";
 import { FavForm } from "./FavForm";
 import { FavFormEdit } from "./FavFormEdit";
+import "./favsPage.scss";
 
 export const FavsPage = () => {
   const { id } = useParams();
@@ -57,12 +58,12 @@ export const FavsPage = () => {
   return (
     <div className="fav-page">
       {loading ? (
-        "cargando..."
+        <Preloading />
       ) : (
-        <div className="fav-page">
+        <div className="container">
           <div className="title">
             <Btn fa="angle-left" onClick={linkClose} />
-            <TitleField text={open?.name} size="2" />
+            <TitleField text={open?.name} size="1.8" />
           </div>
 
           {!open?.list.length ? (

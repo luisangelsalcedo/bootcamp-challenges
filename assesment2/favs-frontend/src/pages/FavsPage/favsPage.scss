@@ -1,6 +1,11 @@
 @media (min-width: 1px) {
   .fav-page {
-    padding-top: 4rem;
+    & > .preloading {
+      height: 100vh;
+    }
+    .container {
+      padding: 7rem 0 0 0;
+    }
 
     .title {
       display: flex;
@@ -40,8 +45,6 @@
 }
 @media (min-width: 850px) {
   .fav-page {
-    .title {
-    }
     .btns {
       .btn {
         span {

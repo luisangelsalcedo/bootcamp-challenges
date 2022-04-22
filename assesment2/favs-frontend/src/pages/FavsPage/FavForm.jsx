@@ -5,6 +5,7 @@ import {
   InputForm,
   TitleField,
   ModalContext,
+  Preloading,
 } from "../../components/DesignSystem";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
@@ -18,7 +19,7 @@ export const FavForm = () => {
   const linkRef = useRef();
   const descriptionRef = useRef();
   const btnRef = useRef();
-  const { callEndpoint } = useFetchAndLoad();
+  const { loading, callEndpoint } = useFetchAndLoad();
   const { closeModal } = useContext(ModalContext);
 
   const handleChange = () => {
@@ -51,41 +52,45 @@ export const FavForm = () => {
     closeModal();
   };
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <TitleField text="Nuevo item" size="1.2" center />
-        <InputForm
-          ref={titleRef}
-          placeholder="Titulo"
-          fa="check"
-          onChange={handleChange}
-          required
-        />
-        <InputForm
-          ref={linkRef}
-          placeholder="Enlace"
-          fa="external-link-square"
-          onChange={handleChange}
-          required
-          pattern={PATTERNS.URL.exp}
-          title={PATTERNS.URL.title}
-        />
-        <InputForm
-          ref={descriptionRef}
-          placeholder="Descripción"
-          fa="align-left"
-          onChange={handleChange}
-          required
-        />
-        <Btn
-          ref={btnRef}
-          label="Guardar"
-          btn="outline"
-          className="btn-block"
-          type="submit"
-          disabled
-        />
-      </form>
-    </div>
+    <>
+      {loading ? (
+        <Preloading />
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <TitleField text="Nuevo item" size="1.2" center />
+          <InputForm
+            ref={titleRef}
+            placeholder="Titulo"
+            fa="check"
+            onChange={handleChange}
+            required
+          />
+          <InputForm
+            ref={linkRef}
+            placeholder="Enlace"
+            fa="external-link-square"
+            onChange={handleChange}
+            required
+            pattern={PATTERNS.URL.exp}
+            title={PATTERNS.URL.title}
+          />
+          <InputForm
+            ref={descriptionRef}
+            placeholder="Descripción"
+            fa="align-left"
+            onChange={handleChange}
+            required
+          />
+          <Btn
+            ref={btnRef}
+            label="Guardar"
+            btn="outline"
+            className="btn-block"
+            type="submit"
+            disabled
+          />
+        </form>
+      )}
+    </>
   );
 };

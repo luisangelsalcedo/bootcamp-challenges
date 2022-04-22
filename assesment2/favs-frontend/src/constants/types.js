@@ -8,4 +8,5 @@ export const TYPES = {
   DELETE_FAVS: "[favs] delete",
   OPEN_FAVS: "[favs] open by api",
   OPEN_FAVS_BY_ID: "[favs] open",
+  CLEAN: "[all] clean",
 };

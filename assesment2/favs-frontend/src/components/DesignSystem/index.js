@@ -7,6 +7,7 @@ import { TitleField } from "./TitleField";
 import { ToggleMode, ColorModeContext, ColorModeProvider } from "./ToggleMode";
 import { Avatar } from "./Avatar";
 import { Modal, ModalContext, ModalProvider } from "./Modal";
+import { Preloading, LoadingMain } from "./Preloading";
 
 export {
   Btn,
@@ -22,4 +23,6 @@ export {
   Modal,
   ModalContext,
   ModalProvider,
+  Preloading,
+  LoadingMain,
 };

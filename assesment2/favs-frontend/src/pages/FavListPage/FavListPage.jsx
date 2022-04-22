@@ -5,6 +5,7 @@ import {
   Btn,
   FavList,
   ModalContext,
+  Preloading,
 } from "../../components/DesignSystem";
 import { useFetchAndLoad } from "../../hooks";
 import { getAllFavs } from "../../redux/actions";
@@ -35,7 +36,7 @@ export const FavListPage = () => {
   return (
     <div className="fav-list-page">
       {loading ? (
-        "loading..."
+        <Preloading />
       ) : (
         <div>
           {!favsList.length ? (

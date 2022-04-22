@@ -1,5 +1,7 @@
 import { Dashboard } from "./Dashboard/Dashboard";
 import {
+  LoadingMain,
+  Preloading,
   Btn,
   FavItem,
   FavList,
@@ -30,4 +32,6 @@ export {
   Modal,
   ModalContext,
   ModalProvider,
+  Preloading,
+  LoadingMain,
 };

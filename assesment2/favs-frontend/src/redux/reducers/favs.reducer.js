@@ -40,6 +40,9 @@ export const favsReducer = (state = initialState, action) => {
         open: state.favsList.find(({ _id }) => _id === action.payload),
       };
 
+    case TYPES.CLEAN:
+      return initialState;
+
     default:
       return state;
   }

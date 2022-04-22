@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { InputForm, Btn } from "../../components";
+import { InputForm, Btn, Preloading } from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
 import { registerUserService } from "../../services";
@@ -10,7 +10,7 @@ export const RegisterForm = () => {
   const emailRef = useRef();
   const passRef = useRef();
   const btnRef = useRef();
-  const { callEndpoint } = useFetchAndLoad();
+  const { loading, callEndpoint } = useFetchAndLoad();
   const navigate = useNavigate();
 
   const handleChange = () => {
@@ -39,39 +39,45 @@ export const RegisterForm = () => {
   }, []);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <InputForm
-        ref={nameRef}
-        placeholder="Nombre completo"
-        fa="user"
-        required
-        onChange={handleChange}
-      />
-      <InputForm
-        ref={emailRef}
-        placeholder="Correo electrónico"
-        fa="envelope"
-        required
-        onChange={handleChange}
-        pattern={PATTERNS.EMAIL.exp}
-        title={PATTERNS.EMAIL.title}
-      />
-      <InputForm
-        ref={passRef}
-        placeholder="Contraseña"
-        fa="lock"
-        type="password"
-        required
-        onChange={handleChange}
-      />
-      <Btn
-        ref={btnRef}
-        label="Iniciar sesión"
-        btn="outline"
-        className="btn-block"
-        type="submit"
-        disabled
-      />
-    </form>
+    <>
+      {loading ? (
+        <Preloading />
+      ) : (
+        <form onSubmit={handleSubmit}>
+          <InputForm
+            ref={nameRef}
+            placeholder="Nombre completo"
+            fa="user"
+            required
+            onChange={handleChange}
+          />
+          <InputForm
+            ref={emailRef}
+            placeholder="Correo electrónico"
+            fa="envelope"
+            required
+            onChange={handleChange}
+            pattern={PATTERNS.EMAIL.exp}
+            title={PATTERNS.EMAIL.title}
+          />
+          <InputForm
+            ref={passRef}
+            placeholder="Contraseña"
+            fa="lock"
+            type="password"
+            required
+            onChange={handleChange}
+          />
+          <Btn
+            ref={btnRef}
+            label="Iniciar sesión"
+            btn="outline"
+            className="btn-block"
+            type="submit"
+            disabled
+          />
+        </form>
+      )}
+    </>
   );
 };

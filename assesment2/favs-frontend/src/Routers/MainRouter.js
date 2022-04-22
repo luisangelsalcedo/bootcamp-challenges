@@ -12,7 +12,7 @@ import {
   RegisterPage,
 } from "../pages";
 
-export const MainRouter = () => (
+const MainRouter = () => (
   <Routes>
     <Route
       path="/"
@@ -63,3 +63,5 @@ export const MainRouter = () => (
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );
+
+export default MainRouter;

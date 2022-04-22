@@ -1,5 +1,9 @@
 @media (min-width: 1px) {
   .fav-list-page {
+    & > .preloading {
+      height: 100vh;
+    }
+
     &-init {
       height: 100vh;
       display: flex;
