@@ -5,14 +5,19 @@ import "./scss/avatar.scss";
  * * Component to display user image
  * **Use:**
  * ```
- * <Avatar name={String} img={String} handler={Function} />
+ * <Avatar name={String} img={String} size={String} handler={Function} />
  * ```
  * @param {object} props
  * @returns {jsx} JSX
  */
-export const Avatar = ({ name, img, handler }) => (
-  <button type="button" className="avatar btn" onClick={handler}>
+export const Avatar = ({ name = "", img, handler, size = "2.3rem" }) => (
+  <button type="button" className="avatar" onClick={handler}>
     <span>{name}</span>
-    <div className="img">{img ? <img src={img} alt="" /> : [...name][0]}</div>
+    <div
+      className="img"
+      style={{ width: size, height: size, borderRadius: size }}
+    >
+      {img ? <img src={img} alt="" /> : [...name][0]}
+    </div>
   </button>
 );

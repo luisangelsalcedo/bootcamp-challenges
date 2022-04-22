@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { Avatar, Logo, Btn, ToggleMode, ModalContext } from "../DesignSystem";
 import { FavListPage } from "../../pages/FavListPage";
 import { exit } from "../../redux";
+import { CreditsPage } from "../../pages/CreditsPage";
 
 export const Dashboard = () => {
   const { name, imageUrl } = useSelector((state) => state.auth);
@@ -17,7 +18,7 @@ export const Dashboard = () => {
   };
 
   const handleCredits = () => {
-    openModal("Desarrollado por Luis Angel Salcedo Gavidia");
+    openModal(<CreditsPage />);
   };
 
   return (
@@ -25,9 +26,9 @@ export const Dashboard = () => {
       <div className="dashboard">
         <div className="dashboard-header">
           <div className="container">
-            <Logo />
+            <Logo handler={handleCredits} />
             <div>
-              <Avatar name={name} img={imageUrl} handler={handleCredits} />
+              <Avatar name={name} img={imageUrl} />
               <Btn label="Salir" fa="sign-out" onClick={handleLogout} />
             </div>
             <ToggleMode />

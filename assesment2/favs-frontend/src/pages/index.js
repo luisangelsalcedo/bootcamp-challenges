@@ -7,6 +7,7 @@ import { FavListPage } from "./FavListPage/FavListPage";
 import { FavsPage } from "./FavsPage/FavsPage";
 import { FavListFormEdit } from "./FavsPage/FavListFormEdit";
 import { FavForm } from "./FavsPage/FavForm";
+import { CreditsPage } from "./CreditsPage/CreditsPage";
 
 export {
   DesignSystemPage,
@@ -18,4 +19,5 @@ export {
   FavsPage,
   FavListFormEdit,
   FavForm,
+  CreditsPage,
 };
