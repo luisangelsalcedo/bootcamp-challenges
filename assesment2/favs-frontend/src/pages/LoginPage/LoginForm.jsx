@@ -1,6 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import { InputForm, Btn, Preloading } from "../../components";
+import {
+  InputForm,
+  Btn,
+  Preloading,
+  NotificationContext,
+} from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
 import { loginService, validateTokenService } from "../../services";
@@ -12,6 +17,7 @@ export const LoginForm = () => {
   const btnRef = useRef();
   const dispatch = useDispatch();
   const { loading, callEndpoint } = useFetchAndLoad();
+  const { openNotice } = useContext(NotificationContext);
 
   const handleChange = () => {
     const emailVal = emailRef.current.value.length;
@@ -32,6 +38,7 @@ export const LoginForm = () => {
     const { data: payload } = await callEndpoint(validateTokenService(token));
 
     dispatch(login({ ...token, ...payload }));
+    await openNotice(`Welcome  ${payload.name}`);
   };
 
   useEffect(() => {

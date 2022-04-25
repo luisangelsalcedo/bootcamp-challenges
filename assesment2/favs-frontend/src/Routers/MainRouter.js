@@ -63,5 +63,4 @@ const MainRouter = () => (
     <Route path="*" element={<NotFoundPage />} />
   </Routes>
 );
-
 export default MainRouter;

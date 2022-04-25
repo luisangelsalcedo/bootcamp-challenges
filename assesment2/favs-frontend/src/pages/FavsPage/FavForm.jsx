@@ -6,6 +6,7 @@ import {
   TitleField,
   ModalContext,
   Preloading,
+  NotificationContext,
 } from "../../components/DesignSystem";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
@@ -13,14 +14,15 @@ import { updateFavs } from "../../redux";
 import { updateFavsByIdService } from "../../services";
 
 export const FavForm = () => {
+  const { closeModal } = useContext(ModalContext);
+  const { openNotice } = useContext(NotificationContext);
+  const { loading, callEndpoint } = useFetchAndLoad();
   const { open } = useSelector((state) => state.favs);
   const dispatch = useDispatch();
   const titleRef = useRef();
   const linkRef = useRef();
   const descriptionRef = useRef();
   const btnRef = useRef();
-  const { loading, callEndpoint } = useFetchAndLoad();
-  const { closeModal } = useContext(ModalContext);
 
   const handleChange = () => {
     const titleVal = titleRef.current.value.length;
@@ -48,8 +50,12 @@ export const FavForm = () => {
 
     const { data } = await callEndpoint(updateFavsByIdService(favsUpdate));
     const { favs } = data;
+
     dispatch(updateFavs(favs));
     closeModal();
+
+    const newItemName = favs.list[favs.list.length - 1].title;
+    await openNotice(`${newItemName} has been added`);
   };
   return (
     <>

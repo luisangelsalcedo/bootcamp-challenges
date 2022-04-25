@@ -6,6 +6,7 @@ import {
   FavList,
   ModalContext,
   Preloading,
+  NotificationContext,
 } from "../../components/DesignSystem";
 import { useFetchAndLoad } from "../../hooks";
 import { getAllFavs } from "../../redux/actions";
@@ -18,6 +19,7 @@ export const FavListPage = () => {
   const { loading, callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
   const { favsList } = useSelector((state) => state.favs);
+  const { openNotice } = useContext(NotificationContext);
 
   const handleClick = () => {
     openModal(<FavListForm />);
@@ -26,7 +28,11 @@ export const FavListPage = () => {
   const handleLoad = async () => {
     const { data } = await callEndpoint(getAllFavsService());
     const { arrFavs } = data;
-    if (data) dispatch(getAllFavs(arrFavs));
+    if (data) {
+      dispatch(getAllFavs(arrFavs));
+    } else {
+      await openNotice(`Create your first list`);
+    }
   };
 
   useEffect(() => {

@@ -11,7 +11,8 @@ import {
   TitleField,
   ModalContext,
   Preloading,
-} from "../../components/DesignSystem";
+  NotificationContext,
+} from "../../components";
 import { FavListFormEdit } from "./FavListFormEdit";
 import { FavForm } from "./FavForm";
 import { FavFormEdit } from "./FavFormEdit";
@@ -25,6 +26,7 @@ export const FavsPage = () => {
   const linkClose = useLinkClickHandler(`/dashboard`);
   const navigate = useNavigate();
   const { openModal } = useContext(ModalContext);
+  const { openAlert } = useContext(NotificationContext);
 
   const handleLoad = async () => {
     if (!open) {
@@ -46,9 +48,11 @@ export const FavsPage = () => {
   };
 
   const handleDelete = async () => {
-    await callEndpoint(deleteFavsByIdService(id));
+    const { data } = await callEndpoint(deleteFavsByIdService(id));
+    const { notice } = data;
     dispatch(deleteFavs(id));
     if (!favsList.legth) navigate("/dashboard", { replace: true });
+    await openAlert(notice);
   };
 
   useEffect(() => {

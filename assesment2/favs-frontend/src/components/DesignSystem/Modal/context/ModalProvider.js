@@ -4,15 +4,13 @@ import { Modal } from "../Modal";
 export const ModalContext = createContext({});
 
 export const ModalProvider = ({ children }) => {
-  const [showModal, setShowModal] = useState(false);
-  const [viewModal, setViewModal] = useState("");
+  const [modal, setModal] = useState({ show: false, component: "" });
 
   const openModal = (view) => {
-    setShowModal(true);
-    setViewModal(view);
+    setModal({ show: true, component: view });
   };
   const closeModal = () => {
-    setShowModal(false);
+    setModal({ show: false, component: "" });
   };
 
   const valueMemo = useMemo(
@@ -20,13 +18,13 @@ export const ModalProvider = ({ children }) => {
       openModal,
       closeModal,
     }),
-    [showModal]
+    [modal]
   );
 
   return (
     <ModalContext.Provider value={valueMemo}>
-      <Modal show={showModal} handler={closeModal}>
-        {viewModal}
+      <Modal show={modal.show} close={closeModal}>
+        {modal.component}
       </Modal>
       {children}
     </ModalContext.Provider>

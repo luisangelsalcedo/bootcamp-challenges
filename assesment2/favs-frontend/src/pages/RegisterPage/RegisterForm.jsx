@@ -1,6 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { InputForm, Btn, Preloading } from "../../components";
+import {
+  InputForm,
+  Btn,
+  Preloading,
+  NotificationContext,
+} from "../../components";
 import { PATTERNS } from "../../constants";
 import { useFetchAndLoad } from "../../hooks";
 import { registerUserService } from "../../services";
@@ -12,6 +17,7 @@ export const RegisterForm = () => {
   const btnRef = useRef();
   const { loading, callEndpoint } = useFetchAndLoad();
   const navigate = useNavigate();
+  const { openNotice } = useContext(NotificationContext);
 
   const handleChange = () => {
     const nameVal = nameRef.current.value.length;
@@ -30,8 +36,11 @@ export const RegisterForm = () => {
       password: passRef.current.value,
     };
     // console.log(newUser);
-    await callEndpoint(registerUserService(newUser));
+    const { data } = await callEndpoint(registerUserService(newUser));
+    const { user } = data;
     navigate("/login", { replace: true });
+    await openNotice(`User ${user.name} created`);
+    await openNotice(`Ready to login`);
   };
 
   useEffect(() => {

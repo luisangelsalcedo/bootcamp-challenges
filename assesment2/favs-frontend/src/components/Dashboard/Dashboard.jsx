@@ -2,7 +2,14 @@ import "./scss/dashboard.scss";
 import { Outlet, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useContext } from "react";
-import { Avatar, Logo, Btn, ToggleMode, ModalContext } from "../DesignSystem";
+import {
+  Avatar,
+  Logo,
+  Btn,
+  ToggleMode,
+  ModalContext,
+  NotificationContext,
+} from "../DesignSystem";
 import { FavListPage } from "../../pages/FavListPage";
 import { exit } from "../../redux";
 import { CreditsPage } from "../../pages/CreditsPage";
@@ -12,9 +19,11 @@ export const Dashboard = () => {
   const dispatch = useDispatch();
   const { id: isOpen } = useParams();
   const { openModal } = useContext(ModalContext);
+  const { openNotice } = useContext(NotificationContext);
 
-  const handleLogout = () => {
+  const handleLogout = async () => {
     dispatch(exit());
+    await openNotice(`See you soon ${name.split(" ")[0]}`);
   };
 
   const handleCredits = () => {

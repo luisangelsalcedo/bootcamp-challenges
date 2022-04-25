@@ -6,6 +6,7 @@ import {
   ModalContext,
   TitleField,
   Preloading,
+  NotificationContext,
 } from "../../components/DesignSystem";
 
 import { useFetchAndLoad } from "../../hooks";
@@ -13,9 +14,10 @@ import { updateFavs } from "../../redux";
 import { updateFavsByIdService } from "../../services";
 
 export const FavListFormEdit = () => {
-  const { open } = useSelector((state) => state.favs);
   const { closeModal } = useContext(ModalContext);
+  const { openNotice } = useContext(NotificationContext);
   const { loading, callEndpoint } = useFetchAndLoad();
+  const { open } = useSelector((state) => state.favs);
   const dispatch = useDispatch();
   const nameRef = useRef();
   const btnRef = useRef();
@@ -37,6 +39,7 @@ export const FavListFormEdit = () => {
     const { favs } = data;
     if (favs) dispatch(updateFavs(favs));
     closeModal();
+    await openNotice(`Updated ${favs.name}`);
   };
 
   useEffect(() => {

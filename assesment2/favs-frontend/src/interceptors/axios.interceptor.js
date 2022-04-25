@@ -1,10 +1,9 @@
 import axios from "axios";
-import { useContext } from "react";
 
 /**
  * * AXIOS INSTANCE
  */
-const axiosHTTPclient = axios.create({
+export const axiosHTTPclient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   // timeout: 1000,
   headers: { "Content-Type": "application/json" },
@@ -36,14 +35,12 @@ axiosHTTPclient.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response.request.status === 401) {
-      localStorage.setItem("auth", JSON.stringify({ logger: false }));
-      window.location.href = "/";
+      setTimeout(() => {
+        localStorage.setItem("auth", JSON.stringify({ logger: false }));
+        window.location.href = "/";
+      }, 2000);
     }
-
-    console.log(error.response.data);
 
     return Promise.reject(error);
   }
 );
-
-export default axiosHTTPclient;

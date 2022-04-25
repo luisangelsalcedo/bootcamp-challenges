@@ -1,3 +1,3 @@
-import axiosHTTPclient from "./axios.interceptor";
+import { axiosHTTPclient } from "./axios.interceptor";
 
 export { axiosHTTPclient };

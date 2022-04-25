@@ -5,8 +5,8 @@ import { Btn } from "../Btn";
 import { useFetchAndLoad } from "../../../hooks";
 import { updateFavsByIdService } from "../../../services";
 import { updateFavs } from "../../../redux";
-import { ModalContext } from "../Modal";
 import { Preloading } from "../Preloading";
+import { NotificationContext } from "../Notificaction";
 
 /**
  * ## FavItem component
@@ -19,9 +19,10 @@ import { Preloading } from "../Preloading";
  * @returns {jsx} JSX
  */
 export const FavItem = ({ fa, fav, index, handleEdit }) => {
+  const { openAlert } = useContext(NotificationContext);
   const { title, link, description } = fav;
-  const { open } = useSelector((state) => state.favs);
   const { loading, callEndpoint } = useFetchAndLoad();
+  const { open } = useSelector((state) => state.favs);
   const dispatch = useDispatch();
 
   const handleDelete = async () => {
@@ -33,6 +34,8 @@ export const FavItem = ({ fa, fav, index, handleEdit }) => {
     const { data } = await callEndpoint(updateFavsByIdService(favsUpdate));
     const { favs } = data;
     dispatch(updateFavs(favs));
+
+    await openAlert(`The item has been deleted`);
   };
 
   return (

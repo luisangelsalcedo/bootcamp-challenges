@@ -6,6 +6,7 @@ import {
   ModalContext,
   TitleField,
   Preloading,
+  NotificationContext,
 } from "../../components/DesignSystem";
 
 import { useFetchAndLoad } from "../../hooks";
@@ -13,6 +14,7 @@ import { createFavs } from "../../redux";
 import { createFavsListService } from "../../services";
 
 export const FavListForm = () => {
+  const { openNotice } = useContext(NotificationContext);
   const { closeModal } = useContext(ModalContext);
   const { loading, callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
@@ -35,6 +37,8 @@ export const FavListForm = () => {
     const { favs } = data;
     if (favs) dispatch(createFavs(favs));
     closeModal();
+    await openNotice(`${favs.name} has been created`);
+    await openNotice(`Add new items`);
   };
 
   useEffect(() => {

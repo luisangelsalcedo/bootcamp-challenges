@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin } from "react-google-login";
 import { useDispatch } from "react-redux";
 import {
   Btn,
   Logo,
+  NotificationContext,
   Preloading,
   TitleField,
   ToggleMode,
@@ -20,6 +21,7 @@ export const RegisterPage = () => {
   const [isForm, setIsForm] = useState(false);
   const { loading, callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
+  const { openNotice } = useContext(NotificationContext);
 
   const handleLoadForm = () => {
     setIsForm((s) => !s);
@@ -31,6 +33,7 @@ export const RegisterPage = () => {
     );
     const { data: payload } = await callEndpoint(validateTokenService(token));
     dispatch(login({ ...token, ...payload }));
+    await openNotice(`Welcome ${payload.name}`);
   };
 
   return (
