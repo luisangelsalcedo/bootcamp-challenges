@@ -27,14 +27,14 @@ export const RegisterPage = () => {
     setIsForm((s) => !s);
   };
 
-  const handleGoogleLogin = async ({ profileObj }) => {
-    const { data: token } = await callEndpoint(
-      loginGoogleService({ profileObj })
-    );
-    const { data: payload } = await callEndpoint(validateTokenService(token));
-    dispatch(login({ ...token, ...payload }));
-    await openNotice(`Welcome ${payload.name}`);
-  };
+  // const handleGoogleLogin = async ({ profileObj }) => {
+  //   const { data: token } = await callEndpoint(
+  //     loginGoogleService({ profileObj })
+  //   );
+  //   const { data: payload } = await callEndpoint(validateTokenService(token));
+  //   dispatch(login({ ...token, ...payload }));
+  //   await openNotice(`Welcome ${payload.name}`);
+  // };
 
   return (
     <div className="register">
@@ -56,14 +56,14 @@ export const RegisterPage = () => {
                   onClick={handleLoadForm}
                   className="btn-block"
                 />
-                <GoogleLogin
+                {/* <GoogleLogin
                   clientId={process.env.REACT_APP_OAUTH_CLIENT_ID}
                   buttonText="Continúa con Google"
                   onSuccess={handleGoogleLogin}
                   onFailure={handleGoogleLogin}
                   cookiePolicy="single_host_origin"
                   className="btn btn-default btn-google  btn-block"
-                />
+                /> */}
               </>
             ) : (
               <RegisterForm />

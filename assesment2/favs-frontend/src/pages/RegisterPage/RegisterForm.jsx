@@ -79,7 +79,7 @@ export const RegisterForm = () => {
           />
           <Btn
             ref={btnRef}
-            label="Iniciar sesión"
+            label="Regístrate"
             btn="outline"
             className="btn-block"
             type="submit"
