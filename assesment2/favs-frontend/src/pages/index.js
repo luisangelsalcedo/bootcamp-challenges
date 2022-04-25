@@ -1,7 +1,7 @@
 import { DesignSystemPage } from "./DesignSystemPage/DesignSystemPage";
 import { HomePage } from "./HomePage/HomePage";
-import { LoginPage } from "./LoginPage/LoginPage";
-import { RegisterPage } from "./RegisterPage/RegisterPage";
+import { LoginPage, LoginForm } from "./LoginPage";
+import { RegisterPage, RegisterForm } from "./RegisterPage";
 import { NotFoundPage } from "./NotFoundPage/NotFoundPage";
 import { FavListPage } from "./FavListPage/FavListPage";
 import { FavsPage } from "./FavsPage/FavsPage";
@@ -13,7 +13,9 @@ export {
   DesignSystemPage,
   HomePage,
   LoginPage,
+  LoginForm,
   RegisterPage,
+  RegisterForm,
   NotFoundPage,
   FavListPage,
   FavsPage,

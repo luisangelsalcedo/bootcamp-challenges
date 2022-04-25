@@ -20,6 +20,8 @@ export const LoginForm = () => {
   const { openNotice } = useContext(NotificationContext);
 
   const handleChange = () => {
+    emailRef.current.value = emailRef.current.value.trim();
+
     const emailVal = emailRef.current.value.length;
     const passVal = passRef.current.value.length;
     let isDisable = true;
@@ -30,7 +32,7 @@ export const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const userLogin = {
-      email: emailRef.current.value,
+      email: emailRef.current.value.trim().toLowerCase(),
       password: passRef.current.value,
     };
 

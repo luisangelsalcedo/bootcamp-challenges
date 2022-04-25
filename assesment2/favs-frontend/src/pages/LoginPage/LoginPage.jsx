@@ -18,7 +18,7 @@ import { login } from "../../redux";
 import "./loginPage.scss";
 
 export const LoginPage = () => {
-  const [isForm, setIsForm] = useState(false);
+  const [isForm, setIsForm] = useState(true);
   const { loading, callEndpoint } = useFetchAndLoad();
   const dispatch = useDispatch();
   const { openNotice } = useContext(NotificationContext);
