@@ -14,7 +14,7 @@
 <img src="https://img.icons8.com/color/32/000000/bootstrap.png"/>
 </div>
 
-[Repositorio](./favs-backend/) |
+### [Repositorio](./favs-backend/) &nbsp;&nbsp;|&nbsp;&nbsp; [Deploy](https://favs-backend.herokuapp.com/)
 
 <br>
 <img src="./favs-backend/public/img/screenshot.jpg"/>
@@ -33,7 +33,7 @@
 <img src="https://prettier.io/icon.png"  width='30'/>
 </div>
 
-[Repositorio](./favs-frontend/) | [UI Design](https://www.figma.com/file/Z2gIl93XMtpLRUHsEBDKOS/favsApp?node-id=0%3A1)
+### [Repositorio](./favs-frontend/) &nbsp;&nbsp;|&nbsp;&nbsp; [UI Design](https://www.figma.com/file/Z2gIl93XMtpLRUHsEBDKOS/favsApp?node-id=0%3A1) &nbsp;&nbsp;|&nbsp;&nbsp; [Deploy](https://favs-app-luissg.netlify.app/)
 
 <br>
 <img src="./favs-frontend/public/img/screenshot.jpg"/>
