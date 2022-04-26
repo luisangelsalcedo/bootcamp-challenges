@@ -21,13 +21,28 @@
 <br>
 <img src="./favs-backend/public/img/screenshot.jpg"/>
 
-## User testing
+## Run test environment
 
-## <img src="./favs-backend/public/img/test-user.jpg"/>
+**Bash:**
 
-## Favs testing
+```bash
+npm install
+npm run dev-test
+```
 
-## <img src="./favs-backend/public/img/test-favs.jpg"/>
+**Other Bash:**
+
+```bash
+npm run test
+```
+
+### User testing
+
+<img src="./favs-backend/public/img/test-user.jpg"/>
+
+### Favs testing
+
+<img src="./favs-backend/public/img/test-favs.jpg"/>
 
 ---
 

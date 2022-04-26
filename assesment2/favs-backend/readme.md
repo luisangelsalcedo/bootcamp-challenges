@@ -19,13 +19,28 @@
 <br>
 <img src="./public/img/screenshot.jpg"/>
 
-## User testing
+## Run test environment
 
-## <img src="./public/img/test-user.jpg"/>
+**Bash:**
 
-## Favs testing
+```bash
+npm install
+npm run dev-test
+```
 
-## <img src="./public/img/test-favs.jpg"/>
+**Other Bash:**
+
+```bash
+npm run test
+```
+
+### User testing
+
+<img src="./public/img/test-user.jpg"/>
+
+### Favs testing
+
+<img src="./public/img/test-favs.jpg"/>
 
 ---
 
