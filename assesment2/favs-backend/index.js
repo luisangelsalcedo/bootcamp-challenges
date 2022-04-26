@@ -1,5 +1,7 @@
 import app from "./src/app.js";
 
-app.listen("5000", () => {
+const server = app.listen(process.env.PORT || 5000, () => {
   console.log("server running");
 });
+
+server.setTimeout(0);

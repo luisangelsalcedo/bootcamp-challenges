@@ -6,12 +6,12 @@ import Favs from "../models/favs.model.js";
  * @param {Object} req - HTTPRequest Object
  * @param {String} req.auth.id - User auth id
  * @param {String} req.body.name - Favorites list name
- * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
+ * @return {HTTPResponse Object} - status 200 return {Favs} | status 400,500 return {message}
  */
 export const createFavsList = async (req, res) => {
   const { id: userID } = req.auth;
   const { name } = req.body;
-  if (!name) return res.status(500).json({ message: "Name is required" });
+  if (!name) return res.status(400).json({ message: "Name is required" });
 
   const favs = new Favs({ name, owner: userID });
 
@@ -64,18 +64,18 @@ export const getFavsListById = async (req, res) => {
  * @param {Object} req - HTTPRequest Object
  * @param {ObjectId} req.params.id - Favorites list ID
  * @param {Object} req.body - Favorites list edited object
- * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
+ * @return {HTTPResponse Object} - status 200 return {Favs} | status 400,404,500 return {message}
  */
 export const updateFavsListById = async (req, res) => {
   const { favslist } = req.body;
   const numKeys = Object.keys(favslist).length;
-  if (!numKeys) return res.status(500).json({ message: "Content is required" });
+  if (!numKeys) return res.status(400).json({ message: "Content is required" });
 
   const { id } = req.params;
 
   try {
     const favs = await Favs.findByIdAndUpdate(id, favslist, { new: true });
-    if (!favs) return res.status(500).json({ message: "Lists not found" });
+    if (!favs) return res.status(404).json({ message: "Lists not found" });
     res.status(200).json({ favs });
   } catch (error) {
     res.status(500).json({ message: error.message });

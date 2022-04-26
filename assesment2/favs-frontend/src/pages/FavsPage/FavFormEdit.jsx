@@ -73,7 +73,6 @@ export const FavFormEdit = ({ fav, index }) => {
             placeholder="Enlace"
             fa="external-link-square"
             onChange={handleChange}
-            required
             pattern={PATTERNS.URL.exp}
             title={PATTERNS.URL.title}
             defaultValue={fav?.link}
@@ -83,7 +82,6 @@ export const FavFormEdit = ({ fav, index }) => {
             placeholder="Descripción"
             fa="align-left"
             onChange={handleChange}
-            required
             defaultValue={fav?.description}
           />
           <Btn

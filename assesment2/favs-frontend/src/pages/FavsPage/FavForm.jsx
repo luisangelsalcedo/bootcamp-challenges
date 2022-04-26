@@ -76,7 +76,6 @@ export const FavForm = () => {
             placeholder="Enlace"
             fa="external-link-square"
             onChange={handleChange}
-            required
             pattern={PATTERNS.URL.exp}
             title={PATTERNS.URL.title}
           />
@@ -85,7 +84,6 @@ export const FavForm = () => {
             placeholder="Descripción"
             fa="align-left"
             onChange={handleChange}
-            required
           />
           <Btn
             ref={btnRef}

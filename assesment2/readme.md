@@ -12,6 +12,7 @@
 <img src="https://img.stackshare.io/package/19054/default_2be036aaca5c71baf790e00f1ef80dd37a625905.png" width='28'/>&nbsp;&nbsp;
 <img src="https://progsoft.net/images/ejs-icon-bccf3f017751a71ee75c69021ee1020fc0d9067e.jpg" width='28'/>&nbsp;&nbsp;
 <img src="https://img.icons8.com/color/32/000000/bootstrap.png"/>&nbsp;&nbsp;
+<img src="https://iconape.com/wp-content/png_logo_vector/jest-logo.png" width="26"/>&nbsp;&nbsp;
 <img src="https://img.icons8.com/color/32/000000/heroku.png"/>&nbsp;&nbsp;
 </div>
 
@@ -19,6 +20,14 @@
 
 <br>
 <img src="./favs-backend/public/img/screenshot.jpg"/>
+
+## User testing
+
+## <img src="./favs-backend/public/img/test-user.jpg"/>
+
+## Favs testing
+
+## <img src="./favs-backend/public/img/test-favs.jpg"/>
 
 ---
 

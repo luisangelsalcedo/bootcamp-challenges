@@ -56,11 +56,14 @@ export const FavItem = ({ fa, fav, index, handleEdit }) => {
           <div>{description}</div>
 
           <Btn fa="edit" btn="primary" onClick={handleEdit} />
-          <Btn
-            fa="external-link-square"
-            btn="primary"
-            onClick={() => window.open(link, "_blank")}
-          />
+          {!!link && (
+            <Btn
+              fa="external-link-square"
+              btn="primary"
+              onClick={() => window.open(link, "_blank")}
+            />
+          )}
+
           <Btn fa="trash" btn="danger" onClick={handleDelete} />
         </details>
       )}

@@ -57,7 +57,6 @@ export const LoginForm = () => {
             ref={emailRef}
             placeholder="Correo electrónico"
             fa="envelope"
-            required
             onChange={handleChange}
             pattern={PATTERNS.EMAIL.exp}
             title={PATTERNS.EMAIL.title}

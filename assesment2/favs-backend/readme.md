@@ -10,6 +10,7 @@
 <img src="https://img.stackshare.io/package/19054/default_2be036aaca5c71baf790e00f1ef80dd37a625905.png" width='28'/>&nbsp;&nbsp;
 <img src="https://progsoft.net/images/ejs-icon-bccf3f017751a71ee75c69021ee1020fc0d9067e.jpg" width='28'/>&nbsp;&nbsp;
 <img src="https://img.icons8.com/color/32/000000/bootstrap.png"/>&nbsp;&nbsp;
+<img src="https://iconape.com/wp-content/png_logo_vector/jest-logo.png" width="26"/>&nbsp;&nbsp;
 <img src="https://img.icons8.com/color/32/000000/heroku.png"/>&nbsp;&nbsp;
 </div>
 
@@ -17,3 +18,50 @@
 
 <br>
 <img src="./public/img/screenshot.jpg"/>
+
+## User testing
+
+## <img src="./public/img/test-user.jpg"/>
+
+## Favs testing
+
+## <img src="./public/img/test-favs.jpg"/>
+
+---
+
+## Questions
+
+### 1. Indicate which are the parts of the following url: `https://backend.mega-app.com.co:8080/api/articles/search?docid=1020&hl=en#dayone`
+
+   <img src="./public/img/url-screenshot.png"/>
+
+- 1 - Protocolo (`https://`)
+- 2 - Subdominio (`backend.`)
+- 3 - Dominio (`mega-app`)
+- 4 - Dominio de alto nivel generico - gTLD (`.com`)
+- 5 - Dominio de alto nivel con código de país - cTLD (`.co`)
+- 6 - Puerto (`:8080`)
+- 7 - Path (`/api/articles/search`)
+- 8 - Query string (`?docid=1020&hl=en`)
+- 9 - Fragmento / Etiqueta (`#dayone`)
+- 10 - Host (`backend.mega-app.com.co`)
+
+---
+
+### 2. Define what is a Web API, Restful and what are the statusCode 200-, 400-, 500-
+
+- Un Web API es un tipo de API que utiliza el protocolo HTTP como forma de comunicación.
+- Restful es la implementación de la arquitectura Rest para conectar varios sistemas basados en el protocolo HTTP.
+- StatusCode `200`: La solicitud ha tenido éxito.
+- StatusCode `400`: Esta respuesta significa que el servidor no pudo interpretar la solicitud dada una sintaxis inválida.
+- StatusCode `500`: El servidor ha encontrado una situación que no sabe cómo manejarla.
+
+---
+
+### 3. When we talk about `CRUD`, what does it mean?
+
+El CRUD se refiere a un acrónimo formado por las primeras letras de las cuatro operaciones más importantes para la creación y gestión de una base de datos.
+
+Sirve para crear (`create`), leer (`read`), actualizar (`update`) y eliminar (`delete`) información usando los verbos de HTTP.
+
+---
