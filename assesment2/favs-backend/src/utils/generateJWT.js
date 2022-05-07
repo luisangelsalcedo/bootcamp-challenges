@@ -4,13 +4,13 @@ export const generateJWT = payload => {
   const promise = new Promise((resolve, reject) => {
     jwt.sign(
       payload,
-      process.env.JWT_PASSWORD,
+      config.token.secret,
       {
         expiresIn: "1d",
       },
       (err, token) => {
         if (!err) resolve(token);
-        else reject(null);
+        else reject(err);
       }
     );
   });

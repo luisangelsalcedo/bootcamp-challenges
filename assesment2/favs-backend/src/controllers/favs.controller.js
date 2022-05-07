@@ -1,102 +1,82 @@
 import Favs from "../models/favs.model.js";
+import { errorResponse, successResponse } from "./../utils/index.js";
 
 /**
- * ## createFavsList
- * * Creating a new favorites list
- * @param {Object} req - HTTPRequest Object
- * @param {String} req.auth.id - User auth id
- * @param {String} req.body.name - Favorites list name
- * @return {HTTPResponse Object} - status 200 return {Favs} | status 400,500 return {message}
+ * ## createFavs
  */
-export const createFavsList = async (req, res) => {
-  const { id: userID } = req.auth;
-  const { name } = req.body;
-  if (!name) return res.status(400).json({ message: "Name is required" });
-
-  const favs = new Favs({ name, owner: userID });
-
+const createFavs = async (req, res, next) => {
   try {
-    const newFavs = await favs.save();
-    res.status(201).json({ favs: newFavs });
+    const { id } = req.auth;
+    const favs = await Favs.create({ ...req.body, owner: id });
+    successResponse(res, 201, "Favs created", favs);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
 /**
- * ## getAllFavsLists
- * * Get all favorites lists
- * @param {String} req.auth.id - User auth id
- * @return {HTTPResponse Object} - status 200 return {Favs[]} | status 500 return {message} | status 204
+ * ## getAllFavs
  */
-export const getAllFavsLists = async (req, res) => {
-  const { id: userID } = req.auth;
+const getAllFavs = async (req, res, next) => {
   try {
-    const arrFavs = await Favs.find({ owner: userID });
-    if (!arrFavs.length) return res.status(204).send();
-    res.status(200).json({ arrFavs });
+    const arrFavs = await Favs.findAll(req);
+    successResponse(res, 200, null, arrFavs);
   } catch (error) {
-    res.status(500).json({ message: "Lists not found" });
+    next(error);
   }
 };
 
 /**
- * ## getFavsListById
- * * Get favorites list by ID
- * @param {Object} req - HTTPRequest Object
- * @param {ObjectId} req.params.id - Favorites list ID
- * @return {HTTPResponse Object} - status 200 return {Favs} | status 500 return {message}
+ * ## findById
  */
-export const getFavsListById = async (req, res) => {
-  const { id } = req.params;
-
+const findById = async (req, res, next, id) => {
   try {
     const favs = await Favs.findById(id);
-    res.status(200).json({ favs });
+    if (!favs) throw errorResponse(404, "Favs list not found");
+    req.favs = favs;
+    next();
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
 /**
- * ## updateFavsListById
- * * Update favorites list by ID
- * @param {Object} req - HTTPRequest Object
- * @param {ObjectId} req.params.id - Favorites list ID
- * @param {Object} req.body - Favorites list edited object
- * @return {HTTPResponse Object} - status 200 return {Favs} | status 400,404,500 return {message}
+ * ## getOneFavs
  */
-export const updateFavsListById = async (req, res) => {
-  const { favslist } = req.body;
-  const numKeys = Object.keys(favslist).length;
-  if (!numKeys) return res.status(400).json({ message: "Content is required" });
-
-  const { id } = req.params;
-
+const getOneFavs = async (req, res, next) => {
   try {
-    const favs = await Favs.findByIdAndUpdate(id, favslist, { new: true });
-    if (!favs) return res.status(404).json({ message: "Lists not found" });
-    res.status(200).json({ favs });
+    const { favs } = req;
+    successResponse(res, 200, null, favs);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
 
 /**
- * ## deleteFavsListById
- * * Delete favorites list by ID
- * @param {Object} req - HTTPRequest Object
- * @param {ObjectId} req.params.id - Favorites list ID
- * @return {HTTPResponse Object} - status 200 return {notice} | status 500 return {message}
+ * ## updateFavs
  */
-export const deleteFavsListById = async (req, res) => {
-  const { id } = req.params;
-
+const updateFavs = async (req, res, next) => {
   try {
-    const favs = await Favs.findByIdAndDelete(id);
-    if (!favs) return res.status(500).json({ message: "Lists not found" });
-    res.status(200).json({ notice: `${favs?.name} has been removed` });
+    const { favs } = req;
+    Object.assign(favs, req.body);
+    const updated = await favs.save();
+    successResponse(res, 200, "Favs list has been updated", updated);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    next(error);
   }
 };
+
+/**
+ * ## deleteFavs
+ */
+const deleteFavs = async (req, res, next) => {
+  try {
+    const { favs } = req;
+    const removed = await favs.remove();
+    successResponse(res, 200, "Favs list has been removed", removed);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export { findById, createFavs, getAllFavs, getOneFavs, updateFavs, deleteFavs };
