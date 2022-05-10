@@ -1,7 +1,8 @@
 # Assesment backend
 
-## favs-backend
+## Backend - Favs api
 
+<br>
 <div>
 <img src="https://img.icons8.com/fluency/32/000000/node-js.png"/>&nbsp;&nbsp;
 <img src="https://camo.githubusercontent.com/6686b9ef0e21e13c9e7c846340303765c0f36e40a0490bcad453ea9d0d433ea0/68747470733a2f2f7777772e6d656d656e746f746563682e696e2f6173736574732f696d616765732f69636f6e732f657870726573732e706e67" width='30'/>&nbsp;&nbsp;
@@ -16,61 +17,80 @@
 <img src="https://img.icons8.com/color/32/000000/heroku.png"/>&nbsp;&nbsp;
 </div>
 
-### [Repositorio](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/assesment2/favs-backend) &nbsp;&nbsp;|&nbsp;&nbsp; [Deploy](https://favs-backend.herokuapp.com/)
+### [Repositorio](https://github.com/luisangelsalcedo/favs-api) &nbsp;&nbsp;|&nbsp;&nbsp; [Deploy](https://favs-api-luissg.herokuapp.com) &nbsp;&nbsp;|&nbsp;&nbsp; [Frontend](https://github.com/luisangelsalcedo/favs-frontend)
 
 <br>
-<img src="./favs-backend/public/img/screenshot.jpg"/>
+<img src="https://raw.githubusercontent.com/luisangelsalcedo/favs-api/main/public/img/screenshot.jpg"/>
+<br>
 
-## Run test environment
+### Requirements
 
-**Bash:**
+As minimum requirements you need to have installed:
 
-```bash
-npm install
-npm run dev-test
-```
+- [node.js](https://nodejs.org/download/release/v16.13.0/) version 16.13.0 or higher.
+- npm version 8.1.4 or higher.
 
-**Other Bash:**
+Set environment variables:
 
-```bash
-npm run test
-```
+- Create a file called **dev.env**
+- Use [reference](./.env.example)
 
-### User testing
+### Project Installation:
 
-<img src="./favs-backend/public/img/test-user.jpg"/>
+1. **Download the project** by opening the terminal and executing the following command:
+   ```
+   git clone https://github.com/luisangelsalcedo/favs-api.git
+   ```
+2. **Get into the project directory** by executing the following command:
+   ```
+   cd favs-api
+   ```
+3. **Install all dependencies** by executing the following command:
+   ```
+   npm install
+   ```
+4. **Run the application** by executing the following command:
+   ```
+   npm run dev
+   ```
+5. Open the following URL <http://localhost:5000> in your browser.
 
-### Favs testing
+   > If you have any questions, [contact us](https://mailto:seemc9@gmail.com)
 
-<img src="./favs-backend/public/img/test-favs.jpg"/>
+### Documentation
+
+You can find all the functionalities of the api documented in the following link: [Favs api documentation](https://documenter.getpostman.com/view/11240421/UyxdLpRF)
+
+### Run tests
+
+Set environment variables for tests:
+
+- Create a file called **test.env**
+- Use [reference](./.env.example)
+
+Run the application in the test environment:
+
+- Running the command: `npm run dev-test` to start the application in the test environment.
+- Open another terminal
+- Running the command: `npm run test` to run all the tests.
+
+> Test endpoint **auth [user](./src/testing/user.test.js)**  
+> ![](https://raw.githubusercontent.com/luisangelsalcedo/favs-api/main/public/img/test-user.png)
+
+> Test endpoint **auth [favs](./src/testing/favs.test.js)**  
+> ![](https://raw.githubusercontent.com/luisangelsalcedo/favs-api/main/public/img/test-favs.png)
+
+<br>
 
 ---
 
-## favs-frontend
-
-<div>
-<img src="https://img.icons8.com/color/32/000000/figma--v1.png"/>&nbsp;&nbsp;
-<img src="https://img.icons8.com/color/32/000000/react-native.png"/>&nbsp;&nbsp;
-<img src="https://img.icons8.com/color/32/000000/redux.png"/>&nbsp;&nbsp;
-<img src="https://img.icons8.com/color/32/000000/sass.png"/>&nbsp;&nbsp;
-<img src="https://axios-http.com/assets/favicon.ico" width='28'/>&nbsp;&nbsp;
-<img src="https://img.icons8.com/color/32/000000/eslint.png"/>&nbsp;&nbsp;
-<img src="https://prettier.io/icon.png"  width='30'/>&nbsp;&nbsp;
-<img src="https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/32/000000/external-netlify-a-cloud-computing-company-that-offers-hosting-and-serverless-backend-services-for-static-websites-logo-shadow-tal-revivo.png"/>
-</div>
-
-### [Repositorio](https://github.com/luisangelsalcedo/bootcamp-challenges/tree/main/assesment2/favs-frontend) &nbsp;&nbsp;|&nbsp;&nbsp; [UI Design](https://www.figma.com/file/Z2gIl93XMtpLRUHsEBDKOS/favsApp?node-id=0%3A1) &nbsp;&nbsp;|&nbsp;&nbsp; [Deploy](https://favs-app-luissg.netlify.app/)
-
 <br>
-<img src="./favs-frontend/public/img/screenshot.jpg"/>
-
----
 
 ## Questions
 
 ### 1. Indicate which are the parts of the following url: `https://backend.mega-app.com.co:8080/api/articles/search?docid=1020&hl=en#dayone`
 
-   <img src="./favs-backend/public/img/url-screenshot.png"/>
+   <img src="https://raw.githubusercontent.com/luisangelsalcedo/favs-api/main/public/img/url-screenshot.png"/>
 
 - 1 - Protocolo (`https://`)
 - 2 - Subdominio (`backend.`)
