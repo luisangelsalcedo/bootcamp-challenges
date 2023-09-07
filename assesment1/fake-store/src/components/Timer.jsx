@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import getRemainTime from "../helpers/getRemainTime"
+import config from "../config"
 
 const Timer = ({ timeRandom, id }) => {
   const [time, setTimer] = useState(timeRandom)
@@ -27,7 +28,7 @@ const Timer = ({ timeRandom, id }) => {
       </div>
 
       {btnActive ? (
-        <Link to={`/product-detail/${id}`}>
+        <Link to={`${config.base}/product-detail/${id}`}>
           <div className="btn">Ver producto</div>
         </Link>
       ) : (

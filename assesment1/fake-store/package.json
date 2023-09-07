@@ -1,5 +1,6 @@
 {
   "name": "fake-store",
+  "homepage": "https://luisangelsalcedo.dev/repo/bootcamp-challenges/assesment/fake-store/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

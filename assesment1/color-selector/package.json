@@ -1,5 +1,6 @@
 {
   "name": "color-selector",
+  "homepage": "https://www.luisangelsalcedo.dev/repo/bootcamp-challenges/assesment/color-selector/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

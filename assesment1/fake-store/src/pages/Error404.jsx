@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom"
+import config from "../config"
 
 const Error404 = () => (
   <div className="error404">
     <nav className="mainMenu" aria-labelledby="navigator">
       <div className="container">
         <div className="logo">
-          <Link to="/">
+          <Link to={config.base}>
             <img src="https://fakestoreapi.com/icons/logo.png" alt="" />
             <div>Fake Store</div>
           </Link>

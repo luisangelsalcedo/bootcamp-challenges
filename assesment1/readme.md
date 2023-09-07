@@ -1,11 +1,11 @@
 # Proyectos React
 
-- ## Opción 1 - [fake-store](./fake-store)
+- ## Opción 1 - [fake-store](./fake-store) | [deploy](https://luisangelsalcedo.dev/repo/bootcamp-challenges/assesment/fake-store/)
 
 <img src='image/fake-store.jpg' width='400'/>
 <br><br><br>
 
-- ## Opción 2 - [color-selector](./color-selector)
+- ## Opción 2 - [color-selector](./color-selector) | [deploy](https://luisangelsalcedo.dev/repo/bootcamp-challenges/assesment/color-selector/)
 <img src='image/color-selector.png' width='400'/>
 <br><br><br>
 
